@@ -1,0 +1,14 @@
+{
+	"cmsName": "Dpcms管理后台",
+	"version": "T2.0",
+	"author": "Ljuyx",
+	"homePage": "index.html",
+	"server": "windows|centos",
+	"dataBase": "8.00.2039",
+	"maxUpload": "2M",
+	"userRights": "超级管理员",
+	"description": "",
+	"powerby": "copyright @ 2018 Dpwl.net 湖北大鹏网络科技有限公司版权所有",
+	"record": "鄂ICP备10202006号",
+	"keywords": "Dpcms、Dpcms管理后台、湖北大鹏网络"
+}
