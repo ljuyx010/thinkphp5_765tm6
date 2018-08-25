@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html";i:1535169685;}*/ ?>
 <!DOCTYPE html>
 <html>
   
@@ -8,10 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    {css href="__STATIC__/layui/css/layui.css"}
-    {css href="__STATIC__/css/welcome.css"}
-    {js href="__STATIC__/js/jquery.min.js"}
-    {js href="__STATIC__/layui/layui.js"}
+    <link rel="stylesheet" type="text/css" href="/public/static/layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="/public/static/css/welcome.css" />
+    <script type="text/javascript" src="/public/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/public/static/layui/layui.js"></script>
   </head>
   
   <body>
@@ -34,26 +35,26 @@
             <th width="220">操作</th>
         </thead>
         <tbody class="x-cate">
-        {volist name="list" id="v"}
-          <tr cate-id='{$v.id}' fid='{$v.pid}' >
+        <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+          <tr cate-id='<?php echo $v['id']; ?>' fid='<?php echo $v['pid']; ?>' >
             <!--<td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$v.id}'><i class="layui-icon">&#xe605;</i></div>
+              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='<?php echo $v['id']; ?>'><i class="layui-icon">&#xe605;</i></div>
             </td>-->
-            <td>{$v.id}</td>
+            <td><?php echo $v['id']; ?></td>
             <td>              
-              {$v.name}
+              <?php echo $v['name']; ?>
             </td>
-            <td><input type="text" class="layui-input x-sort" name="order" value="{$v.order}"></td>
+            <td><input type="text" class="layui-input x-sort" name="order" value="<?php echo $v['order']; ?>"></td>
             <td>
               <input type="checkbox" name="switch"  lay-text="开|关"  checked="" lay-skin="switch">
             </td>
             <td class="td-manage">
-              <button class="layui-btn layui-btn layui-btn-xs edit-btn" data-id="{$v.id}"><i class="layui-icon">&#xe642;</i>编辑</button>
-              <button class="layui-btn layui-btn-warm layui-btn-xs add-xia"  data-id="{$v.id}" ><i class="layui-icon">&#xe654;</i>添加子栏目</button>
-              <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="menu_del(this,{$v.id})" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button>
+              <button class="layui-btn layui-btn layui-btn-xs edit-btn" data-id="<?php echo $v['id']; ?>"><i class="layui-icon">&#xe642;</i>编辑</button>
+              <button class="layui-btn layui-btn-warm layui-btn-xs add-xia"  data-id="<?php echo $v['id']; ?>" ><i class="layui-icon">&#xe654;</i>添加子栏目</button>
+              <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="menu_del(this,<?php echo $v['id']; ?>)" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button>
             </td>
           </tr>
-        {/volist}  
+        <?php endforeach; endif; else: echo "" ;endif; ?>  
         
         </tbody>
       </table>
@@ -70,10 +71,10 @@
     //添加
     function addmenu(id,e){
         if(e==1){
-          var url="{:url('system/menuedit','','')}/id/"+id;
+          var url="<?php echo url('system/menuedit','',''); ?>/id/"+id;
           var p="修改";
         }else{
-          var url="{:url('system/menuadd','','')}/id/"+id;
+          var url="<?php echo url('system/menuadd','',''); ?>/id/"+id;
           var p="添加";
         }
         var index = layui.layer.open({
@@ -102,7 +103,7 @@
   function member_del(obj,id){
       layer.confirm('确认要删除吗？',function(index){            
           //发异步删除数据
-        $.post("{:url('system/menudel','','')}",{id:id},function(result){
+        $.post("<?php echo url('system/menudel','',''); ?>",{id:id},function(result){
           if(result){
             $(obj).parents("tr").remove();
             layer.msg('已删除!',{icon:1,time:1000});

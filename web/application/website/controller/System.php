@@ -12,7 +12,7 @@ class System extends Common{
 	}
 
 	public function menuadd(){
-		$pid = input('post.id',0,'intval');
+		$pid = input('id',0,'intval');
 		$this->assign('pid',$pid);
 		return $this->fetch();
 	}
@@ -35,10 +35,8 @@ class System extends Common{
 	public function menuedit(){
 		$id= input('id',0,'intval');
 		$rs=db('nav')->where('id',$id)->find();
-		$this->assign('id',$id);
-		$this->assign('pid',$rs['pid']);
 		$this->assign('v',$rs);
-		$this->fetch(menuadd);
+		$this->fetch();
 	}
 
 }
