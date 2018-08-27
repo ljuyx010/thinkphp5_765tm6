@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html";i:1535169685;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html";i:1535363672;}*/ ?>
 <!DOCTYPE html>
 <html>
   
@@ -25,9 +25,6 @@
       <table class="layui-table layui-form">
         <thead>
           <tr>
-            <!--<th width="20">
-              <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
-            </th>-->
             <th width="70">ID</th>
             <th>栏目名</th>
             <th width="50">排序</th>
@@ -37,16 +34,13 @@
         <tbody class="x-cate">
         <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
           <tr cate-id='<?php echo $v['id']; ?>' fid='<?php echo $v['pid']; ?>' >
-            <!--<td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='<?php echo $v['id']; ?>'><i class="layui-icon">&#xe605;</i></div>
-            </td>-->
             <td><?php echo $v['id']; ?></td>
             <td>              
               <?php echo $v['name']; ?>
             </td>
             <td><input type="text" class="layui-input x-sort" name="order" value="<?php echo $v['order']; ?>"></td>
             <td>
-              <input type="checkbox" name="switch"  lay-text="开|关"  checked="" lay-skin="switch">
+              <input type="checkbox" name="switch"  lay-text="开|关" id="20" lay-filter="display" checked="" lay-skin="switch">
             </td>
             <td class="td-manage">
               <button class="layui-btn layui-btn layui-btn-xs edit-btn" data-id="<?php echo $v['id']; ?>"><i class="layui-icon">&#xe642;</i>编辑</button>
@@ -67,7 +61,10 @@
         laydate = layui.laydate,
         laytpl = layui.laytpl,
         table = layui.table;
-
+    form.on('switch(display)',function(data){
+        console.log(data.elem.checked);
+        console.log(data.elem.id);
+    });
     //添加
     function addmenu(id,e){
         if(e==1){
@@ -99,7 +96,7 @@
         var id=$(".add-xia").attr("data-id");
         addmenu(id,0);
     }) 
-  })
+  });
   function member_del(obj,id){
       layer.confirm('确认要删除吗？',function(index){            
           //发异步删除数据

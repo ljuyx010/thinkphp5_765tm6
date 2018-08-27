@@ -36,7 +36,7 @@ class System extends Common{
 		$id= input('id',0,'intval');
 		$rs=db('nav')->where('id',$id)->find();
 		$this->assign('v',$rs);
-		$this->fetch();
+		return $this->fetch();
 	}
 
 }
