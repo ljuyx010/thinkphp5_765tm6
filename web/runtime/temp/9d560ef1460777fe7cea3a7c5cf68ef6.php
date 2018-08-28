@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html";i:1535447135;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html";i:1535450624;}*/ ?>
 <!DOCTYPE html>
 <html>
   
@@ -18,7 +18,6 @@
   <body>
     <div class="x-body">
       <xblock>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
           <button class="layui-btn add-btn"><i class="layui-icon layui-icon-add-circle-fine"></i>增加顶级分类</button>
         <div class="layui-clear"></div>
       </xblock>
@@ -35,8 +34,8 @@
         <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
           <tr cate-id='<?php echo $v['id']; ?>' fid='<?php echo $v['pid']; ?>' >
             <td><?php echo $v['id']; ?></td>
-            <td>              
-              <?php echo $v['name']; ?>
+            <td><i class="layui-icon x-show" status='true'>&#xe623;</i>
+              <?php echo $v['_name']; ?>
             </td>
             <td><input type="text" class="layui-input x-sort" name="order" data-id="<?php echo $v['id']; ?>" value="<?php echo $v['order']; ?>"></td>
             <td>
@@ -97,11 +96,11 @@
         addmenu();
     }) 
     $(".edit-btn").click(function(){
-        var id=$(".edit-btn").attr("data-id");
+        var id=$(this).attr("data-id");
         addmenu(id,1);
     }) 
     $(".add-xia").click(function(){
-        var id=$(".add-xia").attr("data-id");
+        var id=$(this).attr("data-id");
         addmenu(id,0);
     }) 
   });
@@ -127,6 +126,36 @@
         });
 
       });
+    }
+  $(function () {
+    $("tbody.x-cate tr[fid!='0']").hide();
+    // 栏目多级显示效果
+    $('.x-show').click(function () {
+        if($(this).attr('status')=='true'){
+            $(this).html('&#xe625;'); 
+            $(this).attr('status','false');
+            cateId = $(this).parents('tr').attr('cate-id');
+            $("tbody tr[fid="+cateId+"]").show();
+       }else{
+            cateIds = [];
+            $(this).html('&#xe623;');
+            $(this).attr('status','true');
+            cateId = $(this).parents('tr').attr('cate-id');
+            getCateId(cateId);
+            for (var i in cateIds) {
+                $("tbody tr[cate-id="+cateIds[i]+"]").hide().find('.x-show').html('&#xe623;').attr('status','true');
+            }
+       }
+    })
+  })
+    var cateIds = [];
+    function getCateId(cateId) {
+        
+        $("tbody tr[fid="+cateId+"]").each(function(index, el) {
+            id = $(el).attr('cate-id');
+            cateIds.push(id);
+            getCateId(id);
+        });
     }
   </script>
   </body>
