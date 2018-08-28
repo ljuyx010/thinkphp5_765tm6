@@ -37,9 +37,9 @@
             <td>              
               {$v.name}
             </td>
-            <td><input type="text" class="layui-input x-sort" name="order" value="{$v.order}"></td>
+            <td><input type="text" class="layui-input x-sort" name="order" data-id="{$v.id}" value="{$v.order}"></td>
             <td>
-              <input type="checkbox" name="switch"  lay-text="开|关" id="20" lay-filter="display" checked="" lay-skin="switch">
+              <input type="checkbox" name="switch" lay-text="开|关" id="{$v.id}" lay-filter="display" {if condition="$v.display"}checked=""{/if} lay-skin="switch">
             </td>
             <td class="td-manage">
               <button class="layui-btn layui-btn layui-btn-xs edit-btn" data-id="{$v.id}"><i class="layui-icon">&#xe642;</i>编辑</button>
@@ -60,22 +60,15 @@
         laydate = layui.laydate,
         laytpl = layui.laytpl,
         table = layui.table;
-    form.on('switch(display)',function(data){
+
+    form.on('switch(display)',function display(data){
         var pd = data.elem.checked ? '1' : '0';
         var id = data.elem.id;
-        $.ajax({
-          type: 'POST',
-          url: "{:url('system/del')}",
-          data: {"dis":pd,"id":id},
-          error: function(data){
-            console.log(data);            
-              layer.msg('数据异常！8'); 
-             },
-          success: function(data){  
-          if(data=="1"){
-            setTimeout(function(){layer.msg('操作成功！');},2000);  
+        $.post("{:url('system/dis','','')}",{"dis":pd,"id":id},function(result){
+          if(result){
+            layer.msg('操作成功！');
           }else{
-            console.log(data);layer.msg('操作失败！'); }
+            layer.msg('操作失败!');
           }
         });
     });
@@ -111,10 +104,19 @@
         addmenu(id,0);
     }) 
   });
-  function member_del(obj,id){
+  $("input").blur(function(){
+    var v=$(this).val();
+    var id=$(this).attr("data-id");
+    $.post("{:url('system/dis','','')}",{'id':id,'ord':v},function(result){
+      if(result==0){
+        layer.msg('排序失败!');
+      }
+    });
+  });
+  function menu_del(obj,id){
       layer.confirm('确认要删除吗？',function(index){            
           //发异步删除数据
-        $.post("{:url('system/menudel','','')}",{id:id},function(result){
+        $.post("{:url('system/del','','')}",{id:id},function(result){
           if(result){
             $(obj).parents("tr").remove();
             layer.msg('已删除!',{icon:1,time:1000});

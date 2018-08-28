@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html";i:1535363672;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html";i:1535447135;}*/ ?>
 <!DOCTYPE html>
 <html>
   
@@ -38,9 +38,9 @@
             <td>              
               <?php echo $v['name']; ?>
             </td>
-            <td><input type="text" class="layui-input x-sort" name="order" value="<?php echo $v['order']; ?>"></td>
+            <td><input type="text" class="layui-input x-sort" name="order" data-id="<?php echo $v['id']; ?>" value="<?php echo $v['order']; ?>"></td>
             <td>
-              <input type="checkbox" name="switch"  lay-text="开|关" id="20" lay-filter="display" checked="" lay-skin="switch">
+              <input type="checkbox" name="switch" lay-text="开|关" id="<?php echo $v['id']; ?>" lay-filter="display" <?php if($v['display']): ?>checked=""<?php endif; ?> lay-skin="switch">
             </td>
             <td class="td-manage">
               <button class="layui-btn layui-btn layui-btn-xs edit-btn" data-id="<?php echo $v['id']; ?>"><i class="layui-icon">&#xe642;</i>编辑</button>
@@ -61,9 +61,17 @@
         laydate = layui.laydate,
         laytpl = layui.laytpl,
         table = layui.table;
-    form.on('switch(display)',function(data){
-        console.log(data.elem.checked);
-        console.log(data.elem.id);
+
+    form.on('switch(display)',function display(data){
+        var pd = data.elem.checked ? '1' : '0';
+        var id = data.elem.id;
+        $.post("<?php echo url('system/dis','',''); ?>",{"dis":pd,"id":id},function(result){
+          if(result){
+            layer.msg('操作成功！');
+          }else{
+            layer.msg('操作失败!');
+          }
+        });
     });
     //添加
     function addmenu(id,e){
@@ -97,10 +105,19 @@
         addmenu(id,0);
     }) 
   });
-  function member_del(obj,id){
+  $("input").blur(function(){
+    var v=$(this).val();
+    var id=$(this).attr("data-id");
+    $.post("<?php echo url('system/dis','',''); ?>",{'id':id,'ord':v},function(result){
+      if(result==0){
+        layer.msg('排序失败!');
+      }
+    });
+  });
+  function menu_del(obj,id){
       layer.confirm('确认要删除吗？',function(index){            
           //发异步删除数据
-        $.post("<?php echo url('system/menudel','',''); ?>",{id:id},function(result){
+        $.post("<?php echo url('system/del','',''); ?>",{id:id},function(result){
           if(result){
             $(obj).parents("tr").remove();
             layer.msg('已删除!',{icon:1,time:1000});
