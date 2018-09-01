@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html";i:1535010820;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html";i:1535782714;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -124,7 +124,7 @@
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;" class="refresh refreshThis"><i
                                 class="layui-icon layui-icon-refresh"></i> 刷新当前</a></dd>
-                        <dd><a href="javascript:;" class="closePageOther"><i class="seraph icon-prohibit"></i> 关闭其他</a>
+                        <dd><a href="javascript:;" class="closePageOther"><i class="layui-icon layui-icon-circle"></i> 关闭其他</a>
                         </dd>
                         <dd><a href="javascript:;" class="closePageAll"><i class="iconfont">&#xe6b7;</i> 关闭全部</a>
                         </dd>
@@ -145,7 +145,7 @@
 </div>
 
 <!--右键菜单 start-->
-<ul class="ul-context-menu" style="position: absolute; text-align: center; width: 110px;padding: 10px 0; background-color: rgba(51, 51, 51,.5); display: none;z-index: 1000;">
+<ul class="ul-context-menu" style="position: absolute; text-align: center; width: 110px;padding: 10px 0; background-color: rgba(238, 238, 238,.8); display: none;z-index: 1000;">
     <li class="ui-context-menu-item">
         <a href="javascript:void(0);" class="refresh refreshThis">
             <i class="layui-icon layui-icon-refresh"></i>
@@ -154,13 +154,13 @@
     </li>
     <li class="ui-context-menu-item">
         <a href="javascript:void(0);" class="whoShow">
-            <i class="layui-icon"></i>
+            <i class="layui-icon">&#xe617;</i>
             <span style="">关闭当前</span>
         </a>
     </li>
     <li class="ui-context-menu-item">
         <a href="javascript:void(0);" class="closePageOther">
-        <i class="seraph icon-prohibit"></i>
+        <i class="layui-icon layui-icon-circle"></i>
         <span style="">关闭其他</span>
         </a>
     </li>
@@ -184,7 +184,7 @@
 </script>
 <script type="text/javascript" src="/public/static/js/jquery.toast.min.js"></script>
 <script type="text/javascript" src="/public/static/js/alert.js"></script>
-<script type="text/javascript" src="/public/static/layui/layui.js"></script>
+<script type="text/javascript" src="/public/static/layui/layui.all.js"></script>
 <script type="text/javascript" src="/public/static/js/index.js"></script>
 <script type="text/javascript" src="/public/static/js/cache.js"></script>
 <script>

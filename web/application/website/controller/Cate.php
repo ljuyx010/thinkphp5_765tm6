@@ -1,12 +1,13 @@
 <?
 namespace app\website\controller;
+use \think\Request;
 
-class System extends Common{
-
+class Cate extends Common{
+	
 	public function index(){
 		vendor ('Nx.Datastyle');
-		$data=db('nav')->field('ico,url',true)->select();
-		$pid=db('nav')->field('pid')->where('pid','>',0)->group('pid')->select();
+		$data=db('cate')->field('id,pid,name,model,order,isf')->select();
+		$pid=db('cate')->field('pid')->where('pid','>',0)->group('pid')->select();
 		$array=array();
 		foreach ($pid as $k=>$v){
 		   $array[]=$v['pid'];
@@ -17,7 +18,7 @@ class System extends Common{
 		return $this->fetch();
 	}
 
-	public function menuadd(){
+	public function add(){
 		$pid = input('id',0,'intval');
 		$this->assign('pid',$pid);
 		return $this->fetch();
@@ -25,11 +26,8 @@ class System extends Common{
 
 	public function runadd(){
 		$id=input('id','','intval');
-		$nav=db('nav');
-		$data['pid']=input('pid',0,'intval');
-		$data['name']=input('name');
-		$data['ico']=input('ico');
-		$data['url']=input('url');
+		$nav=db('cate');
+		$data=Request::instance()->except('id');
 		if($id){
 			$rs=$nav->where('id',$id)->update($data);
 		}else{
@@ -38,9 +36,9 @@ class System extends Common{
 		if($rs==0){return '1';}else if($rs){return '1';}else{return '0';}
 	}
 
-	public function menuedit(){
+	public function edit(){
 		$id= input('id',0,'intval');
-		$rs=db('nav')->where('id',$id)->find();
+		$rs=db('cate')->where('id',$id)->find();
 		$this->assign('v',$rs);
 		return $this->fetch();
 	}
@@ -49,17 +47,19 @@ class System extends Common{
 		$id=input('id','','intval');
 		$dis=input('dis','','intval');
 		$order=input('ord','','intval');
-		if($dis!=''){$data['display']=$dis;}
+		if($dis!=''){$data['isf']=$dis;}
 		if($order!=''){$data['order']=$order;}
-		$rs=db('nav')->where('id',$id)->update($data);
+		$rs=db('cate')->where('id',$id)->update($data);
 		if($rs){return 1;}else{return 0;}
 	}
 
 	public function del(){
 		$id=input('id','','intval');
-		$rs=db('nav')->where('id',$id)->delete();
+		$rs=db('cate')->where('id',$id)->delete();
 		if($rs){return 1;}else{return 0;}
 	}
 
+	
 }
+
 ?>

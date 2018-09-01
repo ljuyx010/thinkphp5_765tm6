@@ -33,8 +33,8 @@
         {volist name="list" id="v"}
           <tr cate-id='{$v.id}' fid='{$v.pid}' >
             <td>{$v.id}</td>
-            <td><i class="layui-icon x-show" status='true'>&#xe623;</i>
-              {$v._name}
+            <td>{if condition="in_array($v.id,$pid)"}<i class="layui-icon x-show" status='true'>&#xe623;</i>{/if}
+              {$v._name}            
             </td>
             <td><input type="text" class="layui-input x-sort" name="order" data-id="{$v.id}" value="{$v.order}"></td>
             <td>
@@ -42,8 +42,9 @@
             </td>
             <td class="td-manage">
               <button class="layui-btn layui-btn layui-btn-xs edit-btn" data-id="{$v.id}"><i class="layui-icon">&#xe642;</i>编辑</button>
-              <button class="layui-btn layui-btn-warm layui-btn-xs add-xia"  data-id="{$v.id}" ><i class="layui-icon">&#xe654;</i>添加子栏目</button>
-              <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="menu_del(this,{$v.id})" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button>
+              <button class="layui-btn layui-btn-warm layui-btn-xs add-xia"  data-id="{$v.id}" ><i class="layui-icon">&#xe654;</i>添加子类</button>
+              {if condition="!in_array($v.id,$pid)"}
+              <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="menu_del(this,{$v.id})" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button>{/if}
             </td>
           </tr>
         {/volist}  

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\menuedit.html";i:1535169949;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\menuedit.html";i:1535698140;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +33,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">链接地址</label>
 					<div class="layui-input-block">
-						<input type="text" class="layui-input url" name="url" value="<?php echo $v['url']; ?>" lay-verify="required" placeholder="请输入菜单链接地址">
+						<input type="text" class="layui-input url" name="url" value="<?php echo $v['url']; ?>" placeholder="请输入菜单链接地址">
 						<input class="id" type="hidden" name="id" value="<?php echo $v['id']; ?>"></input>
 						<input class="pid" type="hidden" name="pid" value="<?php echo $v['pid']; ?>"></input>
 					</div>

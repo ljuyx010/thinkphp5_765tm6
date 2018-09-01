@@ -1,0 +1,529 @@
+---------------------------------------------------------------
+[ 2018-08-30T17:53:38+08:00 ] 127.0.0.1 GET /website/index
+[ info ] 127.0.0.5/website/index [运行时间：0.368012s][吞吐率：2.72req/s] [内存消耗：1,373.30kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'Dp',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-30T17:53:38+08:00 ] 127.0.0.1 GET /website/index/main.html
+[ info ] 127.0.0.5/website/index/main.html [运行时间：0.088005s][吞吐率：11.36req/s] [内存消耗：1,324.71kb] [文件加载：44]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index/main.html',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->main[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-30T17:53:39+08:00 ] 127.0.0.1 GET /website/index/getmenu/id/1
+[ info ] 127.0.0.5/website/index/getmenu/id/1 [运行时间：0.324176s][吞吐率：3.08req/s] [内存消耗：1,957.05kb] [文件加载：51]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index/getmenu/id/1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ RUN ] app\website\controller\Index->getmenu[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.065810s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.107337s ]
+[ sql ] [ SQL ] SELECT `name` AS `title`,`ico` AS `icon`,`url` AS `href` FROM `Dp_nav` WHERE  `display` = 1 ORDER BY `order` ASC,`id` ASC [ RunTime:0.013146s ]
+---------------------------------------------------------------
+[ 2018-08-30T17:53:49+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.134518s][吞吐率：7.43req/s] [内存消耗：1,920.04kb] [文件加载：49]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002558s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.016685s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.001114s ]
+---------------------------------------------------------------
+[ 2018-08-30T18:06:12+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.164823s][吞吐率：6.07req/s] [内存消耗：2,165.77kb] [文件加载：55]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/system/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html [ array (
+  0 => 'pid',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008351s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.011595s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.001047s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_nav` WHERE  `pid` > 0 [ RunTime:0.000806s ]
+---------------------------------------------------------------
+[ 2018-08-30T18:08:04+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.124244s][吞吐率：8.05req/s] [内存消耗：2,165.80kb] [文件加载：55]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/system/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html [ array (
+  0 => 'pid',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002619s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.010341s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_nav` WHERE  `pid` > 0 [ RunTime:0.000564s ]
+---------------------------------------------------------------
+[ 2018-08-30T18:08:13+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.121485s][吞吐率：8.23req/s] [内存消耗：2,036.73kb] [文件加载：53]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html [ array (
+  0 => 'pid',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001650s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.014840s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_nav` WHERE  `pid` > 0 [ RunTime:0.000489s ]
+---------------------------------------------------------------
+[ 2018-08-30T18:08:46+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.091079s][吞吐率：10.98req/s] [内存消耗：1,918.77kb] [文件加载：49]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/system/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001955s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.010890s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_nav` WHERE  `pid` > 0 [ RunTime:0.000570s ]
+---------------------------------------------------------------
+[ 2018-08-30T18:10:30+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.142569s][吞吐率：7.01req/s] [内存消耗：1,918.27kb] [文件加载：49]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/system/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011257s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.031882s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.000883s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_nav` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.019600s ]
+---------------------------------------------------------------
+[ 2018-08-30T18:15:05+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.187667s][吞吐率：5.33req/s] [内存消耗：2,015.34kb] [文件加载：55]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/system/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001810s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.010226s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.000659s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_nav` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.000795s ]
+[ error ] [8]未定义变量: array[D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php:11]
+---------------------------------------------------------------
+[ 2018-08-30T18:15:35+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.094890s][吞吐率：10.54req/s] [内存消耗：1,919.01kb] [文件加载：49]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/system/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001961s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.010214s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.000709s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_nav` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.000855s ]
+---------------------------------------------------------------
+[ 2018-08-30T18:16:24+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.107435s][吞吐率：9.31req/s] [内存消耗：2,015.52kb] [文件加载：55]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/system/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012248s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.010708s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.001048s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_nav` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.000918s ]
+[ error ] [2]array_merge(): Argument #1 is not an array[D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php:12]
+---------------------------------------------------------------
+[ 2018-08-30T18:17:29+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.114335s][吞吐率：8.75req/s] [内存消耗：1,918.86kb] [文件加载：49]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/system/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012137s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.011947s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_nav` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.000996s ]
+---------------------------------------------------------------
+[ 2018-08-30T18:17:51+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.102953s][吞吐率：9.71req/s] [内存消耗：2,036.55kb] [文件加载：53]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/system/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=0objpi9s0ahh7lmq0si998psp7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\System->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\System.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html [ array (
+  0 => 'pid',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002136s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.011295s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_nav` [ RunTime:0.000710s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_nav` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.001430s ]

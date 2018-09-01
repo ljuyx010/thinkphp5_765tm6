@@ -7,6 +7,8 @@
 .magt10{ margin-top:10px !important;}
 .magb15{ margin-bottom:15px !important;}
 .magt30{ margin-top:30px !important;}
+.f-left{float: left;}
+.f-right{float: right;}
 .layui-left{text-align:left;}
 .layui-block{ width:100% !important;}
 .layui-center{text-align:center;}

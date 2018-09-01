@@ -1,5 +1,6 @@
 <?
 namespace app\website\controller;
+use think\Config;
 
 class Index extends Common{
 	
@@ -12,14 +13,38 @@ class Index extends Common{
 	}
 
 	public function getmenu(){
-		if(input('param.id')==1){
-			$rs=db('nav')->field(['name'=>'title','ico'=>'icon','url'=>'href'])->where('display',1)->order('order ASC,id ASC')->select();
-			return $rs;
+		vendor ('Nx.Datastyle');
+		if(input('id')==1){
+			$rs=db('nav')->field(['id','pid','name'=>'title','ico'=>'icon','url'=>'href','order'])->where('display',1)->order('order ASC,id ASC')->select();
+			$data=\Datastyle::node_merge($rs);
+			//p($data);die;
+			return $data;
 		}
-		if(input('param.id')==2){
-			return '[{"title":"\u6587\u7ae0\u7ba1\u7406","icon":"layui-icon &#xe629;","href":"\/admin\/article\/index","spread":false},{"title":"\u7528\u6237\u7ba1\u7406","icon":"layui-icon layui-icon-username","href":"\/admin\/user\/index","spread":false},{"title":"testtest","icon":"iconfont xman-menu","href":"\/admin\/testtest\/index","spread":false}]';
+		if(input('id')==2){
+			$rs=db('cate')->field(['id','pid','name'=>'title','model','order'])->where('isf',1)->where('model','<>','link')->order('order ASC,id ASC')->select();
+			$data=\Datastyle::node_merge($rs);
+			return $data;
 		}
 	}
+
+	public function upload(){
+    	$file = request()->file('file');
+	    // 移动到框架应用根目录/public/uploads/ 目录下
+	    $path=ROOT_PATH . 'public' . DS . 'uploads';
+	    $info = $file->validate(['size'=>2*1024*1024,'ext'=>'jpg,jpeg,png,gif'])->rule('date')->move($path);
+	    if($info){
+	        // 成功上传后 获取上传信息
+	        $src=$info->getSaveName();
+	        $src=config('view_replace_str.__PUBLIC__').'/uploads/'.str_replace('\\','/',$src);
+	        $rs=array('code'=>200,'src'=>$src);
+	        return $rs;
+	    }else{
+	        // 上传失败获取错误信息
+	        $msg=$file->getError();
+	        $rs=array('code'=>0,'msg'=>$msg);
+	        return $rs;
+	    }
+    }
 	
 }
 

@@ -4,10 +4,11 @@ use think\Controller;
 use think\db;
 class Common extends Controller{
 	
-	public function _initialize()
-    {
+	public function _initialize(){
 
     }
+
+    
 	
 }
 

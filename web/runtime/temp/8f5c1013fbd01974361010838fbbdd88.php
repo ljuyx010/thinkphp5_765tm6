@@ -1,10 +1,10 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html";i:1535702165;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\cate\index.html";i:1535774117;}*/ ?>
 <!DOCTYPE html>
 <html>
   
   <head>
     <meta charset="UTF-8">
-    <title>分类页</title>
+    <title>栏目列表页</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -18,7 +18,7 @@
   <body>
     <div class="x-body">
       <xblock>
-          <button class="layui-btn add-btn"><i class="layui-icon layui-icon-add-circle-fine"></i>增加顶级分类</button>
+          <button class="layui-btn add-btn"><i class="layui-icon layui-icon-add-circle-fine"></i>增加一级栏目</button>
         <div class="layui-clear"></div>
       </xblock>
       <table class="layui-table layui-form">
@@ -27,7 +27,8 @@
             <th width="70">ID</th>
             <th>栏目名</th>
             <th width="50">排序</th>
-            <th width="50">状态</th>
+            <th width="50">启用</th>
+            <th width="50">类别</th>
             <th width="220">操作</th>
         </thead>
         <tbody class="x-cate">
@@ -39,11 +40,14 @@
             </td>
             <td><input type="text" class="layui-input x-sort" name="order" data-id="<?php echo $v['id']; ?>" value="<?php echo $v['order']; ?>"></td>
             <td>
-              <input type="checkbox" name="switch" lay-text="开|关" id="<?php echo $v['id']; ?>" lay-filter="display" <?php if($v['display']): ?>checked=""<?php endif; ?> lay-skin="switch">
+              <input type="checkbox" name="switch" lay-text="开|关" id="<?php echo $v['id']; ?>" lay-filter="display" <?php if($v['isf']): ?>checked=""<?php endif; ?> lay-skin="switch">
+            </td>
+            <td>
+              <?php switch($v['model']): case "info": ?>单页<?php break; case "article": ?>文章<?php break; case "gbook": ?>表单<?php break; case "link": ?>外链<?php break; endswitch; ?>
             </td>
             <td class="td-manage">
               <button class="layui-btn layui-btn layui-btn-xs edit-btn" data-id="<?php echo $v['id']; ?>"><i class="layui-icon">&#xe642;</i>编辑</button>
-              <button class="layui-btn layui-btn-warm layui-btn-xs add-xia"  data-id="<?php echo $v['id']; ?>" ><i class="layui-icon">&#xe654;</i>添加子类</button>
+              <button class="layui-btn layui-btn-warm layui-btn-xs add-xia"  data-id="<?php echo $v['id']; ?>" ><i class="layui-icon">&#xe654;</i>添加子栏目</button>
               <?php if(!in_array($v['id'],$pid)): ?>
               <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="menu_del(this,<?php echo $v['id']; ?>)" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button><?php endif; ?>
             </td>
@@ -65,7 +69,7 @@
     form.on('switch(display)',function display(data){
         var pd = data.elem.checked ? '1' : '0';
         var id = data.elem.id;
-        $.post("<?php echo url('system/dis','',''); ?>",{"dis":pd,"id":id},function(result){
+        $.post("<?php echo url('cate/dis','',''); ?>",{"dis":pd,"id":id},function(result){
           if(result){
             layer.msg('操作成功！');
           }else{
@@ -76,14 +80,14 @@
     //添加
     function addmenu(id,e){
         if(e==1){
-          var url="<?php echo url('system/menuedit','',''); ?>/id/"+id;
+          var url="<?php echo url('cate/edit','',''); ?>/id/"+id;
           var p="修改";
         }else{
-          var url="<?php echo url('system/menuadd','',''); ?>/id/"+id;
+          var url="<?php echo url('cate/add','',''); ?>/id/"+id;
           var p="添加";
         }
         var index = layui.layer.open({
-            title : p+"菜单",
+            title : p+"栏目",
             type : 2,
             content : url,
         })
@@ -108,7 +112,7 @@
   $("input").blur(function(){
     var v=$(this).val();
     var id=$(this).attr("data-id");
-    $.post("<?php echo url('system/dis','',''); ?>",{'id':id,'ord':v},function(result){
+    $.post("<?php echo url('cate/dis','',''); ?>",{'id':id,'ord':v},function(result){
       if(result==0){
         layer.msg('排序失败!');
       }
@@ -117,7 +121,7 @@
   function menu_del(obj,id){
       layer.confirm('确认要删除吗？',function(index){            
           //发异步删除数据
-        $.post("<?php echo url('system/del','',''); ?>",{id:id},function(result){
+        $.post("<?php echo url('cate/del','',''); ?>",{id:id},function(result){
           if(result){
             $(obj).parents("tr").remove();
             layer.msg('已删除!',{icon:1,time:1000});
