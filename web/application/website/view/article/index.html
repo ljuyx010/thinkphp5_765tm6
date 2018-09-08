@@ -31,27 +31,20 @@
 				<a class="layui-btn layui-btn-danger layui-btn-normal delAll_btn">批量删除</a>
 			</div>
 			<div class="layui-inline">
-				<select name="cid" lay-filter="move">
+				<select name="cid" class="cid" lay-filter="move">
 					<option>文章转移到</option>
-					<option value="info">单页</option>
-					<option value="gbook">表单</option>
-					<option value="link">外链</option>
+					{volist name="list" id="v"}
+						{if condition="(in_array($v.id,$pid)) OR ($v.id==$id)"}
+						<option value="{$v.id}" disabled>{$v._name}</option>
+						{else /}
+						<option value="{$v.id}">{$v._name}</option>
+						{/if}
+					{/volist}
 				</select>
 			</div>
 		</form>
 	</blockquote>
 	<table id="newsList" lay-filter="newsList"></table>
-	<!--审核状态-->
-	<script type="text/html" id="newsStatus">
-		{{#  if(d.newsStatus == "1"){ }}
-		<span class="layui-red">等待审核</span>
-		{{#  } else if(d.newsStatus == "0"){ }}
-		<span class="layui-blue">已存草稿</span>
-		{{#  } else { }}
-			审核通过
-		{{#  }}}
-	</script>
-
 	<!--操作-->
 	<script type="text/html" id="newsListBar">
 		<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
@@ -59,7 +52,14 @@
 		<a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="look">预览</a>
 	</script>
 </form>
-<script>var url="{:url('article/fpage',['id'=>$id],'')}";</script>
+<script>
+var url="{:url('article/fpage',['id'=>$id],'')}";
+var url2="{:url('article/del','','')}";
+var url4="{:url('article/move','','')}";
+var url5="{:url('article/add','cid='.$id,'')}";
+var url6="{:url('article/edit','','')}";
+var url3="{:url('/Index/article/shows','','')}";
+</script>
 {js href="__STATIC__/js/newsList.js"}
 </body>
 </html>

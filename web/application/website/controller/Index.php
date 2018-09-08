@@ -45,6 +45,34 @@ class Index extends Common{
 	        return $rs;
 	    }
     }
+
+    public function uploads(){
+    	$file = request()->file('file');
+	    // 移动到框架应用根目录/public/uploads/ 目录下
+	    $path=ROOT_PATH . 'public' . DS . 'uploads';
+	    $info = $file->validate(['size'=>2*1024*1024,'ext'=>'jpg,jpeg,png,gif'])->rule('date')->move($path);
+	    if($info){
+	        // 成功上传后 获取上传信息
+	        $src=$info->getSaveName();
+	        $src=config('view_replace_str.__PUBLIC__').'/uploads/'.str_replace('\\','/',$src);
+	        $pid=db('img')->insertGetId(['imgurl'=>$src]);
+	        $rs=array('code'=>200,'src'=>$src,'pid'=>$pid);
+	        return $rs;
+	    }else{
+	        // 上传失败获取错误信息
+	        $msg=$file->getError();
+	        $rs=array('code'=>0,'msg'=>$msg);
+	        return $rs;
+	    }
+    }
+
+    public function remove(){
+    	if(db('img')->delete(input('id'))){
+    		return 1;
+    	}else{
+    		return 0;
+    	}
+    }
 	
 }
 

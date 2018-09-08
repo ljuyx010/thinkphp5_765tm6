@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\main.html";i:1535010860;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\main.html";i:1536206768;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,6 +10,7 @@
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="/public/static/layui/css/layui.css" />
         <link rel="stylesheet" type="text/css" href="/public/static/css/welcome.css" />
+        <link rel="stylesheet" type="text/css" href="/public/static/css/public.css" />
     </head>
     <body>
     <div class="x-body layui-anim layui-anim-up">
@@ -20,52 +21,73 @@
                 <div class="layui-col-md12">
                     <div class="layui-card">
                         <div class="layui-card-body">
-                            <div class="layui-carousel x-admin-carousel x-admin-backlog" lay-anim="" lay-indicator="inside" lay-arrow="none" style="width: 100%; height: 90px;">
-                                <div carousel-item="">
-                                    <ul class="layui-row layui-col-space10 layui-this">
-                                        <li class="layui-col-xs2">
-                                            <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>今日访问</h3>
-                                                <p>
-                                                    <cite>66</cite></p>
-                                            </a>
-                                        </li>
-                                        <li class="layui-col-xs2">
-                                            <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>本月访问</h3>
-                                                <p>
-                                                    <cite>12</cite></p>
-                                            </a>
-                                        </li>
-                                        <li class="layui-col-xs2">
-                                            <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>总访问量</h3>
-                                                <p>
-                                                    <cite>99</cite></p>
-                                            </a>
-                                        </li>
-                                        <li class="layui-col-xs2">
-                                            <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>会员数</h3>
-                                                <p>
-                                                    <cite>67</cite></p>
-                                            </a>
-                                        </li>
-                                        <li class="layui-col-xs2">
-                                            <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>文章数</h3>
-                                                <p>
-                                                    <cite>67</cite></p>
-                                            </a>
-                                        </li>
-                                        <li class="layui-col-xs2">
-                                            <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>产品数</h3>
-                                                <p>
-                                                    <cite>0</cite></p>
-                                            </a>
-                                        </li>
-                                    </ul>
+                            <div class="layui-row layui-col-space10 panel_box">
+                                <div class="panel layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg2">
+                                    <a href="javascript:;">
+                                        <div class="panel_icon layui-bg-green">
+                                            <i class="layui-icon layui-icon-chart"></i>
+                                        </div>
+                                        <div class="panel_word">
+                                            <span>1000</span>
+                                            <cite>访问量</cite>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="panel layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg2">
+                                    <a href="javascript:;">
+                                        <div class="panel_icon layui-bg-black">
+                                            <i class="layui-icon layui-icon-dialogue"></i>
+                                        </div>
+                                        <div class="panel_word">
+                                            <span>0</span>
+                                            <cite>留言</cite>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="panel layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg2">
+                                    <a href="javascript:;">
+                                        <div class="panel_icon layui-bg-red">
+                                            <i class="layui-icon layui-icon-tabs"></i>
+                                        </div>
+                                        <div class="panel_word">
+                                            <span>3</span>
+                                            <cite>专题</cite>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="panel layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg2">
+                                    <a href="javascript:;">
+                                        <div class="panel_icon layui-bg-orange">
+                                            <i class="layui-icon layui-icon-user"></i>
+                                        </div>
+                                        <div class="panel_word userAll">
+                                            <span>3</span>
+                                            <em>用户总数</em>
+                                            <cite class="layui-hide">用户中心</cite>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="panel layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg2">
+                                    <a href="javascript:;">
+                                        <div class="panel_icon layui-bg-cyan">
+                                            <i class="layui-icon layui-icon-list"></i>
+                                        </div>
+                                        <div class="panel_word outIcons">
+                                            <span>34</span>
+                                            <em>文章</em>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="panel layui-col-xs12 layui-col-sm6 layui-col-md4 layui-col-lg2">
+                                    <a href="javascript:;">
+                                        <div class="panel_icon layui-bg-blue">
+                                            <i class="layui-icon layui-icon-log"></i>
+                                        </div>
+                                        <div class="panel_word">
+                                            <span class="loginTime">2018-09-06<br>  11:29:58</span>
+                                            <cite>上次登录时间</cite>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

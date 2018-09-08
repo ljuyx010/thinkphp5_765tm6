@@ -1,0 +1,2780 @@
+---------------------------------------------------------------
+[ 2018-09-08T08:31:52+08:00 ] 127.0.0.1 GET /website/index
+[ info ] 127.0.0.5/website/index [运行时间：0.696344s][吞吐率：1.44req/s] [内存消耗：1,378.60kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'Dp',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T08:31:53+08:00 ] 127.0.0.1 GET /website/index/main.html
+[ info ] 127.0.0.5/website/index/main.html [运行时间：0.137522s][吞吐率：7.27req/s] [内存消耗：1,330.02kb] [文件加载：44]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index/main.html',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->main[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T08:31:54+08:00 ] 127.0.0.1 GET /website/index/getmenu/id/1
+[ info ] 127.0.0.5/website/index/getmenu/id/1 [运行时间：0.591355s][吞吐率：1.69req/s] [内存消耗：2,039.48kb] [文件加载：53]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index/getmenu/id/1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ RUN ] app\website\controller\Index->getmenu[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.094608s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.132886s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name` AS `title`,`ico` AS `icon`,`url` AS `href`,`order` FROM `Dp_nav` WHERE  `display` = 1 ORDER BY `order` ASC,`id` ASC [ RunTime:0.053939s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:32:36+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.194499s][吞吐率：5.14req/s] [内存消耗：2,006.59kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001924s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.062598s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000965s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:33:06+08:00 ] 127.0.0.1 GET /website/index/getmenu/id/2
+[ info ] 127.0.0.5/website/index/getmenu/id/2 [运行时间：0.408547s][吞吐率：2.45req/s] [内存消耗：2,036.90kb] [文件加载：53]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index/getmenu/id/2',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ RUN ] app\website\controller\Index->getmenu[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002207s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_cate` [ RunTime:0.164012s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name` AS `title`,`model`,`order` FROM `Dp_cate` WHERE  `isf` = 1  AND `model` <> 'link' ORDER BY `order` ASC,`id` ASC [ RunTime:0.107683s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:33:08+08:00 ] 127.0.0.1 GET /website/article/index/id/3
+[ info ] 127.0.0.5/website/article/index/id/3 [运行时间：0.163689s][吞吐率：6.11req/s] [内存消耗：2,036.98kb] [文件加载：53]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/index/id/3',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ RUN ] app\website\controller\Article->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\index.html [ array (
+  0 => 'id',
+  1 => 'pid',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002363s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_cate` [ RunTime:0.010891s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name` FROM `Dp_cate` WHERE  `model` = 'article' [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_cate` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.014460s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:33:09+08:00 ] 127.0.0.1 GET /website/article/fpage/id/3?page=1&limit=15
+[ info ] 127.0.0.5/website/article/fpage/id/3?page=1&limit=15 [运行时间：0.184676s][吞吐率：5.41req/s] [内存消耗：1,974.47kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'fpage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/fpage/id/3?page=1&limit=15',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/3',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '15',
+  'id' => '3',
+)
+[ info ] [ RUN ] app\website\controller\Article->fpage[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001959s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_article` [ RunTime:0.052221s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 3 LIMIT 1 [ RunTime:0.027247s ]
+[ sql ] [ SQL ] SELECT id,title,pic,tj,FROM_UNIXTIME(time,"%Y-%m-%d") as times,author FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 3 ORDER BY `time` DESC LIMIT 0,15 [ RunTime:0.011174s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:33:12+08:00 ] 127.0.0.1 GET /website/article/index/id/4
+[ info ] 127.0.0.5/website/article/index/id/4 [运行时间：0.114708s][吞吐率：8.72req/s] [内存消耗：2,036.98kb] [文件加载：53]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/index/id/4',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\index.html [ array (
+  0 => 'id',
+  1 => 'pid',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001970s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_cate` [ RunTime:0.010181s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name` FROM `Dp_cate` WHERE  `model` = 'article' [ RunTime:0.001162s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_cate` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.001489s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:33:12+08:00 ] 127.0.0.1 GET /website/article/fpage/id/4?page=1&limit=15
+[ info ] 127.0.0.5/website/article/fpage/id/4?page=1&limit=15 [运行时间：0.100609s][吞吐率：9.94req/s] [内存消耗：1,974.77kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'fpage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/fpage/id/4?page=1&limit=15',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '15',
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->fpage[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004179s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_article` [ RunTime:0.008673s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 LIMIT 1 [ RunTime:0.000984s ]
+[ sql ] [ SQL ] SELECT id,title,pic,tj,FROM_UNIXTIME(time,"%Y-%m-%d") as times,author FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 ORDER BY `time` DESC LIMIT 0,15 [ RunTime:0.001289s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:33:16+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.081840s][吞吐率：12.22req/s] [内存消耗：2,006.86kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002817s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.007238s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000480s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:44:19+08:00 ] 127.0.0.1 GET /website/article/index/id/3
+[ info ] 127.0.0.5/website/article/index/id/3 [运行时间：0.178823s][吞吐率：5.59req/s] [内存消耗：2,154.48kb] [文件加载：55]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/index/id/3',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/3',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ RUN ] app\website\controller\Article->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\index.html [ array (
+  0 => 'id',
+  1 => 'pid',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005593s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_cate` [ RunTime:0.026966s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name` FROM `Dp_cate` WHERE  `model` = 'article' [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_cate` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.000686s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:44:20+08:00 ] 127.0.0.1 GET /website/article/fpage/id/3?page=1&limit=15
+[ info ] 127.0.0.5/website/article/fpage/id/3?page=1&limit=15 [运行时间：0.101661s][吞吐率：9.84req/s] [内存消耗：1,974.47kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'fpage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/fpage/id/3?page=1&limit=15',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/3',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '15',
+  'id' => '3',
+)
+[ info ] [ RUN ] app\website\controller\Article->fpage[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002644s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_article` [ RunTime:0.006787s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 3 LIMIT 1 [ RunTime:0.000856s ]
+[ sql ] [ SQL ] SELECT id,title,pic,tj,FROM_UNIXTIME(time,"%Y-%m-%d") as times,author FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 3 ORDER BY `time` DESC LIMIT 0,15 [ RunTime:0.000566s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:50:36+08:00 ] 127.0.0.1 GET /website/index
+[ info ] 127.0.0.5/website/index [运行时间：0.069482s][吞吐率：14.39req/s] [内存消耗：1,379.04kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'Dp',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T08:50:37+08:00 ] 127.0.0.1 GET /website/index/main.html
+[ info ] 127.0.0.5/website/index/main.html [运行时间：0.059794s][吞吐率：16.72req/s] [内存消耗：1,330.02kb] [文件加载：44]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index/main.html',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->main[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T08:50:42+08:00 ] 127.0.0.1 GET /website/article/index/id/4
+[ info ] 127.0.0.5/website/article/index/id/4 [运行时间：0.122184s][吞吐率：8.18req/s] [内存消耗：2,037.32kb] [文件加载：53]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/index/id/4',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\index.html [ array (
+  0 => 'id',
+  1 => 'pid',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010461s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_cate` [ RunTime:0.015013s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name` FROM `Dp_cate` WHERE  `model` = 'article' [ RunTime:0.000885s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_cate` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.001232s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:50:43+08:00 ] 127.0.0.1 GET /website/article/fpage/id/4?page=1&limit=15
+[ info ] 127.0.0.5/website/article/fpage/id/4?page=1&limit=15 [运行时间：0.179990s][吞吐率：5.56req/s] [内存消耗：1,975.14kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'fpage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/fpage/id/4?page=1&limit=15',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '15',
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->fpage[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002068s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_article` [ RunTime:0.009817s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 LIMIT 1 [ RunTime:0.001847s ]
+[ sql ] [ SQL ] SELECT id,title,pic,tj,FROM_UNIXTIME(time,"%Y-%m-%d") as times,author FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 ORDER BY `time` DESC LIMIT 0,15 [ RunTime:0.001223s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:50:43+08:00 ] 127.0.0.1 GET /website/article/add/cid/4
+[ info ] 127.0.0.5/website/article/add/cid/4 [运行时间：0.136962s][吞吐率：7.30req/s] [内存消耗：2,138.32kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add/cid/4',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'cid' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.014804s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000684s ]
+---------------------------------------------------------------
+[ 2018-09-08T08:52:57+08:00 ] 127.0.0.1 GET /website/article/edit/id/4
+[ info ] 127.0.0.5/website/article/edit/id/4 [运行时间：0.131273s][吞吐率：7.62req/s] [内存消耗：1,360.27kb] [文件加载：46]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/edit/id/4',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '4',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T08:53:45+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.101151s][吞吐率：9.89req/s] [内存消耗：2,137.76kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002143s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.009644s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000526s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:18:17+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.157852s][吞吐率：6.34req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryWrRm76nSEiAgpQYi',
+  'content-length' => '23125',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T09:19:45+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.116304s][吞吐率：8.60req/s] [内存消耗：2,137.76kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006894s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.009534s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000674s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:19:49+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.068464s][吞吐率：14.61req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryxbA5vTKjEvGgc7bB',
+  'content-length' => '235774',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T09:23:02+08:00 ] 127.0.0.1 GET /website/article/index/id/4
+[ info ] 127.0.0.5/website/article/index/id/4 [运行时间：0.124390s][吞吐率：8.04req/s] [内存消耗：2,037.70kb] [文件加载：53]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/index/id/4',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\index.html [ array (
+  0 => 'id',
+  1 => 'pid',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001766s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_cate` [ RunTime:0.008100s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name` FROM `Dp_cate` WHERE  `model` = 'article' [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_cate` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.000665s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:23:04+08:00 ] 127.0.0.1 GET /website/article/fpage/id/4?page=1&limit=15
+[ info ] 127.0.0.5/website/article/fpage/id/4?page=1&limit=15 [运行时间：0.079072s][吞吐率：12.65req/s] [内存消耗：1,975.30kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'fpage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/fpage/id/4?page=1&limit=15',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '15',
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->fpage[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001519s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_article` [ RunTime:0.006331s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 LIMIT 1 [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SELECT id,title,pic,tj,FROM_UNIXTIME(time,"%Y-%m-%d") as times,author FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 ORDER BY `time` DESC LIMIT 0,15 [ RunTime:0.001016s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:23:09+08:00 ] 127.0.0.1 POST /website/article/del
+[ info ] 127.0.0.5/website/article/del [运行时间：0.059426s][吞吐率：16.83req/s] [内存消耗：1,339.37kb] [文件加载：44]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'del',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '8',
+  'x-original-url' => '/website/article/del',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'newsId' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->del[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T09:23:09+08:00 ] 127.0.0.1 GET /website/article/fpage/id/4?page=1&limit=15
+[ info ] 127.0.0.5/website/article/fpage/id/4?page=1&limit=15 [运行时间：0.125313s][吞吐率：7.98req/s] [内存消耗：1,975.30kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'fpage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/fpage/id/4?page=1&limit=15',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '15',
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->fpage[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002159s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_article` [ RunTime:0.010226s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 LIMIT 1 [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT id,title,pic,tj,FROM_UNIXTIME(time,"%Y-%m-%d") as times,author FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 ORDER BY `time` DESC LIMIT 0,15 [ RunTime:0.001055s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:43:42+08:00 ] 127.0.0.1 GET /website/article/index/id/4
+[ info ] 127.0.0.5/website/article/index/id/4 [运行时间：0.121295s][吞吐率：8.24req/s] [内存消耗：2,037.65kb] [文件加载：53]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/index/id/4',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\index.html [ array (
+  0 => 'id',
+  1 => 'pid',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007994s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_cate` [ RunTime:0.010459s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name` FROM `Dp_cate` WHERE  `model` = 'article' [ RunTime:0.000900s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_cate` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.001073s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:43:43+08:00 ] 127.0.0.1 GET /website/article/fpage/id/4?page=1&limit=15
+[ info ] 127.0.0.5/website/article/fpage/id/4?page=1&limit=15 [运行时间：0.105857s][吞吐率：9.45req/s] [内存消耗：1,975.30kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'fpage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/fpage/id/4?page=1&limit=15',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '15',
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->fpage[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001457s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_article` [ RunTime:0.005640s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 LIMIT 1 [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT id,title,pic,tj,FROM_UNIXTIME(time,"%Y-%m-%d") as times,author FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 ORDER BY `time` DESC LIMIT 0,15 [ RunTime:0.000474s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:43:51+08:00 ] 127.0.0.1 POST /website/article/del
+[ info ] 127.0.0.5/website/article/del [运行时间：0.054216s][吞吐率：18.44req/s] [内存消耗：1,267.82kb] [文件加载：41]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'del',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '8',
+  'x-original-url' => '/website/article/del',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'newsId' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->del[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T09:43:51+08:00 ] 127.0.0.1 GET /website/article/fpage/id/4?page=1&limit=15
+[ info ] 127.0.0.5/website/article/fpage/id/4?page=1&limit=15 [运行时间：0.118576s][吞吐率：8.43req/s] [内存消耗：1,975.30kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'fpage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/fpage/id/4?page=1&limit=15',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/index/id/4',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '15',
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Article->fpage[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011282s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_article` [ RunTime:0.006856s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 LIMIT 1 [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT id,title,pic,tj,FROM_UNIXTIME(time,"%Y-%m-%d") as times,author FROM `Dp_article` WHERE  `del` = 0  AND `cid` = 4 ORDER BY `time` DESC LIMIT 0,15 [ RunTime:0.001435s ]
+---------------------------------------------------------------
+[ 2018-09-08T09:45:19+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.100025s][吞吐率：10.00req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary4bMtgHv8QAXbO8JU',
+  'content-length' => '134660',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:20:44+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.111154s][吞吐率：9.00req/s] [内存消耗：2,138.30kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006145s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.010769s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.001052s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:20:51+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.071562s][吞吐率：13.97req/s] [内存消耗：1,400.72kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryX59OL3mTrYnWZ9QF',
+  'content-length' => '179771',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:20:55+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.062431s][吞吐率：16.02req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryQ282bezLXchy5UpP',
+  'content-length' => '133392',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:37:20+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.154642s][吞吐率：6.47req/s] [内存消耗：2,138.35kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006765s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.008277s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000586s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:37:20+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.108221s][吞吐率：9.24req/s] [内存消耗：2,007.55kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005715s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.007430s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000402s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:37:20+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.090162s][吞吐率：11.09req/s] [内存消耗：2,007.64kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011378s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.008090s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000375s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:37:27+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.086782s][吞吐率：11.52req/s] [内存消耗：1,400.72kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryOTrQNZcGJQl774uB',
+  'content-length' => '174183',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:37:27+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.091198s][吞吐率：10.97req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryOwmozQDYjvym6QKY',
+  'content-length' => '134656',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:39:32+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.119441s][吞吐率：8.37req/s] [内存消耗：2,138.23kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012422s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.009293s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000609s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:39:36+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.099903s][吞吐率：10.01req/s] [内存消耗：2,007.46kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002397s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.010325s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000591s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:39:49+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.086929s][吞吐率：11.50req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryXrZRoq6aQhIVbJnH',
+  'content-length' => '179771',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:39:49+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.088405s][吞吐率：11.31req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary65MPolTi9yfA6eIV',
+  'content-length' => '174183',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:45:12+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.117928s][吞吐率：8.48req/s] [内存消耗：2,138.23kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006124s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.007684s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000475s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:45:14+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.126203s][吞吐率：7.92req/s] [内存消耗：2,007.63kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004885s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.007541s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000447s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:45:15+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.107171s][吞吐率：9.33req/s] [内存消耗：2,007.63kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011407s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.006498s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.001378s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:45:15+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.075864s][吞吐率：13.18req/s] [内存消耗：2,007.57kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006382s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.008972s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000550s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:45:28+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.057042s][吞吐率：17.53req/s] [内存消耗：1,400.72kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarygQWECnp6nJSBbFHW',
+  'content-length' => '134660',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:45:28+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.071357s][吞吐率：14.01req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarywQEtLHZqLLqK287G',
+  'content-length' => '23125',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:51:24+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.119356s][吞吐率：8.38req/s] [内存消耗：2,138.24kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007574s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.008961s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000742s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:51:27+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.105400s][吞吐率：9.49req/s] [内存消耗：2,007.45kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002307s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.010449s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000505s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:51:35+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.079801s][吞吐率：12.53req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryBfafxhA4xsrBeXal',
+  'content-length' => '96683',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:51:35+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.079162s][吞吐率：12.63req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary6NOjlphZBtRms2dS',
+  'content-length' => '235774',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:54:30+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.102812s][吞吐率：9.73req/s] [内存消耗：2,007.45kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002358s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.009423s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000689s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:54:36+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.071957s][吞吐率：13.90req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryeF1bNpOZNg8QVfCK',
+  'content-length' => '179771',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:54:36+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.058252s][吞吐率：17.17req/s] [内存消耗：1,400.72kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryyDTjMuISYJ83gUrx',
+  'content-length' => '133392',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:54:54+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.105675s][吞吐率：9.46req/s] [内存消耗：2,007.64kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005717s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.009207s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000622s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:54:55+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.088213s][吞吐率：11.34req/s] [内存消耗：2,007.64kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001534s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.006512s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000455s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:54:55+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.451173s][吞吐率：2.22req/s] [内存消耗：2,007.64kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001818s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.006514s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000431s ]
+---------------------------------------------------------------
+[ 2018-09-08T10:55:02+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.064108s][吞吐率：15.60req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary5G5LA21JmmaYFhwC',
+  'content-length' => '174183',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T10:55:02+08:00 ] 127.0.0.1 POST /website/index/upload
+[ info ] 127.0.0.5/website/index/upload [运行时间：0.088758s][吞吐率：11.27req/s] [内存消耗：1,400.73kb] [文件加载：45]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryAo67Mq1g78xdrdrA',
+  'content-length' => '133392',
+  'x-original-url' => '/website/index/upload',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->upload[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-09-08T11:35:42+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.134242s][吞吐率：7.45req/s] [内存消耗：2,138.52kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008261s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.009134s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000761s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:35:52+08:00 ] 127.0.0.1 POST /website/index/uploads
+[ info ] 127.0.0.5/website/index/uploads [运行时间：0.252603s][吞吐率：3.96req/s] [内存消耗：2,026.02kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarylMfVMudrPMcbKb0t',
+  'content-length' => '134660',
+  'x-original-url' => '/website/index/uploads',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->uploads[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006352s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_img` [ RunTime:0.008880s ]
+[ sql ] [ SQL ] INSERT INTO `Dp_img` (`imgurl`) VALUES ('/public/uploads/20180908/2e1bb44a3ed73cf484ddd3ad21454696.jpg') [ RunTime:0.153226s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:42:58+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.144135s][吞吐率：6.94req/s] [内存消耗：2,138.74kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007456s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.022964s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000665s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:43:50+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.108241s][吞吐率：9.24req/s] [内存消耗：2,138.73kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011564s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.008500s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000540s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:44:50+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.114408s][吞吐率：8.74req/s] [内存消耗：2,138.71kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012106s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.009302s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000731s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:45:02+08:00 ] 127.0.0.1 POST /website/index/uploads
+[ info ] 127.0.0.5/website/index/uploads [运行时间：0.082930s][吞吐率：12.06req/s] [内存消耗：2,026.98kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryddD7uqU1H1VmZByX',
+  'content-length' => '134660',
+  'x-original-url' => '/website/index/uploads',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->uploads[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001554s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_img` [ RunTime:0.009136s ]
+[ sql ] [ SQL ] INSERT INTO `Dp_img` (`imgurl`) VALUES ('/public/uploads/20180908/e3d66a8000e12791e531b5666bfcca50.jpg') [ RunTime:0.000826s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:45:10+08:00 ] 127.0.0.1 POST /website/index/remove.html
+[ info ] 127.0.0.5/website/index/remove.html [运行时间：0.137999s][吞吐率：7.25req/s] [内存消耗：2,030.54kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'remove',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '4',
+  'x-original-url' => '/website/index/remove.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ RUN ] app\website\controller\Index->remove[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002345s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_img` [ RunTime:0.008965s ]
+[ sql ] [ SQL ] DELETE FROM `Dp_img`    WHERE  `id` = 2 [ RunTime:0.012811s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:45:33+08:00 ] 127.0.0.1 POST /website/index/remove.html
+[ info ] 127.0.0.5/website/index/remove.html [运行时间：0.106225s][吞吐率：9.41req/s] [内存消耗：2,030.51kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'remove',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '4',
+  'x-original-url' => '/website/index/remove.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ RUN ] app\website\controller\Index->remove[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011081s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_img` [ RunTime:0.008132s ]
+[ sql ] [ SQL ] DELETE FROM `Dp_img`    WHERE  `id` = 2 [ RunTime:0.000690s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:46:05+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.120479s][吞吐率：8.30req/s] [内存消耗：2,138.73kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011651s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.007404s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000474s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:46:12+08:00 ] 127.0.0.1 POST /website/index/uploads
+[ info ] 127.0.0.5/website/index/uploads [运行时间：0.101256s][吞吐率：9.88req/s] [内存消耗：2,026.98kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryQcrMlZDDR1RErs1O',
+  'content-length' => '235774',
+  'x-original-url' => '/website/index/uploads',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->uploads[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002368s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_img` [ RunTime:0.008999s ]
+[ sql ] [ SQL ] INSERT INTO `Dp_img` (`imgurl`) VALUES ('/public/uploads/20180908/f1461eea45457fc8b562c6ffee34cdc6.jpg') [ RunTime:0.000590s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:46:21+08:00 ] 127.0.0.1 POST /website/index/remove.html
+[ info ] 127.0.0.5/website/index/remove.html [运行时间：0.096652s][吞吐率：10.35req/s] [内存消耗：2,030.54kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'remove',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '4',
+  'x-original-url' => '/website/index/remove.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ RUN ] app\website\controller\Index->remove[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001904s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_img` [ RunTime:0.007787s ]
+[ sql ] [ SQL ] DELETE FROM `Dp_img`    WHERE  `id` = 3 [ RunTime:0.000864s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:49:54+08:00 ] 127.0.0.1 GET /website/article/add
+[ info ] 127.0.0.5/website/article/add [运行时间：0.111231s][吞吐率：8.99req/s] [内存消耗：2,138.75kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'article',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/article/add',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Article->add[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Article.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html [ array (
+  0 => 'cid',
+  1 => 'sub',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002093s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_subject` [ RunTime:0.010320s ]
+[ sql ] [ SQL ] SELECT `id`,`subname` FROM `Dp_subject` ORDER BY `order` ASC [ RunTime:0.000709s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:49:58+08:00 ] 127.0.0.1 POST /website/index/uploads
+[ info ] 127.0.0.5/website/index/uploads [运行时间：0.101317s][吞吐率：9.87req/s] [内存消耗：2,026.97kb] [文件加载：52]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundary3xPzKFpBDHFHv4BR',
+  'content-length' => '96683',
+  'x-original-url' => '/website/index/uploads',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->uploads[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002725s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_img` [ RunTime:0.007932s ]
+[ sql ] [ SQL ] INSERT INTO `Dp_img` (`imgurl`) VALUES ('/public/uploads/20180908/f6964f446123e6dc9df261a99ad04b10.jpg') [ RunTime:0.000502s ]
+---------------------------------------------------------------
+[ 2018-09-08T11:50:00+08:00 ] 127.0.0.1 POST /website/index/remove.html
+[ info ] 127.0.0.5/website/index/remove.html [运行时间：0.102430s][吞吐率：9.76req/s] [内存消耗：2,030.54kb] [文件加载：54]
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'remove',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '4',
+  'x-original-url' => '/website/index/remove.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/article/add',
+  'host' => '127.0.0.5',
+  'cookie' => 'PHPSESSID=jo2ps9liic74kg1hk2tg66i3l5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '4',
+)
+[ info ] [ RUN ] app\website\controller\Index->remove[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011436s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_img` [ RunTime:0.007452s ]
+[ sql ] [ SQL ] DELETE FROM `Dp_img`    WHERE  `id` = 4 [ RunTime:0.000604s ]

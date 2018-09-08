@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\index.html";i:1535789325;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:75:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\index.html";i:1536367451;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,27 +32,18 @@
 				<a class="layui-btn layui-btn-danger layui-btn-normal delAll_btn">批量删除</a>
 			</div>
 			<div class="layui-inline">
-				<select name="cid" lay-filter="move">
+				<select name="cid" class="cid" lay-filter="move">
 					<option>文章转移到</option>
-					<option value="info">单页</option>
-					<option value="gbook">表单</option>
-					<option value="link">外链</option>
+					<?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;if((in_array($v['id'],$pid)) OR ($v['id']==$id)): ?>
+						<option value="<?php echo $v['id']; ?>" disabled><?php echo $v['_name']; ?></option>
+						<?php else: ?>
+						<option value="<?php echo $v['id']; ?>"><?php echo $v['_name']; ?></option>
+						<?php endif; endforeach; endif; else: echo "" ;endif; ?>
 				</select>
 			</div>
 		</form>
 	</blockquote>
 	<table id="newsList" lay-filter="newsList"></table>
-	<!--审核状态-->
-	<script type="text/html" id="newsStatus">
-		{{#  if(d.newsStatus == "1"){ }}
-		<span class="layui-red">等待审核</span>
-		{{#  } else if(d.newsStatus == "0"){ }}
-		<span class="layui-blue">已存草稿</span>
-		{{#  } else { }}
-			审核通过
-		{{#  }}}
-	</script>
-
 	<!--操作-->
 	<script type="text/html" id="newsListBar">
 		<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
@@ -60,7 +51,14 @@
 		<a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="look">预览</a>
 	</script>
 </form>
-<script>var url="<?php echo url('article/fpage',['id'=>$id],''); ?>";</script>
+<script>
+var url="<?php echo url('article/fpage',['id'=>$id],''); ?>";
+var url2="<?php echo url('article/del','',''); ?>";
+var url4="<?php echo url('article/move','',''); ?>";
+var url5="<?php echo url('article/add','cid='.$id,''); ?>";
+var url6="<?php echo url('article/edit','',''); ?>";
+var url3="<?php echo url('/Index/article/shows','',''); ?>";
+</script>
 <script type="text/javascript" src="/public/static/js/newsList.js"></script>
 </body>
 </html>
