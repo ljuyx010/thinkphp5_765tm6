@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html";i:1536378590;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html";i:1536659945;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -109,7 +109,7 @@
 			</div>
 			<hr class="layui-bg-gray" />
 			<div class="layui-left">
-				<input type="hidden" name="cid" value="<?php echo $cid; ?>"></input>
+				<input type="hidden" name="cid" class="cid" value="<?php echo $cid; ?>"></input>
 				<a class="layui-btn" lay-filter="addNews" lay-submit><i class="layui-icon">&#xe609;</i>保存文章</a>
 			</div>
 		</div>
@@ -180,31 +180,42 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
         trigger : "click"
     });
 
-    form.on("submit(addNews)",function(data){
-        //截取文章内容中的一部分文字放入文章摘要
-        var abstract = layedit.getText(editIndex).substring(0,50);
+    form.on("submit(addNews)",function(data){ 
+    	var pics = [];     
+        //同步编辑器内容到textarea
+        //editor.sync();
+        $("#upload-list li").each(function(){
+		    pics= $(this).find('img').attr('data-id');
+		})
         //弹出loading
         var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
-        // 实际使用时的提交信息
-        // $.post("上传路径",{
-        //     newsName : $(".newsName").val(),  //文章标题
-        //     abstract : $(".abstract").val(),  //文章摘要
-        //     content : layedit.getContent(editIndex).split('<audio controls="controls" style="display: none;"></audio>')[0],  //文章内容
-        //     newsImg : $(".thumbImg").attr("src"),  //缩略图
-        //     classify : '1',    //文章分类
-        //     newsStatus : $('.newsStatus select').val(),    //发布状态
-        //     newsTime : submitTime,    //发布时间
-        //     newsTop : data.filed.newsTop == "on" ? "checked" : "",    //是否置顶
-        // },function(res){
-        //
-        // })
-        setTimeout(function(){
-            top.layer.close(index);
-            top.layer.msg("文章添加成功！");
-            layer.closeAll("iframe");
-            //刷新父页面
-            parent.location.reload();
-        },500);
+        $.post("<?php echo url('article/runadd'); ?>",{
+            title : $(".title").val(),  //文章标题
+            keywords : $(".keywords").val(), 
+            description : $(".description").val(),  //文章摘要
+            content : $("#content").val(),  //文章内容
+            pic : $("#upload-list #selected img").attr("src"),  //缩略图
+            pics : pics,
+            sid : $(".sid select").val(),    //文章专题分类
+            author : $('.author').val(),    //作者
+            from : $('.from').val(), //来源
+            time : $('#release').val(),    //发布时间
+            tj : data.filed.tj == "on" ? 1 : 0,    //是否置顶
+            url : $('.url').val(),    //跳转地址
+            cid : $('.cid').val()
+        },function(res){
+        	if(res==1){
+        		top.layer.close(index);
+	            top.layer.msg("文章添加成功！");
+	            layer.closeAll("iframe");
+	            //刷新父页面
+	            parent.location.reload();
+        	}else if(res==204){
+        		top.layer.msg("您没有权限！");
+        	}else{
+        		top.layer.msg("文章添加失败！");
+        	}
+        });
         return false;
     })
 

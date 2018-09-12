@@ -66,6 +66,10 @@ class Article extends Common{
 		return $this->fetch();
 	}
 
+	public function runadd(){
+		p(input('post.*'));
+	}
+
 }
 
 ?>
