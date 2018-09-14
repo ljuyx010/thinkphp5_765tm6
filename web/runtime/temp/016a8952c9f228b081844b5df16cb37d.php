@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\main.html";i:1536206768;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\main.html";i:1536824113;}*/ ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -102,31 +102,34 @@
                     <tbody>
                         <tr>
                             <th>系统版本</th>
-                            <td>T2.0.180820</td></tr>
-                        <tr>
+                            <td>T2.0.180820</td>
                             <th>服务器域名</th>
-                            <td><?php echo $_SERVER['SERVER_NAME']; ?></td></tr>
+                            <td><?php echo $_SERVER['SERVER_NAME']; ?></td>
+                        </tr>
                         <tr>
                             <th>操作系统</th>
-                            <td><?php if(IS_WIN): ?>WINDOWS<?php else: ?>LIUNX<?php endif; ?></td></tr>
-                        <tr>
+                            <td><?php if(IS_WIN): ?>WINDOWS<?php else: ?>LIUNX<?php endif; ?></td>
                             <th>运行环境</th>
-                            <td><?php echo $_SERVER['SERVER_SOFTWARE']; ?></td></tr>
+                            <td><?php echo $_SERVER['SERVER_SOFTWARE']; ?></td>
+                        </tr>
                         <tr>
                             <th>PHP版本</th>
-                            <td><?php echo PHP_VERSION; ?></td></tr>
-                        <tr>
+                            <td><?php echo PHP_VERSION; ?></td>
                             <th>PHP运行方式</th>
-                            <td><?php echo php_sapi_name(); ?></td></tr>
+                            <td><?php echo php_sapi_name(); ?></td>
+                        </tr>
                         <tr>
                             <th>MYSQL版本</th>
-                            <td><?php echo re_substr(mysql_get_client_info(),0,25,false); ?></td></tr>
-                        <tr>
+                            <td><?php echo re_substr(mysql_get_client_info(),0,25,false); ?></td>
                             <th>上传附件限制</th>
-                            <td><?php echo ini_get('upload_max_filesize'); ?></td></tr>
+                            <td><?php echo ini_get('upload_max_filesize'); ?></td>
+                        </tr>
                         <tr>
                             <th>执行时间限制</th>
-                            <td><?php echo ini_get('max_execution_time'); ?>秒</td></tr>
+                            <td><?php echo ini_get('max_execution_time'); ?>秒</td>
+                            <th></th>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

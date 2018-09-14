@@ -67,7 +67,29 @@ class Article extends Common{
 	}
 
 	public function runadd(){
-		p(input('post.*'));
+		$data=array(
+			'title' => input('title'),
+			'keyword' => input('keyword'),
+			'pic' => input('pic'),
+			'sid' => input('sid'),
+			'author' => input('author'),
+			'from' => input('from'),
+			'tj' => input('tj'),
+			'url' => input('url')
+		);
+		$data['time']=input('time') ? strtotime(input('time')) : time();
+		$data['pics']=implode("|", input('pics/a'));
+		$data['description']=input('description') ? input('description') : re_substr(input('content','','strip_tags'),0,300,false);
+		$data['content']=input('content','','htmlspecialchars');
+		if(input('?post.id')){
+			$data['id']=input('id');
+			$rs=db('article')->update($data);
+		}else{
+			$data['cid']=input('cid');
+			$data['uid']=session('user.id')?session('user.id'):0;
+			$rs=db('article')->insert($data);
+		}
+		if($rs){return 1;}else{return 0;}
 	}
 
 }

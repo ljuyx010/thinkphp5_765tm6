@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html";i:1536659945;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html";i:1536830460;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,13 +98,13 @@
 			<div class="layui-form-item tj">
 				<label class="layui-form-label"><i class="seraph icon-zhiding"></i> 推　荐</label>
 				<div class="layui-input-block">
-					<input type="checkbox" name="tj" lay-skin="switch" lay-text="是|否">
+					<input type="checkbox" name="tj" id="tj" lay-filter="tj" lay-skin="switch" lay-text="是|否">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label"> 跳　转</label>
 				<div class="layui-input-block">
-					<input type="text" name="url" class="layui-input url" lay-verify="url" placeholder="需要自动跳转到其他页面时填写要跳转的完整url">
+					<input type="text" name="url" class="layui-input url" placeholder="需要自动跳转到其他页面时填写要跳转的完整url">
 				</div>
 			</div>
 			<hr class="layui-bg-gray" />
@@ -120,7 +120,7 @@
 <script type="text/javascript" src="/public/static/kindeditor/NKeditor-all-min.js"></script>
 <script type="text/javascript">
 layui.use(['form','layer','layedit','laydate','upload'],function(){
-    var form = layui.form
+    var form = layui.form,
         layer = parent.layer === undefined ? layui.layer : top.layer,
         laypage = layui.laypage,
         upload = layui.upload,
@@ -179,19 +179,24 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
         type: 'datetime',
         trigger : "click"
     });
-
+    //是否置顶
+    form.on('switch(tj)', function(data){
+        var pd = data.elem.checked ? '1' : '0';
+        $('#tj').val(pd);
+    });
+    //提交表单
     form.on("submit(addNews)",function(data){ 
     	var pics = [];     
         //同步编辑器内容到textarea
         //editor.sync();
         $("#upload-list li").each(function(){
-		    pics= $(this).find('img').attr('data-id');
+		    pics.push($(this).find('img').attr('data-id'));
 		})
         //弹出loading
         var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
         $.post("<?php echo url('article/runadd'); ?>",{
             title : $(".title").val(),  //文章标题
-            keywords : $(".keywords").val(), 
+            keyword : $(".keywords").val(), 
             description : $(".description").val(),  //文章摘要
             content : $("#content").val(),  //文章内容
             pic : $("#upload-list #selected img").attr("src"),  //缩略图
@@ -200,7 +205,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
             author : $('.author').val(),    //作者
             from : $('.from').val(), //来源
             time : $('#release').val(),    //发布时间
-            tj : data.filed.tj == "on" ? 1 : 0,    //是否置顶
+            tj : $("#tj").val(),    //是否置顶
             url : $('.url').val(),    //跳转地址
             cid : $('.cid').val()
         },function(res){
