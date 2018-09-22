@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html";i:1536204125;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\index.html";i:1537429655;}*/ ?>
 <!DOCTYPE html>
 <html>
   
@@ -37,13 +37,13 @@
             <td><?php if(in_array($v['id'],$pid)): ?><i class="layui-icon x-show" status='true'>&#xe623;</i><?php endif; ?>
               <?php echo $v['_name']; ?>            
             </td>
-            <td><input type="text" class="layui-input x-sort" name="order" data-id="<?php echo $v['id']; ?>" value="<?php echo $v['order']; ?>"></td>
+            <td><input type="text" class="layui-input x-sort" name="order" data-id="<?php echo $v['id']; ?>" value="<?php echo $v['orders']; ?>"></td>
             <td>
               <input type="checkbox" name="switch" lay-text="开|关" id="<?php echo $v['id']; ?>" lay-filter="display" <?php if($v['display']): ?>checked=""<?php endif; ?> lay-skin="switch">
             </td>
             <td class="td-manage">
-              <button class="layui-btn layui-btn layui-btn-xs edit-btn"><i class="layui-icon">&#xe642;</i>编辑</button>
-              <button class="layui-btn layui-btn-warm layui-btn-xs add-xia"><i class="layui-icon">&#xe654;</i>添加子类</button>
+              <button class="layui-btn layui-btn layui-btn-xs edit-btn" data-id="<?php echo $v['id']; ?>"><i class="layui-icon">&#xe642;</i>编辑</button>
+              <button class="layui-btn layui-btn-warm layui-btn-xs add-xia"  data-id="<?php echo $v['id']; ?>" ><i class="layui-icon">&#xe654;</i>添加子类</button>
               <?php if(!in_array($v['id'],$pid)): ?>
               <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="menu_del(this,<?php echo $v['id']; ?>)" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button><?php endif; ?>
             </td>
@@ -96,13 +96,12 @@
     $(".add-btn").click(function(){
         addmenu();
     }) 
-    $(".edit-btn").click(function(obj){
-        var id=$(this).attr("data-id"),data = obj.data;
-        console.log(data);
+    $(".edit-btn").click(function(){
+        var id=$(this).attr("data-id");
         addmenu(id,1);
     }) 
-    $(".add-xia").click(function(obj){
-        var id=$(this).attr("data-id"),data = obj.data;
+    $(".add-xia").click(function(){
+        var id=$(this).attr("data-id");
         addmenu(id,0);
     }) 
   });

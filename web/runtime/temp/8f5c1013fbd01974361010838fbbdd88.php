@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\cate\index.html";i:1535774117;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\cate\index.html";i:1537429729;}*/ ?>
 <!DOCTYPE html>
 <html>
   
@@ -38,7 +38,7 @@
             <td><?php if(in_array($v['id'],$pid)): ?><i class="layui-icon x-show" status='true'>&#xe623;</i><?php endif; ?>
               <?php echo $v['_name']; ?>            
             </td>
-            <td><input type="text" class="layui-input x-sort" name="order" data-id="<?php echo $v['id']; ?>" value="<?php echo $v['order']; ?>"></td>
+            <td><input type="text" class="layui-input x-sort" name="order" data-id="<?php echo $v['id']; ?>" value="<?php echo $v['orders']; ?>"></td>
             <td>
               <input type="checkbox" name="switch" lay-text="开|关" id="<?php echo $v['id']; ?>" lay-filter="display" <?php if($v['isf']): ?>checked=""<?php endif; ?> lay-skin="switch">
             </td>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\menuadd.html";i:1535698149;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\system\menuadd.html";i:1535773868;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,13 +80,6 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
         		top.layer.msg("保存失败！");
         	}
         })
-        setTimeout(function(){
-            top.layer.close(index);
-            top.layer.msg("保存成功！");
-            layer.closeAll("iframe");
-            //刷新父页面
-            parent.location.reload();
-        },500);
         return false;
     })
 })

@@ -1,6 +1,5 @@
 <?
 namespace app\website\controller;
-use \think\Request;
 
 class Article extends Common{
 
@@ -53,7 +52,7 @@ class Article extends Common{
 	}
 
 	public function del(){
-		$id = input('newsId') ? $where['id']=input('newsId') : $where['id']=array('in',input('ids/a'));
+		input('newsId') ? $where['id']=input('newsId') : $where['id']=array('in',input('ids/a'));
 		$rs=db('article')->where($where)->setField('del',1);
 		return $rs;
 	}
@@ -78,8 +77,8 @@ class Article extends Common{
 			'url' => input('url')
 		);
 		$data['time']=input('time') ? strtotime(input('time')) : time();
-		$data['pics']=implode("|", input('pics/a'));
-		$data['description']=input('description') ? input('description') : re_substr(input('content','','strip_tags'),0,300,false);
+		$data['pics']=input('pics') ? implode("|", input('pics/a')) : '';
+		$data['description']=input('description') ? input('description') : re_substr(preg_replace('/\s/', '', input('content','','strip_tags')),0,300,false);
 		$data['content']=input('content','','htmlspecialchars');
 		if(input('?post.id')){
 			$data['id']=input('id');
@@ -90,6 +89,20 @@ class Article extends Common{
 			$rs=db('article')->insert($data);
 		}
 		if($rs){return 1;}else{return 0;}
+	}
+
+	public function edit(){
+		$id=input('id');
+		$article=db('article')->where('id',$id)->find();
+		$pics=explode("|", $article['pics']);
+		$pid=db('img')->where('imgurl',$article['pic'])->value('id');
+		$piclist=db('img')->where('id','in',$pics)->select();
+		$sub=db('subject')->field('id,subname')->order('order asc')->select();
+		$this->assign('a',$article);
+		$this->assign('pid',$pid);
+		$this->assign('piclist',$piclist);
+		$this->assign('sub',$sub);
+		return $this->fetch();
 	}
 
 }

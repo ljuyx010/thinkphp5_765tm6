@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: 流年 <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-
+use think\Config;
 // 应用公共文件
 header("Content-type:text/html;charset=utf-8");
 
@@ -154,12 +154,13 @@ function cut_name($user_name){
  * @return boolean       是否成功
  */
 function send_email($address,$subject,$content){
-    $email_smtp=C('EMAIL_SMTP');
-    $email_username=C('EMAIL_USERNAME');
-    $email_password=C('EMAIL_PASSWORD');
-    $email_from_name=C('EMAIL_FROM_NAME');
-    $email_smtp_secure=C('EMAIL_SMTP_SECURE');
-    $email_port=C('EMAIL_PORT');
+    $config=Config::get('diy');
+    $email_smtp=$config['smtp'];
+    $email_username=$config['username'];
+    $email_password=$config['password'];
+    $email_from_name=$config['formname'];
+    $email_smtp_secure=$config['smtp_secure'];
+    $email_port=$config['smtp_port'];
     if(empty($email_smtp) || empty($email_username) || empty($email_password) || empty($email_from_name)){
         return array("error"=>1,"message"=>'邮箱配置不完整');
     }
@@ -170,6 +171,8 @@ function send_email($address,$subject,$content){
     $phpmailer=new \Phpmailer();
     // 设置PHPMailer使用SMTP服务器发送Email
     $phpmailer->IsSMTP();
+    //开启调试模式
+    $phpmailer->SMTPDebug=false;
     // 设置设置smtp_secure
     $phpmailer->SMTPSecure=$email_smtp_secure;
     // 设置port
@@ -544,9 +547,9 @@ function import_excel($file){
 if (!function_exists('wx_share_init')) {  
     function wx_share_init() {  
         $wxconfig = array();  
-        vendor('Wxshare.class#jssdk');  
+        vendor('Wxshare.jssdk');  
         $config = array('APPID'=>C('APPID'),'APPSECRET'=>C('APPSECRET')); //这里配置了微信公众号的AppId和AppSecret  
-        $jssdk = new JSSDK($config['APPID'], $config['APPSECRET']);  
+        $jssdk = new \JSSDK($config['APPID'], $config['APPSECRET']);  
         $wxconfig = $jssdk->GetSignPackage();  
         return $wxconfig;  
     }  

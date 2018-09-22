@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\cate\edit.html";i:1535775661;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\cate\edit.html";i:1537583921;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,6 +43,19 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
+					<label class="layui-form-label">栏目转移</label>
+					<div class="layui-input-block">
+					<div class="layui-col-md2 layui-col-xs4">
+						<select name="pid" lay-verify="required">
+						<option <?php if($v['pid'] == 0): ?>selected="selected"<?php endif; ?> value="0">一级栏目</option>
+						<?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$l): if($v['id'] != $l['id']): ?>
+							<option <?php if($v['pid'] == $l['id']): ?>selected="selected"<?php endif; ?> value="<?php echo $l['id']; ?>"><?php echo $l['_name']; ?></option>
+							<?php endif; endforeach; endif; else: echo "" ;endif; ?>						
+						</select>
+					</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
 					<label class="layui-form-label">栏目图片</label>
 					<div class="layui-col-md2 layui-col-xs4">
 					<input type="hidden" name="pic" value=""></input>
@@ -54,12 +67,14 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">栏目模型</label>
 					<div class="layui-input-block">
+					<div class="layui-col-md2 layui-col-xs4">
 						<select name="model" lay-verify="required" lay-filter="model">
 							<option <?php if($v['model'] == 'article'): ?>selected="selected"<?php endif; ?> value="article">文章</option>
 							<option <?php if($v['model'] == 'info'): ?>selected="selected"<?php endif; ?> value="info">单页</option>
 							<option <?php if($v['model'] == 'gbook'): ?>selected="selected"<?php endif; ?> value="gbook">表单</option>
 							<option <?php if($v['model'] == 'link'): ?>selected="selected"<?php endif; ?> value="link">外链</option>
 						</select>
+					</div>
 					</div>
 				</div>
 				<div class="layui-form-item page <?php if($v['model'] != "article"): ?>layui-hide<?php endif; ?>">
@@ -106,7 +121,6 @@
 				<div class="layui-form-item">
 				<div class="layui-input-block">
 				<input class="id" type="hidden" name="id" value="<?php echo $v['id']; ?>"></input>
-				<input class="pid" type="hidden" name="pid" value="<?php echo $v['pid']; ?>"></input>
 				<a class="layui-btn" lay-filter="add" lay-submit><i class="layui-icon">&#xe609;</i>保存</a></div>
 				</div>
 			</div>			
@@ -161,7 +175,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
             gid:$('select[name=gid]').val(),
             isn:$('select[name=isn]').val(),
             id : $('.id').val(),
-            pid : $('.pid').val()
+            pid : $('select[name=pid]').val()
         },function(res){        	
         	if(res){
         		top.layer.close(index);

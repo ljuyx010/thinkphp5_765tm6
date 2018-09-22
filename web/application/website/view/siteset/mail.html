@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>参数设置页</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	{css href="__STATIC__/layui/css/layui.css"}
+    {css href="__STATIC__/css/font.css"}
+	{css href="__STATIC__/css/public.css"}
+</head>
+
+<body class="childrenBody">
+	<form class="layui-form">
+		<table class="layui-table mag0">
+			<colgroup>
+				<col width="25%">
+				<col width="45%">
+				<col>
+		    </colgroup>
+		    <thead>
+		    	<tr>
+		    		<th>变量名</th>
+		    		<th>参数值</th>
+		    		<th pc>参数说明</th>
+		    	</tr>
+		    </thead>
+		    <tbody>
+		    	<tr>
+		    		<td>smtp</td>
+		    		<td><input type="text" class="layui-input smtp" lay-verify="required" {if condition="isset($v.smtp)"}value="{$v.smtp}"{/if} placeholder="smtp地址"></td>
+		    		<td pc>邮箱smtp服务器地址</td>
+		    	</tr>
+		    	<tr>
+		    		<td>port</td>
+		    		<td><input type="text" class="layui-input port" {if condition="isset($v.port)"}value="{$v.port}"{/if} placeholder="smtp端口"></td>
+		    		<td pc>smtp服务器端口</td>
+		    	</tr>
+		    	<tr>
+		    		<td>secure</td>
+		    		<td><input type="text" class="layui-input secure" {if condition="isset($v.secure)"}value="{$v.secure}"{/if} placeholder="加密方式"></td>
+		    		<td pc>连接smtp服务器的加密方式(QQ邮箱要用ssl方式)</td>
+		    	</tr>
+		    	<tr>
+		    		<td>username</td>
+		    		<td><input type="text" class="layui-input username" {if condition="isset($v.username)"}value="{$v.username}"{/if} placeholder="邮箱账号"></td>
+		    		<td pc>登录邮箱账号</td>
+		    	</tr>
+		    	<tr>
+		    		<td>password</td>
+		    		<td><input type="password" class="layui-input password" {if condition="isset($v.password)"}value="{$v.password}"{/if} placeholder="邮箱密码"></td>
+		    		<td pc>登录邮箱密码或授权码</td>
+		    	</tr>
+		    	<tr>
+		    		<td>formname</td>
+		    		<td><input type="text" class="layui-input formname" {if condition="isset($v.formname)"}value="{$v.formname}"{/if} placeholder="发件人名称"></td>
+		    		<td pc>发件人名称</td>
+		    	</tr>    	
+		    	<tr>
+		    		<td>mail</td>
+		    		<td><input type="text" class="layui-input mail" {if condition="isset($v.mail)"}value="{$v.mail}"{/if} placeholder="测试邮箱"></td>
+		    		<td pc>发送测试信息到邮箱</td>
+		    	</tr>
+		    	
+		    	<tr>
+		    		<td>message</td>
+		    		<td><textarea placeholder="测试信息" class="layui-textarea message">{if condition="isset($v.message)"}{$v.message}{/if}</textarea></td>
+		    		<td pc>发送到测试邮箱的测试信息</td>
+		    	</tr>		    	
+		    </tbody>
+		</table>
+		<div class="magt10 layui-right" style="margin-right: 20px;">
+			<div class="layui-input-block">
+				<input type="hidden" class="name" value="mail"></input>
+				<button class="layui-btn" lay-submit="" lay-filter="save">立即提交</button>{if condition="isset($v.mail)"}
+				<button class="layui-btn layui-btn-danger" lay-submit="" lay-filter="test">发送邮件测试</button>{/if}
+		    </div>
+		</div>
+	</form>
+	{js href="__STATIC__/js/jquery.min.js"}
+	{js href="__STATIC__/layui/layui.js"}
+	<script>
+layui.use(['form','layer','layedit','laydate','upload'],function(){
+    var form = layui.form
+        layer = parent.layer === undefined ? layui.layer : top.layer,
+        laypage = layui.laypage,
+        upload = layui.upload,
+        layedit = layui.layedit,
+        laydate = layui.laydate,
+        $ = layui.jquery;
+
+    $(".password").focus(function(){
+    	$(".password").prop('type','text');
+ 	});
+  	$(".password").blur(function(){
+    	$(".password").prop('type','password');
+ 	});
+
+    form.on("submit(save)",function(data){        
+        var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
+        // 实际使用时的提交信息
+        $.post("{:url('siteset/save')}",{
+            smtp : $(".smtp").val(), 
+            port : $('.port').val(),
+            secure : $('.secure').val(),
+            username : $('.username').val(),
+            password : $('.password').val(),
+            formname : $('.formname').val(),
+            mail : $('.mail').val(),
+            message : $('.message').val(),
+            name : $('.name').val()
+        },function(res){        	
+        	if(res){
+        		top.layer.close(index);
+	            top.layer.msg("保存成功！");
+        	}else{
+        		top.layer.msg("保存失败！");
+        	}
+        })
+        return false;
+    })
+
+    form.on("submit(test)",function(){
+    	$.post("{:url('siteset/mailtest')}",{mail:$('.mail').val(),message:$('.message').val()},function(res){        	
+        	if(res.error==0){
+	            top.layer.msg("发送成功！");
+        	}else{
+        		top.layer.msg(res.message);
+        	}
+        })
+        return false;
+    })
+})
+</script>
+</body>
+</html>

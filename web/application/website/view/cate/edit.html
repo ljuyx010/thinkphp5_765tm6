@@ -42,6 +42,21 @@
 					</div>
 				</div>
 				<div class="layui-form-item">
+					<label class="layui-form-label">栏目转移</label>
+					<div class="layui-input-block">
+					<div class="layui-col-md2 layui-col-xs4">
+						<select name="pid" lay-verify="required">
+						<option {if condition="$v.pid eq 0"}selected="selected"{/if} value="0">一级栏目</option>
+						{foreach name='list' id='l'}
+							{if condition="$v.id neq $l.id"}
+							<option {if condition="$v.pid eq $l.id"}selected="selected"{/if} value="{$l.id}">{$l._name}</option>
+							{/if}
+						{/foreach}						
+						</select>
+					</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
 					<label class="layui-form-label">栏目图片</label>
 					<div class="layui-col-md2 layui-col-xs4">
 					<input type="hidden" name="pic" value=""></input>
@@ -53,12 +68,14 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">栏目模型</label>
 					<div class="layui-input-block">
+					<div class="layui-col-md2 layui-col-xs4">
 						<select name="model" lay-verify="required" lay-filter="model">
 							<option {if condition="$v.model eq 'article'"}selected="selected"{/if} value="article">文章</option>
 							<option {if condition="$v.model eq 'info'"}selected="selected"{/if} value="info">单页</option>
 							<option {if condition="$v.model eq 'gbook'"}selected="selected"{/if} value="gbook">表单</option>
 							<option {if condition="$v.model eq 'link'"}selected="selected"{/if} value="link">外链</option>
 						</select>
+					</div>
 					</div>
 				</div>
 				<div class="layui-form-item page {if condition='$v.model neq "article"'}layui-hide{/if}">
@@ -105,7 +122,6 @@
 				<div class="layui-form-item">
 				<div class="layui-input-block">
 				<input class="id" type="hidden" name="id" value="{$v.id}"></input>
-				<input class="pid" type="hidden" name="pid" value="{$v.pid}"></input>
 				<a class="layui-btn" lay-filter="add" lay-submit><i class="layui-icon">&#xe609;</i>保存</a></div>
 				</div>
 			</div>			
@@ -160,7 +176,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
             gid:$('select[name=gid]').val(),
             isn:$('select[name=isn]').val(),
             id : $('.id').val(),
-            pid : $('.pid').val()
+            pid : $('select[name=pid]').val()
         },function(res){        	
         	if(res){
         		top.layer.close(index);

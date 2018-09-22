@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html";i:1536830460;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html";i:1537257118;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +54,7 @@
 		<div class="layui-form-item magb0">
 			<label class="layui-form-label">文章内容</label>
 			<div class="layui-input-block">
-				<textarea style="width:100%;height:200px;visibility:hidden;" name="content" lay-verify="required" id="content"></textarea>
+				<textarea style="width:100%;height:500px;visibility:hidden;" name="content" lay-verify="required" id="content"></textarea>
 			</div>
 		</div>
 	</div>
@@ -65,7 +65,7 @@
 				<label class="layui-form-label"><i class="layui-icon layui-icon-flag"></i> 专　题</label>
 				<div class="layui-input-block sid">
 					<select name="sid">
-					<?php if(is_array($sub) || $sub instanceof \think\Collection || $sub instanceof \think\Paginator): if( count($sub)==0 ) : echo "" ;else: foreach($sub as $key=>$v): ?>
+					<?php if(is_array($sub) || $sub instanceof \think\Collection || $sub instanceof \think\Paginator): $i = 0; $__LIST__ = $sub;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
 						<option value="<?php echo $v['id']; ?>"><?php echo re_substr($v['subname'],0,16); ?></option>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 					</select>
@@ -149,7 +149,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
 		}
 	});
 	//设置封面
-	$(document).on("click",".img-wrapper",function(){
+	$(document).on("dblclick",".img-wrapper",function(){
 	  $("#selected").attr('id','');
 	  $(this).attr('id',"selected");
 	});
@@ -215,8 +215,6 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
 	            layer.closeAll("iframe");
 	            //刷新父页面
 	            parent.location.reload();
-        	}else if(res==204){
-        		top.layer.msg("您没有权限！");
         	}else{
         		top.layer.msg("文章添加失败！");
         	}
@@ -227,26 +225,12 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
     //创建一个编辑器
     KindEditor.ready(function(K) {
 	    K.create('textarea[name="content"]', {
-	        uploadJson : "http://herosphp.r9it.com/admin/upload/qiniu",
-	        fileManagerJson : 'http://herosphp.r9it.com/admin/upload/filelist',
-	        imageSearchJson : null, //图片搜索url
-	        dialogOffset : 0, //对话框距离页面顶部的位置，默认为0居中，
-	        filePostName: 'file',
+	        uploadJson : K.basePath+"php/default/upload_json.php",
+	        fileManagerJson : K.basePath+'php/default/file_manager_json.php',
 	        allowFileManager : true,
 	        allowImageUpload : true,
 	        allowMediaUpload : true,
 	        themeType : "grey", //主题
-	        afterCreate : function() {
-		        var self = this;
-		        K.ctrl(document, 13, function() {
-			        self.sync();
-			        K('form[name=example]')[0].submit();
-		        });
-		        K.ctrl(self.edit.doc, 13, function() {
-			        self.sync();
-			        K('form[name=example]')[0].submit();
-		        });
-	        },
 	        //错误处理 handler
 	        errorMsgHandler : function(message, type) {
 		        layer.alert(message);

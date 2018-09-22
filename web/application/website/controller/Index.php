@@ -15,13 +15,13 @@ class Index extends Common{
 	public function getmenu(){
 		vendor ('Nx.Datastyle');
 		if(input('id')==1){
-			$rs=db('nav')->field(['id','pid','name'=>'title','ico'=>'icon','url'=>'href','order'])->where('display',1)->order('order ASC,id ASC')->select();
+			$rs=db('nav')->field(['id','pid','name'=>'title','ico'=>'icon','url'=>'href','orders'])->where('display',1)->order('orders ASC,id ASC')->select();
 			$data=\Datastyle::node_merge($rs);
 			//p($data);die;
 			return $data;
 		}
 		if(input('id')==2){
-			$rs=db('cate')->field(['id','pid','name'=>'title','model','order'])->where('isf',1)->where('model','<>','link')->order('order ASC,id ASC')->select();
+			$rs=db('cate')->field(['id','pid','name'=>'title','model','orders'])->where('isf',1)->where('model','<>','link')->order('orders ASC,id ASC')->select();
 			$data=\Datastyle::node_merge($rs);
 			return $data;
 		}
@@ -31,7 +31,7 @@ class Index extends Common{
     	$file = request()->file('file');
 	    // 移动到框架应用根目录/public/uploads/ 目录下
 	    $path=ROOT_PATH . 'public' . DS . 'uploads';
-	    $info = $file->validate(['size'=>2*1024*1024,'ext'=>'jpg,jpeg,png,gif'])->rule('date')->move($path);
+	    $info = $file->validate(['size'=>2*1024*1024,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move($path);
 	    if($info){
 	        // 成功上传后 获取上传信息
 	        $src=$info->getSaveName();
@@ -50,7 +50,7 @@ class Index extends Common{
     	$file = request()->file('file');
 	    // 移动到框架应用根目录/public/uploads/ 目录下
 	    $path=ROOT_PATH . 'public' . DS . 'uploads';
-	    $info = $file->validate(['size'=>2*1024*1024,'ext'=>'jpg,jpeg,png,gif'])->rule('date')->move($path);
+	    $info = $file->validate(['size'=>2*1024*1024,'ext'=>'jpg,jpeg,png,gif'])->rule('uniqid')->move($path);
 	    if($info){
 	        // 成功上传后 获取上传信息
 	        $src=$info->getSaveName();

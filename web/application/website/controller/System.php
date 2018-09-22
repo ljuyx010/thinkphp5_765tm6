@@ -5,7 +5,7 @@ class System extends Common{
 
 	public function index(){
 		vendor ('Nx.Datastyle');
-		$data=db('nav')->field('ico,url',true)->select();
+		$data=db('nav')->field('ico,url',true)->order('orders asc,id asc')->select();
 		$pid=db('nav')->field('pid')->where('pid','>',0)->group('pid')->select();
 		$array=array();
 		foreach ($pid as $k=>$v){
@@ -50,7 +50,7 @@ class System extends Common{
 		$dis=input('dis','','intval');
 		$order=input('ord','','intval');
 		if($dis!=''){$data['display']=$dis;}
-		if($order!=''){$data['order']=$order;}
+		if($order!=''){$data['orders']=$order;}
 		$rs=db('nav')->where('id',$id)->update($data);
 		if($rs){return 1;}else{return 0;}
 	}

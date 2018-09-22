@@ -156,34 +156,5 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         }
     });
 
-    //创建一个编辑器
-    KindEditor.ready(function(K) {
-        K.create('textarea[name="content"]', {
-            uploadJson : "http://herosphp.r9it.com/admin/upload/qiniu",
-            fileManagerJson : 'http://herosphp.r9it.com/admin/upload/filelist',
-            imageSearchJson : null, //图片搜索url
-            dialogOffset : 0, //对话框距离页面顶部的位置，默认为0居中，
-            filePostName: 'file',
-            allowFileManager : true,
-            allowImageUpload : true,
-            allowMediaUpload : true,
-            themeType : "grey", //主题
-            afterCreate : function() {
-                var self = this;
-                K.ctrl(document, 13, function() {
-                    self.sync();
-                    K('form[name=example]')[0].submit();
-                });
-                K.ctrl(self.edit.doc, 13, function() {
-                    self.sync();
-                    K('form[name=example]')[0].submit();
-                });
-            },
-            //错误处理 handler
-            errorMsgHandler : function(message, type) {
-                layer.alert(message);
-            }
-        });
-    })
 
 })

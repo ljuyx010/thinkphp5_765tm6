@@ -9,7 +9,12 @@ if ((html = document.getElementsByTagName('html'))) {
 	_direction = html[0].dir;
 }
 
-function _getInitHtml(themesPath, bodyClass, cssPath, cssData) {
+function _getInitHtml(options) {
+	var themesPath = _undef(options.themesPath, ''),
+		bodyClass = options.bodyClass,
+		cssPath = options.cssPath,
+		jsPath = options.jsPath,
+		cssData = options.cssData;
 	var arr = [
 		(_direction === '' ? '<html>' : '<html dir="' + _direction + '">'),
 		'<head><meta charset="utf-8" /><title></title>',
@@ -68,10 +73,21 @@ function _getInitHtml(themesPath, bodyClass, cssPath, cssData) {
 		'	font-size:0;',
 		'	height:2px;',
 		'}',
-		'</style>'
+
 	];
+
+	if (options.showHelpGrid) {
+		arr.push('p,ul,ol,li,div{border: 1px dashed #c1c1c1;}');
+		arr.push('li{margin:5px 0px}');
+		arr.push('div,ul,ol{margin-bottom:10px}');
+	}
+	arr.push('</style>');
 	if (!_isArray(cssPath)) {
 		cssPath = [cssPath];
+	}
+	if (_inArray(K.basePath+'themes/app.css', cssPath) < 0) {
+		cssPath.push(K.basePath+'themes/app.css');
+		cssPath.push(K.basePath+'plugins/code/prism.css');
 	}
 	_each(cssPath, function(i, path) {
 		if (path) {
@@ -81,7 +97,22 @@ function _getInitHtml(themesPath, bodyClass, cssPath, cssData) {
 	if (cssData) {
 		arr.push('<style>' + cssData + '</style>');
 	}
-	arr.push('</head><body ' + (bodyClass ? 'class="' + bodyClass + '"' : '') + '></body></html>');
+	arr.push('</head><body ' + (bodyClass ? 'class="' + bodyClass + '"' : '') + '>');
+
+	if (!_isArray(jsPath)) {
+		jsPath = [jsPath];
+	}
+	// 加载代码高亮的脚本
+	if (_inArray(K.basePath+'plugins/code/prism.js', jsPath) < 0) {
+		jsPath.push(K.basePath+'plugins/code/prism.js');
+		jsPath.push(K.basePath+'plugins/code/pretty.js');
+	}
+	_each(jsPath, function(i, path) {
+		if (path) {
+			arr.push('<script type="text/javascript" src="' + path + '"></script>');
+		}
+	});
+	arr.push('</body></html>');
 	return arr.join('\n');
 }
 
@@ -115,11 +146,7 @@ _extend(KEdit, KWidget, {
 		self.beforeSetHtml = options.beforeSetHtml;
 		self.afterSetHtml = options.afterSetHtml;
 
-		var themesPath = _undef(options.themesPath, ''),
-			bodyClass = options.bodyClass,
-			cssPath = options.cssPath,
-			cssData = options.cssData,
-			isDocumentDomain = location.protocol != 'res:' && location.host.replace(/:\d+/, '') !== document.domain,
+		var isDocumentDomain = location.protocol != 'res:' && location.host.replace(/:\d+/, '') !== document.domain,
 			srcScript = ('document.open();' +
 				(isDocumentDomain ? 'document.domain="' + document.domain + '";' : '') +
 				'document.close();'),
@@ -147,7 +174,7 @@ _extend(KEdit, KWidget, {
 			if (isDocumentDomain) {
 				doc.domain = document.domain;
 			}
-			doc.write(_getInitHtml(themesPath, bodyClass, cssPath, cssData));
+			doc.write(_getInitHtml(self.options));
 			doc.close();
 			self.win = self.iframe[0].contentWindow;
 			self.doc = doc;

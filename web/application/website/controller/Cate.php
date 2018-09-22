@@ -1,12 +1,11 @@
 <?
 namespace app\website\controller;
-use \think\Request;
 
 class Cate extends Common{
 	
 	public function index(){
-		vendor ('Nx.Datastyle');
-		$data=db('cate')->field('id,pid,name,model,order,isf')->select();
+		vendor ('Nx.Datastyle');	
+		$data=db('cate')->field('id,pid,name,model,orders,isf')->order('orders asc,id asc')->select();
 		$pid=db('cate')->field('pid')->where('pid','>',0)->group('pid')->select();
 		$array=array();
 		foreach ($pid as $k=>$v){
@@ -27,9 +26,9 @@ class Cate extends Common{
 	public function runadd(){
 		$id=input('id','','intval');
 		$nav=db('cate');
-		$data=Request::instance()->except('id');
+		$data=input('');
 		if($id){
-			$rs=$nav->where('id',$id)->update($data);
+			$rs=$nav->update($data);
 		}else{
 			$rs=$nav->insert($data);
 		}
@@ -37,8 +36,12 @@ class Cate extends Common{
 	}
 
 	public function edit(){
+		vendor ('Nx.Datastyle');
 		$id= input('id',0,'intval');
 		$rs=db('cate')->where('id',$id)->find();
+		$data=db('cate')->field('id,pid,name,model,orders,isf')->order('orders asc,id asc')->select();
+		$data=\Datastyle::tree($data,'name','id','pid');
+		$this->assign('list',$data);
 		$this->assign('v',$rs);
 		return $this->fetch();
 	}
@@ -48,7 +51,7 @@ class Cate extends Common{
 		$dis=input('dis','','intval');
 		$order=input('ord','','intval');
 		if($dis!=''){$data['isf']=$dis;}
-		if($order!=''){$data['order']=$order;}
+		if($order!=''){$data['orders']=$order;}
 		$rs=db('cate')->where('id',$id)->update($data);
 		if($rs){return 1;}else{return 0;}
 	}

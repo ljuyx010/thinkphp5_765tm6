@@ -38,9 +38,7 @@ $prefix = $fileType."-";
 // 本次列举的条目数
 $limit = 15;
 $delimiter = '/';
-
 list($ret, $err) = $bucketManager->listFiles(QINIU_TEST_BUCKET, $prefix, $marker, $limit, $delimiter);
-
 $result = new \JsonResult();
 if ($err !== null) {
     $result->setCode(\JsonResult::CODE_FAIL);
@@ -52,7 +50,6 @@ if ($err !== null) {
         $filename = $value['key'];
         if (strpos($value['mimeType'], 'image') !== false) { //如果是图片则获取尺寸
             $imgSize = getImgSize($value['key']);
-
         }
         array_push($files, array(
             "thumbURL" => QINIU_BUCKET_DOMAIN.$filename,
@@ -61,11 +58,11 @@ if ($err !== null) {
             "width" => intval($imgSize["width"]),
             "height" => intval($imgSize["height"])));
     }
-    $result->setItems($files);
+    $result->setData($files);
     if (array_key_exists('marker', $ret)) {
-        $result->setItem($ret['marker']);
+        $result->setExtra($ret['marker']);
     } else {
-        $result->setItem("no_records");
+        $result->setExtra("no_records");
     }
 }
 $result->output();

@@ -37,7 +37,7 @@
             <td>{if condition="in_array($v.id,$pid)"}<i class="layui-icon x-show" status='true'>&#xe623;</i>{/if}
               {$v._name}            
             </td>
-            <td><input type="text" class="layui-input x-sort" name="order" data-id="{$v.id}" value="{$v.order}"></td>
+            <td><input type="text" class="layui-input x-sort" name="order" data-id="{$v.id}" value="{$v.orders}"></td>
             <td>
               <input type="checkbox" name="switch" lay-text="开|关" id="{$v.id}" lay-filter="display" {if condition="$v.isf"}checked=""{/if} lay-skin="switch">
             </td>

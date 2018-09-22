@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片管理</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	{css href="__STATIC__/layui/css/layui.css"}
+	{css href="__STATIC__/css/public.css"}
+</head>
+<body class="childrenBody">
+<form class="layui-form">
+	<blockquote class="layui-elem-quote news_search">
+		<div class="layui-inline">
+			<input type="checkbox" name="selectAll" id="selectAll" lay-filter="selectAll" lay-skin="primary" title="全选">
+		</div>
+		<div class="layui-inline">
+			<a class="layui-btn layui-btn-sm layui-btn-danger batchDel">批量删除</a>
+		</div>
+		<div class="layui-inline">
+			<a class="layui-btn layui-btn-sm add">上传图片</a>
+		</div>
+	</blockquote>
+	<ul class="layer-photos-demo" id="Images"></ul>
+</form>
+{js href="__STATIC__/js/jquery.min.js"}
+{js href="__STATIC__/layui/layui.js"}
+<script type="text/javascript">
+	var url="{:url('banner/page')}";
+	var addurl="{:url('banner/add')}";
+	var edurl="{:url('banner/edit','','')}";
+	var durl="{:url('banner/del')}";
+	var upurl="{:url('index/upload','','')}";
+</script>
+{js href="__STATIC__/js/images.js"}
+</body>
+</html>
