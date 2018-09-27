@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>分类页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    {css href="__STATIC__/layui/css/layui.css"}
+    {css href="__STATIC__/css/welcome.css"}
+    {js href="__STATIC__/js/jquery.min.js"}
+    {js href="__STATIC__/layui/layui.js"}
+  </head>
+  
+  <body>
+    <div class="x-body">
+      <xblock>
+          <button class="layui-btn add-btn"><i class="layui-icon layui-icon-add-circle-fine"></i>增加留言模型</button>
+        <div class="layui-clear"></div>
+      </xblock>
+      <table class="layui-table layui-form">
+        <thead>
+          <tr>
+            <th width="70">ID</th>
+            <th>模型名称</th>
+            <th width="220">操作</th>
+        </thead>
+        <tbody class="x-cate">
+        {volist name="list" id="v"}
+          <tr cate-id='{$v.id}'>
+            <td>{$v.id}</td>
+            <td>
+              {$v.gname}            
+            </td>
+            <td class="td-manage">
+              <button class="layui-btn layui-btn layui-btn-xs edit-btn" data-id="{$v.id}"><i class="layui-icon">&#xe642;</i>编辑</button>
+              <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="menu_del(this,{$v.id})" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button>
+            </td>
+          </tr>
+        {/volist}  
+        
+        </tbody>
+      </table>
+    </div>
+    <script>
+    layui.use(['form','layer','laydate','table','laytpl'],function(){
+    var form = layui.form,
+        layer = parent.layer === undefined ? layui.layer : top.layer,
+        $ = layui.jquery,
+        laydate = layui.laydate,
+        laytpl = layui.laytpl,
+        table = layui.table;
+
+    //添加
+    function addmenu(id,e){
+        if(e==1){
+          var url="{:url('gbook/typedit','','')}/id/"+id;
+          var p="修改";
+        }else{
+          var url="{:url('gbook/typeadd','','')}";
+          var p="添加";
+        }
+        var index = layui.layer.open({
+            title : p+"留言模型",
+            type : 2,
+            content : url,
+        })
+        layui.layer.full(index);
+        //改变窗口大小时，重置弹窗的宽高，防止超出可视区域（如F12调出debug的操作）
+        $(window).on("resize",function(){
+            layui.layer.full(index);
+        })
+    }
+    $(".add-btn").click(function(){
+        addmenu();
+    }) 
+    $(".edit-btn").click(function(){
+        var id=$(this).attr("data-id");
+        addmenu(id,1);
+    }) 
+  });
+  function menu_del(obj,id){
+      layer.confirm('确认要删除吗？',function(index){            
+          //发异步删除数据
+        $.post("{:url('gbook/typedel','','')}",{id:id},function(result){
+          if(result){
+            $(obj).parents("tr").remove();
+            layer.msg('已删除!',{icon:1,time:1000});
+          }else{
+            layer.msg('删除失败!',{icon:2,time:1000});
+          }
+        });
+
+      });
+    }
+  </script>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 <?
 namespace app\website\controller;
 use think\Controller;
+use think\Request;
 use think\db;
 
 class Login extends Controller{
@@ -86,6 +87,22 @@ class Login extends Controller{
     	}
 
 	}
+
+    public function logs(){
+
+        return $this->fetch();
+    }
+
+    public function page(){
+        $db=db('login');
+        $p=input('page');
+        $l=input('limit');
+        $c=$db->count();
+        $rs=$db->alias('l')->join('admin a','l.aid = a.id')->field('a.username,l.*,FROM_UNIXTIME(l.logintime,"%Y-%m-%d %H:%i") as times')->order('logintime DESC')->page($p,$l)->select();
+        if(!$rs){$msg="暂无数据";}else{$msg='数据正常';} 
+        $data=array('code'=>0,'msg'=>$msg,'count'=>$c,'data'=>$rs);
+        return $data;
+    }
 }
 
 ?>

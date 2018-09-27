@@ -145,7 +145,7 @@ layui.use(['form','layer','laydate','table','upload'],function(){
             pic : $(".linkLogoImg").attr("src"),  //logo
             subname : $(".name").val(),  //网站名称
             url : $(".url").val(),    //网址
-            time : submitTime,    //发布时间
+            addtime : submitTime,    //发布时间
             id : $('.linkid').val()
         },function(res){
             if(res){

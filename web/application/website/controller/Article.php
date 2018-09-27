@@ -59,7 +59,7 @@ class Article extends Common{
 
 	public function add(){
 		$cid=input('cid');
-		$rs=db('subject')->field('id,subname')->order('order asc')->select();
+		$rs=db('subject')->field('id,subname')->order('orders asc')->select();
 		$this->assign('cid',$cid);
 		$this->assign('sub',$rs);
 		return $this->fetch();
@@ -88,7 +88,7 @@ class Article extends Common{
 			$data['uid']=session('user.id')?session('user.id'):0;
 			$rs=db('article')->insert($data);
 		}
-		if($rs){return 1;}else{return 0;}
+		return $rs;
 	}
 
 	public function edit(){
@@ -97,7 +97,7 @@ class Article extends Common{
 		$pics=explode("|", $article['pics']);
 		$pid=db('img')->where('imgurl',$article['pic'])->value('id');
 		$piclist=db('img')->where('id','in',$pics)->select();
-		$sub=db('subject')->field('id,subname')->order('order asc')->select();
+		$sub=db('subject')->field('id,subname')->order('orders asc')->select();
 		$this->assign('a',$article);
 		$this->assign('pid',$pid);
 		$this->assign('piclist',$piclist);

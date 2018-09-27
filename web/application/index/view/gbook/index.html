@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{$title}</title>
+	<meta name="keywords" content="{$keyword}">
+	<meta name="description" content="{$description}">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	{css href="__STATIC__/layui/css/layui.css"}
+	{css href="__STATIC__/css/public.css"}
+</head>
+<body class="childrenBody">
+<form class="layui-form" style="width:80%;">
+	{volist name="field" id="v"}
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-col-xs4">
+		<label class="layui-form-label">{$v.title}</label>		
+		<div class="layui-input-block">
+			<input type="text" class="layui-input gName" name="{$v.zd}" {if condition="in_array($v.zd,$no)"}lay-verify="required"{/if} placeholder="请输入{$v.title}">
+		</div>
+		</div>
+	</div>
+	{/volist}
+
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-input-block">
+	    <input type="hidden" name="cid" value="{$cid}"></input>
+			<a class="layui-btn layui-btn-sm" lay-filter="tj" lay-submit><i class="layui-icon">&#xe609;</i>提交</a>
+		</div>
+	</div>
+</form>
+
+{js href="__STATIC__/js/jquery.min.js"}
+{js href="__STATIC__/layui/layui.js"}
+<script>
+//Demo
+layui.use(['form','layer'], function(){
+  var form = layui.form,
+  layer = parent.layer === undefined ? layui.layer : top.layer,
+  $ = layui.jquery;
+
+  //监听提交
+  form.on("submit(tj)", function(data){
+  	var temp=$('.layui-form').serialize();
+    $.post("{:url('gbook/submit')}",temp,function(res){
+        if(res.code){
+            top.layer.msg(res.msg);
+        }else{
+            top.layer.msg(res.msg);
+        }        
+    })
+    return false;
+  })
+});
+</script>
+</body>
+</html>

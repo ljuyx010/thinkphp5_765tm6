@@ -73,6 +73,11 @@ class Index extends Common{
     		return 0;
     	}
     }
+
+    public function clear(){
+    	$dir=ROOT_PATH.'runtime';
+    	return delete_dir_file($dir);
+    }
 	
 }
 

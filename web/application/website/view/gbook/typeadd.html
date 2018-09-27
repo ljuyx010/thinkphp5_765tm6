@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>留言模型</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	{css href="__STATIC__/layui/css/layui.css"}
+	{css href="__STATIC__/css/public.css"}
+</head>
+<body class="childrenBody">
+<form class="layui-form" style="width:80%;">
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-col-xs4">
+		<label class="layui-form-label">模型名</label>		
+		<div class="layui-input-block">
+			<input type="text" class="layui-input gName" name="gname" lay-verify="required" {if condition="isset($gname)"}value="{$gname}"{/if} placeholder="请输入模型名">
+		</div>
+		</div>
+	</div>
+	{if condition="isset($field)"}
+		{volist name="field" id="v"}
+		<div class="layui-row">
+		  <div class="magb15 layui-col-md4 layui-col-xs12">
+		    <label class="layui-form-label">留言字段名</label>
+		    <div class="layui-input-block userSex">
+		      <input type="text" class="layui-input fieldn" name="name[]" lay-verify="required" value="{$v.title}" placeholder="请输入字段中文"></div>
+		  </div>
+		  <div class="magb15 layui-col-md3 layui-col-xs12">
+		    <label class="layui-form-label">字段标识</label>
+		    <div class="layui-input-block userSex">
+		      <input type="text" class="layui-input field" name="bs[]" lay-verify="required" value="{$v.zd}" placeholder="请输入字段标识如：title"></div>
+		  </div>
+		  <div class="magb15 layui-col-md2 layui-col-xs12">
+		    <label class="layui-form-label">是否必填</label>
+		    <div class="layui-input-block">
+		      <input type="checkbox" {if condition="in_array($v.zd,$no)"}checked{/if} name="notnull[]" title="必填" ></div>
+		  </div>
+		  <div class="magb15 layui-col-md2 layui-col-xs12">
+		    <label class="layui-form-label">后台列表</label>
+		    <div class="layui-input-block">
+		      <input type="checkbox" name="dis[]" {if condition="in_array($v.zd,$dis)"}checked{/if} title="显示"></div>
+		  </div>
+		  <div class="magb15 layui-col-md1 layui-col-xs12">
+		    <a class="layui-btn layui-btn-warm layui-btn-sm" href="javascript:;">删除字段</a></div>
+		</div>
+		{/volist}
+	{else /}
+	<div class="layui-row last">
+		<div class="magb15 layui-col-md4 layui-col-xs12">
+			<label class="layui-form-label">留言字段名</label>
+			<div class="layui-input-block userSex">
+				<input type="text" class="layui-input fieldn" name='name[]' lay-verify="required" placeholder="请输入字段中文">
+			</div>
+		</div>
+		<div class="magb15 layui-col-md3 layui-col-xs12">
+			<label class="layui-form-label">字段标识</label>
+			<div class="layui-input-block userSex">
+				<input type="text" class="layui-input field" name="bs[]" lay-verify="required" placeholder="请输入字段标识如：title">
+			</div>
+		</div>
+		<div class="magb15 layui-col-md2 layui-col-xs12">
+			<label class="layui-form-label">是否必填</label>
+			<div class="layui-input-block">
+				<input type="checkbox" name="notnull[]" title="必填">
+			</div>
+		</div>
+		<div class="magb15 layui-col-md2 layui-col-xs12">
+			<label class="layui-form-label">后台列表</label>
+			<div class="layui-input-block">
+				<input type="checkbox" name="dis[]" title="显示">
+			</div>
+		</div>
+		<div class="magb15 layui-col-md1 layui-col-xs12">
+			<a class="layui-btn layui-btn-normal layui-btn-sm" href="javascript:;">增加字段</a>
+		</div>
+	</div>
+	{/if}
+	{if condition="isset($field)"}
+	<div class="layui-form-item layui-row layui-col-xs12 last">
+		<div class="layui-input-block">
+		<a class="layui-btn layui-btn-normal layui-btn-sm" href="javascript:;">增加字段</a>
+	{else /}
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-input-block">
+	{/if}
+			{if condition="isset($id)"}<input type="hidden" name="id" value="{$id}"></input>{/if}
+			<a class="layui-btn layui-btn-sm" lay-filter="tj" lay-submit><i class="layui-icon">&#xe609;</i>保存</a>
+		</div>
+	</div>
+</form>
+
+{js href="__STATIC__/js/jquery.min.js"}
+{js href="__STATIC__/layui/layui.js"}
+<script>
+//Demo
+layui.use(['form','layer'], function(){
+  var form = layui.form,
+  layer = parent.layer === undefined ? layui.layer : top.layer,
+  $ = layui.jquery;
+
+  var zd='<div class="layui-row"><div class="magb15 layui-col-md4 layui-col-xs12"><label class="layui-form-label">留言字段名</label><div class="layui-input-block userSex"><input type="text" class="layui-input fieldn" name="name[]" lay-verify="required" placeholder="请输入字段中文"></div></div><div class="magb15 layui-col-md3 layui-col-xs12"><label class="layui-form-label">字段标识</label><div class="layui-input-block userSex"><input type="text" class="layui-input field" name="bs[]" lay-verify="required" placeholder="请输入字段标识如：title"></div></div><div class="magb15 layui-col-md2 layui-col-xs12"><label class="layui-form-label">是否必填</label><div class="layui-input-block"><input type="checkbox" name="notnull[]" title="必填"></div></div><div class="magb15 layui-col-md2 layui-col-xs12"><label class="layui-form-label">后台列表</label><div class="layui-input-block"><input type="checkbox" name="dis[]" title="显示"></div></div><div class="magb15 layui-col-md1 layui-col-xs12"><a class="layui-btn layui-btn-warm layui-btn-sm" href="javascript:;">删除字段</a></div></div>';
+  
+  $('.layui-btn-normal').click(function(){
+  	$('.last').before(zd);
+  	form.render();
+  });
+
+  $(document).on('click', '.layui-btn-warm', function() {
+    $(this).parents('.layui-row').remove();
+  });
+
+  //监听提交
+  form.on("submit(tj)", function(data){
+  	form.render();
+  	var temp=$('.layui-form').serialize();
+    $.post("{:url('gbook/runtype')}",temp,function(res){
+        if(res){
+            top.layer.msg("保存成功！");
+            layer.closeAll("iframe");
+            //刷新父页面
+            parent.location.reload();
+        }else{
+            top.layer.msg("保存失败！");
+        }        
+    })
+    return false;
+  })
+});
+</script>
+</body>
+</html>

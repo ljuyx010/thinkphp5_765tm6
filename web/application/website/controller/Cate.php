@@ -19,7 +19,9 @@ class Cate extends Common{
 
 	public function add(){
 		$pid = input('id',0,'intval');
+		$rs=db('gtype')->field('id,gname')->where('del',0)->select();
 		$this->assign('pid',$pid);
+		$this->assign('gtype',$rs);
 		return $this->fetch();
 	}
 
@@ -38,11 +40,13 @@ class Cate extends Common{
 	public function edit(){
 		vendor ('Nx.Datastyle');
 		$id= input('id',0,'intval');
+		$gtype=db('gtype')->field('id,gname')->where('del',0)->select();
 		$rs=db('cate')->where('id',$id)->find();
 		$data=db('cate')->field('id,pid,name,model,orders,isf')->order('orders asc,id asc')->select();
 		$data=\Datastyle::tree($data,'name','id','pid');
 		$this->assign('list',$data);
 		$this->assign('v',$rs);
+		$this->assign('gtype',$gtype);
 		return $this->fetch();
 	}
 

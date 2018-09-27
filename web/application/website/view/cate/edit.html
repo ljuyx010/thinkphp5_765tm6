@@ -104,12 +104,13 @@
 				<div class="layui-form-item gbook {if condition='$v.model neq "gbook"'}layui-hide{/if}">
 					<label class="layui-form-label">表单模型</label>
 					<div class="layui-input-block">
+						<div class="layui-col-md2 layui-col-xs4">
 						<select name="gid" lay-verify="required">
-							<option value="article">文章</option>
-							<option value="info">单页</option>
-							<option value="gbook">表单</option>
-							<option value="link">外链</option>
+							{volist name="gtype" id="g"}
+							<option value="{$g.id}">{$g.gname}</option>
+							{/volist}
 						</select>
+						</div>
 					</div>
 				</div>
 				<div class="layui-form-item">

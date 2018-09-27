@@ -69,6 +69,7 @@
 				<label class="layui-form-label"><i class="layui-icon layui-icon-flag"></i> 专　题</label>
 				<div class="layui-input-block sid">
 					<select name="sid">
+					<option>选择专题</option>
 					{volist name="sub" id="v"}
 						<option {if condition="$a.sid eq $v.id"}selected{/if} value="{$v.id}">{$v.subname|re_substr=0,16}</option>
 					{/volist}

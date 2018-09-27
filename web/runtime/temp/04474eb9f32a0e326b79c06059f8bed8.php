@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\banner\type.html";i:1537429771;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\gbook\type.html";i:1537865253;}*/ ?>
 <!DOCTYPE html>
 <html>
   
@@ -18,29 +18,30 @@
   <body>
     <div class="x-body">
       <xblock>
-          <button class="layui-btn add-btn"><i class="layui-icon layui-icon-add-circle-fine"></i>增加广告图分类</button>
+          <button class="layui-btn add-btn"><i class="layui-icon layui-icon-add-circle-fine"></i>增加留言模型</button>
         <div class="layui-clear"></div>
       </xblock>
       <table class="layui-table layui-form">
         <thead>
           <tr>
             <th width="70">ID</th>
-            <th>分类名</th>
-            <th width="70">排序</th>
+            <th>模型名称</th>
             <th width="220">操作</th>
         </thead>
-        <tbody class="x-banner">
+        <tbody class="x-cate">
         <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-          <tr banner-id='<?php echo $v['id']; ?>' fid='<?php echo $v['fid']; ?>' >
+          <tr cate-id='<?php echo $v['id']; ?>'>
             <td><?php echo $v['id']; ?></td>
-            <td><?php echo $v['name']; ?></td>
-            <td><input type="text" class="layui-input x-sort" name="order" data-id="<?php echo $v['id']; ?>" value="<?php echo $v['orders']; ?>"></td>
+            <td>
+              <?php echo $v['gname']; ?>            
+            </td>
             <td class="td-manage">
               <button class="layui-btn layui-btn layui-btn-xs edit-btn" data-id="<?php echo $v['id']; ?>"><i class="layui-icon">&#xe642;</i>编辑</button>
               <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="menu_del(this,<?php echo $v['id']; ?>)" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button>
             </td>
           </tr>
-        <?php endforeach; endif; else: echo "" ;endif; ?>
+        <?php endforeach; endif; else: echo "" ;endif; ?>  
+        
         </tbody>
       </table>
     </div>
@@ -56,14 +57,14 @@
     //添加
     function addmenu(id,e){
         if(e==1){
-          var url="<?php echo url('banner/typedit','',''); ?>/id/"+id;
+          var url="<?php echo url('gbook/typedit','',''); ?>/id/"+id;
           var p="修改";
         }else{
-          var url="<?php echo url('banner/typeadd','',''); ?>";
+          var url="<?php echo url('gbook/typeadd','',''); ?>";
           var p="添加";
         }
         var index = layui.layer.open({
-            title : p+"栏目",
+            title : p+"留言模型",
             type : 2,
             content : url,
         })
@@ -81,19 +82,10 @@
         addmenu(id,1);
     }) 
   });
-  $("input").blur(function(){
-    var v=$(this).val();
-    var id=$(this).attr("data-id");
-    $.post("<?php echo url('banner/runtype','',''); ?>",{'id':id,'order':v},function(result){
-      if(result==0){
-        layer.msg('排序失败!');
-      }
-    });
-  });
   function menu_del(obj,id){
       layer.confirm('确认要删除吗？',function(index){            
           //发异步删除数据
-        $.post("<?php echo url('banner/typedel','',''); ?>",{id:id},function(result){
+        $.post("<?php echo url('gbook/typedel','',''); ?>",{id:id},function(result){
           if(result){
             $(obj).parents("tr").remove();
             layer.msg('已删除!',{icon:1,time:1000});

@@ -86,13 +86,16 @@ window.getData = function(id){
 	//清除缓存
 	$(".clearCache").click(function(){
         var index = layer.msg('清除缓存中，请稍候',{icon: 16,time:false,shade:0.8});
-        setTimeout(function(){
-            window.sessionStorage.clear();
-            window.localStorage.clear();
-            $.post(curl);
+        window.sessionStorage.clear();
+        window.localStorage.clear();
+        $.post(curl,function(res){
             layer.close(index);
-            layer.msg("缓存清除成功！");
-        },500);
+            if(res){            
+                layer.msg("缓存清除成功！");
+            }else{
+                layer.msg("缓存清除失败！");
+            }
+        });
     });
 
 	//刷新后还原打开的窗口

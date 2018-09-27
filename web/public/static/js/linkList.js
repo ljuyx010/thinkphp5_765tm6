@@ -152,7 +152,7 @@ layui.use(['form','layer','laydate','table','upload'],function(){
             url : $(".url").val(),    //网址
             mark : $('.mark').val(),    //备注
             tid :  $(".tid select").val(),    //分类
-            time : submitTime,    //发布时间
+            addtime : submitTime,    //发布时间
             id : $('.linkid').val()
         },function(res){
             if(res){

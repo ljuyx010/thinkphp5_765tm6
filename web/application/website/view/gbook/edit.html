@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>留言信息</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	{css href="__STATIC__/layui/css/layui.css"}
+	{css href="__STATIC__/css/public.css"}
+</head>
+<body class="childrenBody">
+<form class="layui-form" style="width:80%;">
+	{volist name='field' id='f'}
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-col-xs4">
+		<label class="layui-form-label">{$f.title}</label>		
+		<div class="layui-input-block">
+			<div class="layui-form-mid layui-word-aux">{$v[$f.zd]}</div>
+		</div>
+		</div>
+	</div>
+	{/volist}
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-col-xs4">
+		<label class="layui-form-label">留言日期</label>		
+		<div class="layui-input-block">
+			<div class="layui-form-mid layui-word-aux">{$v.time|date='Y-m-d H:i:s',###}</div>
+		</div>
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-col-xs4">
+		<label class="layui-form-label">留言IP</label>		
+		<div class="layui-input-block">
+			<div class="layui-form-mid layui-word-aux">{$v.ip}</div>
+		</div>
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<label class="layui-form-label">留言回复</label>
+		<div class="layui-input-block">
+			<textarea placeholder="请输入回复信息（200字内）" class="layui-textarea reply" lay-verify="required">{if condition="isset($v.reply)"}{$v.reply}{/if}</textarea>
+		</div>
+	</div>
+	<div class="layui-form-item layui-row layui-col-xs12">
+		<div class="layui-input-block">
+			<input type="hidden" class="id" value="{$v.id}"></input>
+			<a class="layui-btn layui-btn-sm" lay-filter="tj" lay-submit><i class="layui-icon">&#xe609;</i>保存回复</a>
+		</div>
+	</div>
+</form>
+
+{js href="__STATIC__/js/jquery.min.js"}
+{js href="__STATIC__/layui/layui.js"}
+<script>
+//Demo
+layui.use(['form','layer'], function(){
+  var form = layui.form,
+  layer = parent.layer === undefined ? layui.layer : top.layer,
+  $ = layui.jquery;
+
+  //监听提交
+  form.on("submit(tj)", function(data){
+    $.post("{:url('gbook/reply')}",{id:$('.id').val(),reply:$('.reply').val()},function(res){
+        if(res){
+            top.layer.msg("回复成功！");
+            layer.closeAll("iframe");
+            //刷新父页面
+            parent.location.reload();
+        }else{
+            top.layer.msg("回复失败！");
+        }        
+    })
+    return false;
+  })
+});
+</script>
+</body>
+</html>
