@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数据备份</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	{css href="__STATIC__/layui/css/layui.css"}
+	{css href="__STATIC__/css/public.css"}
+</head>
+<body class="childrenBody">
+	<blockquote class="layui-elem-quote quoteBox">
+		<form class="layui-form">
+			<div class="layui-inline">
+				<a class="layui-btn addLink_btn">新建备份</a>
+			</div>
+		</form>
+	</blockquote>
+	<table class="layui-table" lay-filter="baklist">
+		<colgroup>
+	    <col width="150">
+	    <col>
+	    <col width="250">
+	    <col width="150">
+	    <col width="200">	    
+	  </colgroup>
+	  <thead>
+	    <tr>
+	      <th>排序</th>
+	      <th>文件名</th>
+	      <th>备份时间</th>
+	      <th>文件大小</th>
+	      <th>操作</th>
+	    </tr> 
+	  </thead>
+	  <tbody>
+	  	{volist name='lists' id='v' key='k'}
+	    <tr>
+	      <td>{$v.id}</td>
+	      <td><a href="{:url('bak/index',['Action'=>'download','File'=>$v.name],'')}" target="_blank">{$v.name}</a></td>
+	      <td>{$v.time}</td>
+	      <td>{$v.size}</td>
+	      <td><a class="layui-btn layui-btn-xs" href="{:url('bak/index',['Action'=>'download','File'=>$v.name],'')}" target="_blank">下载</a>
+	      <a class="layui-btn layui-btn-xs layui-btn-danger" onclick="del('{$v.name}')">删除</a></td>
+	    </tr>
+		{/volist}
+	  </tbody>
+	</table>
+	{js href="__STATIC__/js/jquery.min.js"}
+	{js href="__STATIC__/layui/layui.js"}
+	<script type="text/javascript">
+		layui.use(['layer','laydate','table'],function(){
+    var layer = parent.layer === undefined ? layui.layer : top.layer,
+        $ = layui.jquery,
+        laydate = layui.laydate,
+        table = layui.table;
+
+    //添加数据备份
+    function addLink(){
+        $.post("{:url('bak/index','Action=backup')}",function(data){location.reload();})
+    }
+    $(".addLink_btn").click(function(){
+        addLink();
+    })    
+	})
+	function del(f){
+    	layer.confirm('确定删除此数据备份？',{icon:3, title:'提示信息'},function(index){
+            $.post("{:url('bak/index','Action=Del')}",{
+                File : f
+            },function(data){
+            	if(data){
+            		layer.msg('删除成功！');
+            		location.reload();
+            	}else{
+            		layer.msg('删除失败！');
+            	}
+            })
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<?
+<?php
 namespace app\website\controller;
 
 class Banner extends Common{

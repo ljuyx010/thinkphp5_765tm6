@@ -1,4 +1,4 @@
-<?
+<?php
 namespace app\website\controller;
 
 class Article extends Common{
@@ -53,7 +53,11 @@ class Article extends Common{
 
 	public function del(){
 		input('newsId') ? $where['id']=input('newsId') : $where['id']=array('in',input('ids/a'));
-		$rs=db('article')->where($where)->setField('del',1);
+		if(input('t')){
+			$rs=db('article')->where($where)->delete();
+		}else{
+			$rs=db('article')->where($where)->setField('del',1);
+		}		
 		return $rs;
 	}
 
@@ -103,6 +107,29 @@ class Article extends Common{
 		$this->assign('piclist',$piclist);
 		$this->assign('sub',$sub);
 		return $this->fetch();
+	}
+
+	public function recyle(){
+		if(input('t')){
+			$p=input('page');
+			$l=input('limit');
+			$key=input('key');
+			$map['del']=1;
+			if($key){$map['title']=['like','%'.$key.'%'];}
+			$c=db('article')->where($map)->count();
+			$rs=db('article')->alias('a')->join('cate c','a.cid = c.id')->field('c.name as cname,a.id,title,a.pic,tj,FROM_UNIXTIME(time,"%Y-%m-%d") as times,author')->where($map)->order('time desc')->page($p,$l)->select();
+			if(!$rs){$msg="暂无数据";}else{$msg='数据正常';}
+			$data=array('code'=>0,'msg'=>$msg,'count'=>$c,'data'=>$rs);
+			return $data;
+		}else{
+			return $this->fetch();
+		}
+	}
+
+	public function restore(){
+		input('newsId') ? $where['id']=input('newsId') : $where['id']=array('in',input('ids/a'));
+		$rs=db('article')->where($where)->setField('del',0);		
+		return $rs;
 	}
 
 }

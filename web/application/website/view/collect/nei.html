@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>采集测试</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	{css href="__STATIC__/layui/css/layui.css"}
+	{css href="__STATIC__/css/public.css"}
+</head>
+<body class="childrenBody">	
+	<table class="layui-table" lay-filter="baklist">
+		<colgroup>
+	    <col width="200">
+	    <col>    
+	  </colgroup>
+	  <thead>
+	    <tr>
+	      <th>采集项目</th>
+	      <th>采集内容</th>	      
+	    </tr> 
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>文章标题</td>
+	      <td>{if condition="isset($v[0]['title'])"}{$v[0]['title']}{/if}</td>
+	    </tr>
+	    <tr>
+	      <td>文章关键词</td>
+	      <td>{if condition="isset($v[0]['keyword'])"}{$v[0]['keyword']}{/if}</td>
+	    </tr>
+	    <tr>
+	      <td>文章描述</td>
+	      <td>{if condition="isset($v[0]['description'])"}{$v[0]['description']}{/if}</td>
+	    </tr>
+	    <tr>
+	      <td>文章作者</td>
+	      <td>{if condition="isset($v[0]['author'])"}{$v[0]['author']}{/if}</td>
+	    </tr>
+	    <tr>
+	      <td>文章来源</td>
+	      <td>{if condition="isset($v[0]['from'])"}{$v[0]['from']}{/if}</td>
+	    </tr>
+	    <tr>
+	      <td>文章浏览量</td>
+	      <td>{if condition="isset($v[0]['click'])"}{$v[0]['click']}{/if}</td>
+	    </tr>
+	    <tr>
+	      <td>文章发布日期</td>
+	      <td>{if condition="isset($v[0]['time'])"}{$v[0]['time']}{/if}</td>
+	    </tr>
+	    <tr>
+	      <td>文章内容</td>
+	      <td>{$v[0]['content']}</td>
+	    </tr>
+	  </tbody>
+	</table>
+	{js href="__STATIC__/js/jquery.min.js"}
+	{js href="__STATIC__/layui/layui.js"}
+</body>
+</html>

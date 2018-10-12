@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>采集规则</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	{css href="__STATIC__/layui/css/layui.css"}
+	{css href="__STATIC__/css/public.css"}
+</head>
+<body class="childrenBody">
+<form class="layui-form layui-row layui-col-space10">
+	<div class="layui-col-md12 layui-col-xs12">
+		<div class="layui-row layui-col-space10">
+			<div class="layui-col-md6 layui-col-xs12">
+				<fieldset class="layui-elem-field">
+				  <legend>第一步：列表页规则</legend>
+				  <div class="layui-field-box">
+				    <div class="layui-form-item" style="padding-top:20px;">
+						<label class="layui-form-label">规则名称</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input name" name="name" {if condition="isset($v.name)"}value="{$v.name}"{/if} lay-verify="required" placeholder="请输入规则名称">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">数据源域名</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input site" name="site" {if condition="isset($v.site)"}value="{$v.site}"{/if} lay-verify="url" placeholder="请输入数据源域名">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">列表页地址</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input url" name="url" {if condition="isset($v.url)"}value="{$v.url}"{/if} lay-verify="url" placeholder="请输入数据页面地址，分页用{p}表示">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">列表页分页</label>
+						<div class="layui-input-block">
+							<div class="layui-input-inline" style="width: 100px;">
+						      <input type="text" name="s" placeholder="起始页" autocomplete="off" class="layui-input" lay-verify="required" {if condition="isset($v.s)"}value="{$v.s}"{/if}>
+						    </div>
+						    <div class="layui-form-mid">-</div>
+						    <div class="layui-input-inline" style="width: 100px;">
+						      <input type="text" name="d" placeholder="末尾页" autocomplete="off" class="layui-input" lay-verify="required" {if condition="isset($v.d)"}value="{$v.d}"{/if}>
+						    </div>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">采集到栏目</label>
+						<div class="layui-input-block">
+							<select name="cid" class="cid" lay-verify="required">
+								<option value="">选择栏目</option>
+								{volist name="list" id="l"}
+									{if condition="in_array($l.id,$pid)"}
+									<option value="{$l.id}" disabled>{$l._name}</option>
+									{elseif condition="isset($v.cid)"/}
+									<option {eq name="l.id" value="$v.cid"}selected{/eq} value="{$l.id}">{$l._name}</option>
+									{else /}
+									<option value="{$l.id}">{$l._name}</option>
+									{/if}
+								{/volist}
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">列表标题</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input titlegz" name="titlegz" {if condition="isset($v.titlegz)"}value="{$v.titlegz}"{/if} lay-verify="required" placeholder="请输入标题标记,如:.news li">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">列表链接</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input urlgz" name="urlgz" {if condition="isset($v.urlgz)"}value="{$v.urlgz}"{/if} lay-verify="required" placeholder="请输入链接标记,如:.news li a[href]">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">发布时间</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input timegz" name="timegz" {if condition="isset($v.timegz)"}value="{$v.timegz}"{/if}  placeholder="请输入日期标记,如:.time">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">题图标记</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input imgz" name="imgz" {if condition="isset($v.imgz)"}value="{$v.imgz}"{/if}  placeholder="请输入题图标记,如:.pic img">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">浏览量标记</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input clickgz" name="clickgz" {if condition="isset($v.clickgz)"}value="{$v.clickgz}"{/if}  placeholder="请输入浏览量标记,如:.click">
+						</div>
+					</div>
+				  </div>
+				</fieldset>
+			</div>
+			<div class="layui-col-md6 layui-col-xs12">
+				<fieldset class="layui-elem-field">
+				  <legend>第二步：正文页规则</legend>
+				  <div class="layui-field-box">
+				  	<div class="layui-form-item" style="padding-top:20px;">
+						<label class="layui-form-label">数据源编码</label>
+						<div class="layui-input-block">							
+							<select name="bm" class="bm" lay-verify="required">								
+								{if condition="isset($v.bm)"/}
+								<option {eq name="$v.bm" value="0"}selected{/eq} value="0">utf-8</option>
+								<option {eq name="$v.bm" value="1"}selected{/eq} value="1">gbk</option>
+								{else /}
+								<option value="0">utf-8</option>
+								<option value="1">gbk</option>>
+								{/if}								
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">文章标题</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input ntgz" name="ntgz" {if condition="isset($v.ntgz)"}value="{$v.ntgz}"{/if} lay-verify="required" placeholder="请输入文章标题标记,如:.title">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">文章关键字</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input keywordgz" {if condition="isset($v.keywordgz)"}value="{$v.keywordgz}"{/if} value=""  placeholder="请输入关键字标记,如:meta[name='keywords']">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">文章描述</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input descgz" name="descgz" {if condition="isset($v.descgz)"}value="{$v.descgz}"{/if}  placeholder="请输入关键字标记,如:meta[name='description']">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">文章正文</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input contgz" name="contgz" {if condition="isset($v.contgz)"}value="{$v.contgz}"{/if}  lay-verify="required" placeholder="请输入关键字标记,如:.content">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">文章作者</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input authorgz" name="authorgz" {if condition="isset($v.authorgz)"}value="{$v.authorgz}"{/if}  placeholder="请输入文章作者,如:.title span:eq(1)">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">文章来源</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input fromgz" name="fromgz" {if condition="isset($v.fromgz)"}value="{$v.fromgz}"{/if} placeholder="请输入文章来源标记,如:.title span:eq(2)">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">文章日期</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input ntime" name="ntime" {if condition="isset($v.ntime)"}value="{$v.ntime}"{/if}  placeholder="请输入文章日期标记,如:.title span:eq(3)">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">文章点击量</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input hitgz" name="hitgz" {if condition="isset($v.hitgz)"}value="{$v.hitgz}"{/if}  placeholder="请输入文章点击量标记,如:.title span:eq(4)">
+						</div>
+					</div>
+				  </div>
+				</fieldset>
+				<div class="layui-left">
+				<input type="hidden" name="id" class="id" {if condition="isset($v.id)"}value="{$v.id}"{/if}></input>
+				<a class="layui-btn" lay-filter="addNews" lay-submit><i class="layui-icon">&#xe609;</i>保存规则</a>
+			</div>
+			</div>						
+		</div>
+	</div>
+</form>
+{js href="__STATIC__/js/jquery.min.js"}
+{js href="__STATIC__/layui/layui.js"}
+<script>
+layui.use(['form','layer','layedit','laydate'],function(){
+    var form = layui.form,
+        layer = parent.layer === undefined ? layui.layer : top.layer,
+        laypage = layui.laypage,
+        layedit = layui.layedit,
+        laydate = layui.laydate,
+        $ = layui.jquery;
+
+    
+    form.on("submit(addNews)",function(data){        
+        var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
+        // 实际使用时的提交信息
+        $.post("{:url('collect/runadd')}",{
+            name : $(".name").val(), 
+            site : $(".site").val(), 
+            url : $('.url').val(),
+            cid : $('.cid').val(),
+            s : $('input[name=s]').val(),
+            d:$('input[name=d]').val(),
+            titlegz:$('.titlegz').val(),
+            urlgz:$('.urlgz').val(),
+            timegz:$('.timegz').val(),
+            imgz:$('.imgz').val(),
+            clickgz : $('.clickgz').val(),
+            bm : $('.bm').val(),
+            ntgz : $('.ntgz').val(),
+            keywordgz : $('.keywordgz').val(),
+            descgz : $('.descgz').val(),
+            contgz : $('.contgz').val(),
+            authorgz : $('.authorgz').val(),
+            fromgz : $('.fromgz').val(),
+            ntime : $('.ntime').val(),
+            hitgz : $('.hitgz').val(),
+            id : $('.id').val()
+        },function(res){        	
+        	if(res){
+        		top.layer.close(index);
+	            top.layer.msg("保存成功！");
+	            layer.closeAll("iframe");
+	            //刷新父页面
+	            parent.location.reload();
+        	}else{
+        		top.layer.msg("保存失败！");
+        	}
+        })
+        return false;
+    })
+})
+</script>
+</body>
+</html>
