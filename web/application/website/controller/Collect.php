@@ -148,7 +148,11 @@ class Collect extends Common{
 				            'www_root' => dirname(__FILE__)
 				        ]);
 				    return $item;});
-			}else{$data=\QL\QueryList::Query($url,$rules)->data;}
+			}elseif($rs['bm']){
+				$data=\QL\QueryList::Query($url,$rules,'','UTF-8','GB2312')->data;
+			}else{
+				$data=\QL\QueryList::Query($url,$rules)->data;
+			}
 			foreach($data as $k=>$v){
 				if(strpos($v['url'],$rs['site']) == false){$data[$k]['url']=$rs['site'].$v['url'];}
 				$rk=array('cid'=>$rs['id'],'title'=>$v['title'],'url'=>$v['url']);
