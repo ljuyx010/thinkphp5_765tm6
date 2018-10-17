@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\collect\add.html";i:1539221022;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\collect\add.html";i:1539574981;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +30,7 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">数据源域名</label>
 						<div class="layui-input-block">
-							<input type="text" class="layui-input site" name="site" <?php if(isset($v['site'])): ?>value="<?php echo $v['site']; ?>"<?php endif; ?> lay-verify="url" placeholder="请输入数据源域名">
+							<input type="text" class="layui-input site" name="site" <?php if(isset($v['site'])): ?>value="<?php echo $v['site']; ?>"<?php endif; ?> placeholder="请输入数据源域名">
 						</div>
 					</div>
 					<div class="layui-form-item">

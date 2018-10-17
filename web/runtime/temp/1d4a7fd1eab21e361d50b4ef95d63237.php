@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\collect\test.html";i:1539334543;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\collect\test.html";i:1539576174;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +44,7 @@
 	      <td><?php if(isset($v['img'])): ?><img src="<?php echo $v['img']; ?>" height="26"><?php endif; ?></td>
 	      <td><?php if(isset($v['time'])): ?><?php echo $v['time']; endif; ?></td>
 	      <td><?php if(isset($v['click'])): ?><?php echo $v['click']; endif; ?></td>
-	      <td><a class="layui-btn layui-btn-xs" onclick="testn('<?php echo urlencode($v['url']); ?>')">测试内容页</a></td>
+	      <td><a class="layui-btn layui-btn-xs" onclick="testn('<?php echo urlencode($v['surl']); ?>')">测试内容页</a></td>
 	    </tr>
 		<?php endforeach; endif; else: echo "" ;endif; ?>
 	  </tbody>
@@ -67,7 +67,7 @@
 				layer.open({
 					type: 1, 
 					title: "采集内页测试",
-					area: ['100%', '500px'],
+					area: ['100%', 'auto'],
 					content: result
 
 				}); 

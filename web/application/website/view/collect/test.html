@@ -43,7 +43,7 @@
 	      <td>{if condition="isset($v.img)"}<img src="{$v.img}" height="26">{/if}</td>
 	      <td>{if condition="isset($v.time)"}{$v.time}{/if}</td>
 	      <td>{if condition="isset($v.click)"}{$v.click}{/if}</td>
-	      <td><a class="layui-btn layui-btn-xs" onclick="testn('{:urlencode($v.url)}')">测试内容页</a></td>
+	      <td><a class="layui-btn layui-btn-xs" onclick="testn('{:urlencode($v.surl)}')">测试内容页</a></td>
 	    </tr>
 		{/volist}
 	  </tbody>
@@ -66,7 +66,7 @@
 				layer.open({
 					type: 1, 
 					title: "采集内页测试",
-					area: ['100%', '500px'],
+					area: ['100%', 'auto'],
 					content: result
 
 				}); 

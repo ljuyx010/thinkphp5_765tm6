@@ -17,7 +17,7 @@
 		<colgroup>
 	    <col width="200">
 	    <col>
-	    <col width="100">
+	    <col>
 	  </colgroup>
 	  <thead>
 	    <tr>
@@ -27,11 +27,13 @@
 	    </tr> 
 	  </thead>
 	  <tbody>
+	  {volist name='jg' id='v'}
 	    <tr>
-	      <td>{$id}</td>
-	      <td>{$title}</td>
-	      <td>{if condition="$zt"}成功{else/}失败{/if}</td>
+	      <td>{$v.id}</td>
+	      <td>{$v.title}</td>
+	      <td>{if condition="$v.zt eq 1"}成功{elseif condition="$v.zt eq 2"/}重复内容已忽略{else /}失败{/if}</td>
 	    </tr>
+	  {/volist}
 	  </tbody>
 	</table>
 	{js href="__STATIC__/js/jquery.min.js"}
