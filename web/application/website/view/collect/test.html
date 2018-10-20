@@ -43,7 +43,7 @@
 	      <td>{if condition="isset($v.img)"}<img src="{$v.img}" height="26">{/if}</td>
 	      <td>{if condition="isset($v.time)"}{$v.time}{/if}</td>
 	      <td>{if condition="isset($v.click)"}{$v.click}{/if}</td>
-	      <td><a class="layui-btn layui-btn-xs" onclick="testn('{:urlencode($v.surl)}')">测试内容页</a></td>
+	      <td><a class="layui-btn layui-btn-xs" onclick="testn('{:urlencode($v.url)}')">测试内容页</a></td>
 	    </tr>
 		{/volist}
 	  </tbody>
@@ -56,22 +56,12 @@
     });
 
     function testn(url){
-		$.ajax({
-			url: "{:url('collect/test',['id'=>$id])}", 
-			type: 'POST',
-			data: {u:url}, 
-			dataType : "json",
-			success: function (result){
-				var d=result;
-				layer.open({
-					type: 1, 
-					title: "采集内页测试",
-					area: ['100%', 'auto'],
-					content: result
-
-				}); 
-			}
-		})
+    	layer.open({
+			type: 2, 
+			title: "采集内页测试",
+			area: ['100%', '100%'],
+			content: "{:url('collect/test',['id'=>$id],'')}?u="+url
+		}); 		
 	}
 	</script>
 </body>

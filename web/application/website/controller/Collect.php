@@ -71,27 +71,19 @@ class Collect extends Common{
 	public function test(){
 		vendor("QL.QueryList");
 		$rs=db('collect')->where('id',input('id'))->find();
-		if(!$rs['site']){$rs['site']="/";}
+		$site=array('base'=>$rs['site'],'img'=>$rs['imgsite']);
 		if(!input('u')){
 			$rules=array(
 				'title'=>array($rs['titlegz'],'text'),
-				'url'=>array($rs['urlgz'],'href')			
+				'url'=>array($rs['urlgz'],'href','',function($url) use($site){if(strpos($url,$site['base'])===false) $url=$site['base'].$url; return $url;})			
 			);
 			if($rs['timegz']) $rules['time']=array($rs['timegz'],'text');
-			if($rs['imgz']) $rules['img']=array($rs['imgz'],'src');
+			if($rs['imgz']) $rules['img']=array($rs['imgz'],'src','',function($img) use($site){$s=$site['img'] ?:$site['base'];if(strpos($img,$s)===false) $img=$s.$img; return $img;});
 			if($rs['clickgz']) $rules['click']=array($rs['clickgz'],'text');
 			$url=str_replace("{p}",$rs['s'],$rs['url']);
-			if($rs['bm']){
-				$data=\QL\QueryList::Query($url,$rules,'','UTF-8','GB2312')->data;
-			}else{
-				$data=\QL\QueryList::Query($url,$rules)->data;
-			}
-			foreach($data as $k=>$v){
-				if(strpos($v['url'],$rs['site']) == false){$data[$k]['surl']=$rs['site'].$v['url'];}
-				if(isset($v['img'])){
-					if(strpos($v['img'],$rs['site']) == false){$data[$k]['img']=$rs['site'].$v['img'];}
-				}			
-			}	
+			if($rs['bm']){$html = iconv('GBK','UTF-8',file_get_contents($url));}else{$html=file_get_contents($url);}			
+			$data=\QL\QueryList::Query($html,$rules)->data;
+			
 			$this->assign('id',input('id'));			
 			$this->assign('list',$data);
 			return $this->fetch();
@@ -107,11 +99,8 @@ class Collect extends Common{
 			if($rs['fromgz']) $rules['from']=array($rs['fromgz'],'text');
 			if($rs['ntime']) $rules['time']=array($rs['ntime'],'text');
 			if($rs['hitgz']) $rules['click']=array($rs['hitgz'],'text');
-			if($rs['bm']){
-				$data=\QL\QueryList::Query($url,$rules,'','UTF-8','GB2312')->data;
-			}else{
-				$data=\QL\QueryList::Query($url,$rules)->data;
-			}
+			if($rs['bm']){$html = iconv('GBK','UTF-8',file_get_contents($url));}else{$html=file_get_contents($url);}
+			$data=\QL\QueryList::Query($html,$rules)->data;
 			$this->assign('v',$data);
 			return $this->fetch('nei');
 		}
@@ -122,44 +111,33 @@ class Collect extends Common{
 		vendor("QL.QueryList");
 		$rs=db('collect')->where('id',input('id'))->find();
 		db('collect')->where('id',input('id'))->setField('time',time());
-		if(!$rs['site']){$rs['site']="/";}
+		$site=array('base'=>$rs['site'],'img'=>$rs['imgsite']);
 		$rules=array(
 			'title'=>array($rs['titlegz'],'text'),
-			'url'=>array($rs['urlgz'],'href')			
+			'url'=>array($rs['urlgz'],'href','',function($url) use($site){if(strpos($url,$site['base'])===false) $url=$site['base'].$url; return $url;})	
 		);
 		if($rs['timegz']) $rules['time']=array($rs['timegz'],'text','',function($time){return strtotime($time);});
-		if($rs['imgz']) $rules['img']=array($rs['imgz'],'src');
+		if($rs['imgz']) $rules['img']=array($rs['imgz'],'src','',function($img) use($site){$s=$site['img'] ?:$site['base'];if(strpos($img,$s)===false) $img=$s.$img; return $img;});
 		if($rs['clickgz']) $rules['click']=array($rs['clickgz'],'text');
-		$js=0;$GLOBALS['base']=$rs['site'];
+		$js=0;$jg=array();
 		while ($rs['s'] <= $rs['d']) {
 		 	$url=str_replace("{p}",$rs['s'],$rs['url']);
-			if($rs['bm'] && $rs['imgz']){				
-				$data=\QL\QueryList::Query($url,$rules,'','UTF-8','GB2312')->getData(function($item){
-				    //图片本地化
+			if($rs['bm']){$html = iconv('GBK','UTF-8',file_get_contents($url));}else{$html=file_get_contents($url);}
+			if($rs['imgz']){				
+				$data=\QL\QueryList::Query($html,$rules)->getData(function($item){
+				    //图片本地化				    
 				    $item['img'] = \QL\QueryList::run('Dimage',[
 				            'content' => "<img src='".$item['img']."' />",
 				            'image_path' => '/img/'.date('Y-m-d'),
 				            'www_root' => ROOT_PATH,
-				            'base_url' => $GLOBALS['base'],
 				        ]);
-				    return $item;});
-			}elseif($rs['imgz']){
-				$data=\QL\QueryList::Query($url,$rules)->getData(function($item){
-				    //图片本地化
-				    $item['img'] = \QL\QueryList::run('Dimage',[
-				            'content' => "<img src='".$item['img']."' />",
-				            'image_path' => '/img/'.date('Y-m-d'),
-				            'www_root' => ROOT_PATH,
-				            'base_url' => $GLOBALS['base'],
-				        ]);
-				    return $item;});
-			}elseif($rs['bm']){
-				$data=\QL\QueryList::Query($url,$rules,'','UTF-8','GB2312')->data;
+				    return $item;
+				});				
 			}else{
-				$data=\QL\QueryList::Query($url,$rules)->data;
+				$data=\QL\QueryList::Query($html,$rules)->data;
 			}
-			foreach($data as $k=>$v){
-				if(strpos($v['url'],$rs['site']) == false){$v['url']=$rs['site'].$v['url'];}
+
+			foreach($data as $k=>$v){				
 				$rk=array('cid'=>$rs['id'],'title'=>$v['title'],'url'=>$v['url']);
 				if(isset($v['time'])){$rk['time']=$v['time'];}
 				if(isset($v['click'])){$rk['click']=$v['click'];}
@@ -198,12 +176,13 @@ class Collect extends Common{
 		vendor("QL.QueryList");
 		$where['l.id']=input('id') ? input('id') : array('in',input('ids/a'));
 		$rs=db('collect_list')->alias('l')->join('collect c','l.cid = c.id')
-		->field('l.*,c.cid as cateid,c.bm,c.site,c.ntgz,c.keywordgz,c.descgz,c.contgz,c.authorgz,c.fromgz,c.ntime,c.hitgz')
+		->field('l.*,c.cid as cateid,c.imgsite,c.bm,c.site,c.ntgz,c.keywordgz,c.descgz,c.contgz,c.authorgz,c.fromgz,c.ntime,c.hitgz')
 		->where($where)->select();
 		foreach ($rs as $k => $v) {
+			$site['img']=$v['imgsite']?:$v['site'];
 			$rules=array(
 				'title'=>array($v['ntgz'],'text'),
-				'nei'=>array($v['contgz'],'html','-script div'),
+				'content'=>array($v['contgz'],'html','-script div'),
 			);
 			if($v['descgz']) $rules['description']=array($v['descgz'],'content');
 			if($v['keywordgz']) $rules['keyword']=array($v['keywordgz'],'content');
@@ -211,38 +190,28 @@ class Collect extends Common{
 			if($v['fromgz']) $rules['from']=array($v['fromgz'],'text');
 			if($v['ntime']) $rules['time']=array($v['ntime'],'text');
 			if($v['hitgz']) $rules['click']=array($v['hitgz'],'text');
-			$GLOBALS['base']=$v['site'];
-			if($v['bm']){				
-				$data=\QL\QueryList::Query($v['url'],$rules,'','UTF-8','GB2312')->getData(function($items){
-				    //图片本地化
-				    p($items);				    
-				    $items['content'] = \QL\QueryList::run('Dimage',[
-				            'content' => $items['nei'],
-				            'image_path' => '/img/'.date('Y-m-d'),
-				            'www_root' => ROOT_PATH,
-				            'base_url' => $GLOBALS['base'],
-				        ]);
-				    return $items;
-				 });
-			}else{
-				$data=\QL\QueryList::Query($v['url'],$rules)->getData(function($item){
-				    //图片本地化
-				    $item['content'] = \QL\QueryList::run('Dimage',[
-				            'content' => $item['nei'],
-				            'image_path' => '/img/'.date('Y-m-d'),
-				            'www_root' => ROOT_PATH,
-				            'base_url' => $GLOBALS['base'],
-				        ]);
-				    return $item;});
-			}
-			$a=array('cid'=>$v['cateid'],'content'=>$data[0]['content'],'uid'=>session('user.id'));
+			if($v['bm']){$html = iconv('GBK','UTF-8',file_get_contents($v['url']));}else{$html=file_get_contents($v['url']);}		
+				
+			$data=\QL\QueryList::Query($html,$rules)->getData(function($item) use($site){
+			    //图片本地化
+			    $item['content'] = \QL\QueryList::run('Dimage',[
+			            'content' => $item['content'],
+			            'image_path' => '/img/'.date('Y-m-d'),
+			            'www_root' => ROOT_PATH,
+			            'base_url' => $site['img'],
+			        ]);
+			    return $item;
+			});
+
+			$a=array('pic'=>$v['img'],'cid'=>$v['cateid'],'content'=>htmlspecialchars($data[0]['content']),'uid'=>session('user.id')?:0);
 			if($data[0]['title']){$a['title']=$data[0]['title']?$data[0]['title']:$v['title'];}
 			if(isset($data[0]['keyword'])) $a['keyword']=$data[0]['keyword'];
 			if(isset($data[0]['description'])) $a['description']=$data[0]['description'];
 			if(isset($data[0]['author'])) $a['author']=$data[0]['author'];
 			if(isset($data[0]['from'])) $a['from']=$data[0]['from'];
-			if(isset($data[0]['time'])) {$a['time']=$data[0]['time']?strtotime($data[0]['time']):$v['time'];};
-			if(isset($data[0]['click'])) $a['click']=$data[0]['click'];
+			if($v['time']) {$a['time']=$v['time'];}elseif(isset($data[0]['time'])){$a['time']=strtotime($data[0]['time']);}else{$a['time']=time();};
+			if(isset($data[0]['click'])) $a['click']=$data[0]['click'];	
+					
 			if(db('article')->insert($a)){
 				db('collect_list')->where('id',$v['id'])->setField('stuts',1);
 			}

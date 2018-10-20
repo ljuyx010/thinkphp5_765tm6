@@ -33,8 +33,9 @@
 	{js href="__STATIC__/js/jquery.min.js"}
 	{js href="__STATIC__/layui/layui.js"}
 	<script>
-layui.use(['form','layer','laydate','table','laytpl'],function(){
+layui.use(['form','element','layer','laydate','table','laytpl'],function(){
     var form = layui.form,
+    	element = parent.layui.element,
         layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
         laydate = layui.laydate,
@@ -116,16 +117,21 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
     //列表操作
     table.on('tool(newsList)', function(obj){
         var layEvent = obj.event,
+        	openTitle = '',
             data = obj.data;
         if(layEvent === 'edit'){ //编辑
             addNews(data);            
         } else if(layEvent === 'test'){ //运行
-            var index = layer.open({
-            title : "测试规则",
-            type : 2,
-            area : ["90%","600px"],
-            content : "{:url('collect/test','','')}/id/"+data.id
-        	})
+        	var surl="{:url('collect/test','','')}/id/"+data.id;
+        	openTitle += '<cite>测试' + data.name + '</cite>';
+            openTitle += '<i class="layui-icon layui-unselect layui-tab-close" data-id="' + data.id + '">&#x1006;</i>';
+            element.tabAdd("bodyTab", {
+                title: openTitle,
+                content: "<iframe src='" + surl + "' data-id='" + data.id + "'></frame>",
+                id: data.id
+            });
+            element.tabChange("bodyTab", data.id);
+
         } else if(layEvent === 'run'){ //测试
            	var index = layer.open({
             title : "测试规则",

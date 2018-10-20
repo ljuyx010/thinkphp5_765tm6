@@ -33,6 +33,12 @@
 						</div>
 					</div>
 					<div class="layui-form-item">
+						<label class="layui-form-label">图片源域名</label>
+						<div class="layui-input-block">
+							<input type="text" class="layui-input imgsite" name="imgsite" {if condition="isset($v.imgsite)"}value="{$v.imgsite}"{/if} placeholder="如果数据源和图片源域名一致可空">
+						</div>
+					</div>
+					<div class="layui-form-item">
 						<label class="layui-form-label">列表页地址</label>
 						<div class="layui-input-block">
 							<input type="text" class="layui-input url" name="url" {if condition="isset($v.url)"}value="{$v.url}"{/if} lay-verify="url" placeholder="请输入数据页面地址，分页用{p}表示">
@@ -194,6 +200,7 @@ layui.use(['form','layer','layedit','laydate'],function(){
         $.post("{:url('collect/runadd')}",{
             name : $(".name").val(), 
             site : $(".site").val(), 
+            imgsite : $(".imgsite").val(), 
             url : $('.url').val(),
             cid : $('.cid').val(),
             s : $('input[name=s]').val(),
