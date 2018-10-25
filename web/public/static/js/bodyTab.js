@@ -11,15 +11,9 @@ layui.define(["element","jquery"],function(exports){
 				url : undefined  //获取菜单json地址
 			}
 		};
-    //生成左侧菜单
-    Tab.prototype.navBar = function(strData){
-        var data;
-        if(typeof(strData) === "string"){
-            data = JSON.parse(strData); //部分用户解析出来的是字符串，转换一下
-        }else{
-            data = strData;
-        }
-        var ulHtml = '';
+
+	function nfinitus(data){		
+		var ulHtml = '';
         for(var i=0;i<data.length;i++){
             if(data[i].spread || data[i].spread === undefined){
                 ulHtml += '<li class="layui-nav-item layui-nav-itemed">';
@@ -34,15 +28,28 @@ layui.define(["element","jquery"],function(exports){
                 ulHtml += '</a>';
                 ulHtml += '<dl class="layui-nav-child">';
                 for(var j=0;j<data[i].children.length;j++){
-                    if(data[i].children[j].target == "_blank"){
-                        ulHtml += '<dd><a data-url="'+data[i].children[j].href+'" target="'+data[i].children[j].target+'">';
-                    }else{
-                        ulHtml += '<dd><a data-url="'+data[i].children[j].href+'">';
-                    }
-                    if(data[i].children[j].icon != undefined && data[i].children[j].icon != ''){
-                        ulHtml += '<i class="'+data[i].children[j].icon+'" data-icon="'+data[i].children[j].icon+'"></i>';
-                    }
-                    ulHtml += '<cite>'+data[i].children[j].title+'</cite></a></dd>';
+                	var child=data[i].children[j];
+                	if(child.children !== undefined && child.children.length > 0){
+                		ulHtml += '<li class="layui-nav-item"><a>';
+		                ulHtml += '<i class="'+child.icon+'" data-icon="'+child.icon+'"></i>';
+		                ulHtml += '<cite>'+child.title+'</cite>';
+		                ulHtml += '<span class="layui-nav-more"></span>';
+		                ulHtml += '</a>';
+		                ulHtml += '<dl class="layui-nav-child">';
+                		ulHtml += nfinitus(child.children);
+                		ulHtml += '</li>';
+                	}else{
+                		if(child.target == "_blank"){
+                        ulHtml += '<dd><a data-url="'+child.href+'" target="'+child.target+'">';
+	                    }else{
+	                        ulHtml += '<dd><a data-url="'+child.href+'">';
+	                    }
+	                    if(child.icon != undefined && child.icon != ''){
+	                        ulHtml += '<i class="'+child.icon+'" data-icon="'+child.icon+'"></i>';
+	                    }
+	                    ulHtml += '<cite>'+child.title+'</cite></a></dd>';
+                	}
+                    
                 }
                 ulHtml += "</dl>";
             }else{
@@ -56,7 +63,19 @@ layui.define(["element","jquery"],function(exports){
             }
             ulHtml += '</li>';
         }
+
         return ulHtml;
+	}
+    //生成左侧菜单
+    Tab.prototype.navBar = function(strData){
+        var data;
+        if(typeof(strData) === "string"){
+            data = JSON.parse(strData); //部分用户解析出来的是字符串，转换一下
+        }else{
+            data = strData;
+        }
+        return nfinitus(data);
+        
     };
 	//获取二级菜单数据
 	Tab.prototype.render = function() {

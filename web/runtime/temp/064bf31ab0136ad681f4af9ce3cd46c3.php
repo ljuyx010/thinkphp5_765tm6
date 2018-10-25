@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html";i:1535782714;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html";i:1540452173;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,8 +105,8 @@
             <i class="layui-icon">&#xe615;</i>
         </div>-->
         <div class="navBar layui-side-scroll" id="navBar" style="border-bottom: 1px dashed #454545">
-            <ul class="layui-nav layui-nav-tree">
-                <li class="layui-nav-item layui-this">
+            <ul class="layui-nav layui-nav-tree" id="tree">
+                <li class="layui-nav-item layui-this">                
                     <a href="javascript:;" data-url="<?php echo url('index/main'); ?>"><i class="layui-icon" data-icon="&#xe68e;"></i><cite>后台首页</cite></a>
                 </li>
             </ul>

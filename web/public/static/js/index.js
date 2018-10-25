@@ -49,9 +49,9 @@ window.getData = function(id){
 		}
 		$(".layui-layout-admin").removeClass("showMenu");
 		$("body").addClass("site-mobile");
-		getData($(this).data("menu"));
-		//渲染顶部窗口
-		tab.tabMove();
+        getData($(this).data("menu"));
+        //渲染顶部窗口
+        tab.tabMove();		
 	});
 
 	//隐藏左侧导航
