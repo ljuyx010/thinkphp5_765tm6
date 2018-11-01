@@ -1,0 +1,2173 @@
+---------------------------------------------------------------
+[ 2018-10-26T09:12:59+08:00 ] 127.0.0.1 GET /website/index
+[ info ] 127.0.0.5/website/index [运行时间：0.848350s][吞吐率：1.18req/s] [内存消耗：2,015.18kb] [文件加载：53]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'Dp',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.077624s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.123407s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.016537s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000820s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:13:00+08:00 ] 127.0.0.1 GET /website/index/main.html
+[ info ] 127.0.0.5/website/index/main.html [运行时间：0.181820s][吞吐率：5.50req/s] [内存消耗：1,966.34kb] [文件加载：52]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index/main.html',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->main[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011609s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.009226s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000668s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:13:00+08:00 ] 127.0.0.1 GET /website/index/getmenu/id/1
+[ info ] 127.0.0.5/website/index/getmenu/id/1 [运行时间：0.261597s][吞吐率：3.82req/s] [内存消耗：2,055.80kb] [文件加载：54]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'getmenu',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index/getmenu/id/1',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ RUN ] app\website\controller\Index->getmenu[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011160s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.008937s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001081s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000898s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_nav` [ RunTime:0.052234s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name` AS `title`,`ico` AS `icon`,`url` AS `href`,`orders` FROM `Dp_nav` WHERE  `display` = 1 ORDER BY `orders` ASC,`id` ASC [ RunTime:0.018286s ]
+---------------------------------------------------------------
+[ 2018-10-26T09:13:29+08:00 ] 127.0.0.1 GET /website/auth/access
+[ info ] 127.0.0.5/website/auth/access [运行时间：0.148819s][吞吐率：6.72req/s] [内存消耗：1,760.97kb] [文件加载：47]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'auth',
+    2 => 'access',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/auth/access',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002940s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.007627s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000819s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:47:33+08:00 ] 127.0.0.1 GET /website/auth/access
+[ info ] 127.0.0.5/website/auth/access [运行时间：0.157254s][吞吐率：6.36req/s] [内存消耗：1,773.93kb] [文件加载：47]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'auth',
+    2 => 'access',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/auth/access',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/auth/access',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018486s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.008096s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000669s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000623s ]
+[ error ] [4]语法错误: unexpected '}', expecting ',' or ';'[D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Auth.php:8]
+---------------------------------------------------------------
+[ 2018-10-26T10:47:54+08:00 ] 127.0.0.1 GET /website/auth/access
+[ info ] 127.0.0.5/website/auth/access [运行时间：0.093435s][吞吐率：10.70req/s] [内存消耗：1,950.30kb] [文件加载：51]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'auth',
+    2 => 'access',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/auth/access',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/auth/access',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Auth->access[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Auth.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001919s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.009247s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000450s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:51:48+08:00 ] 127.0.0.1 GET /website/auth/access
+[ info ] 127.0.0.5/website/auth/access [运行时间：0.102076s][吞吐率：9.80req/s] [内存消耗：1,950.30kb] [文件加载：51]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'auth',
+    2 => 'access',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/auth/access',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/auth/access',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Auth->access[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Auth.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002227s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.008749s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000507s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:51:52+08:00 ] 127.0.0.1 GET /website/auth/access
+[ info ] 127.0.0.5/website/auth/access [运行时间：0.090859s][吞吐率：11.01req/s] [内存消耗：1,950.30kb] [文件加载：51]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'auth',
+    2 => 'access',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/auth/access',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/auth/access',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Auth->access[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Auth.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002428s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.007718s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000813s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000569s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:52:01+08:00 ] 127.0.0.1 GET /website/auth/access
+[ info ] 127.0.0.5/website/auth/access [运行时间：0.100312s][吞吐率：9.97req/s] [内存消耗：1,950.13kb] [文件加载：51]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'auth',
+    2 => 'access',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/auth/access',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Auth->access[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Auth.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002545s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.010695s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000389s ]
+---------------------------------------------------------------
+[ 2018-10-26T10:52:39+08:00 ] 127.0.0.1 GET /website/auth/access
+[ info ] 127.0.0.5/website/auth/access [运行时间：0.113788s][吞吐率：8.79req/s] [内存消耗：1,950.30kb] [文件加载：51]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'auth',
+    2 => 'access',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/auth/access',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/auth/access',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Auth->access[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Auth.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012100s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.009999s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000839s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000737s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:12:33+08:00 ] 127.0.0.1 GET /website/cate/index
+[ info ] 127.0.0.5/website/cate/index [运行时间：0.204215s][吞吐率：4.90req/s] [内存消耗：2,188.90kb] [文件加载：56]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'cate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/cate/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Cate->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Cate.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\cate\index.html [ array (
+  0 => 'pid',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007375s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.007334s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_cate` [ RunTime:0.037397s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name`,`model`,`orders`,`isf` FROM `Dp_cate` ORDER BY `orders` ASC,`id` ASC [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_cate` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.000700s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:12:42+08:00 ] 127.0.0.1 GET /website/siteset/index
+[ info ] 127.0.0.5/website/siteset/index [运行时间：0.138166s][吞吐率：7.24req/s] [内存消耗：2,140.84kb] [文件加载：55]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'siteset',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/siteset/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Siteset->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Siteset.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\siteset\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004045s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.009547s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000700s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'sets' LIMIT 1 [ RunTime:0.000794s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:15:45+08:00 ] 127.0.0.1 GET /website/info/lists
+[ info ] 127.0.0.5/website/info/lists [运行时间：0.145921s][吞吐率：6.85req/s] [内存消耗：2,132.80kb] [文件加载：55]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'info',
+    2 => 'lists',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/info/lists',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Info->lists[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Info.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\info\lists.html [ array (
+  0 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002928s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.010299s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000628s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000553s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_info` [ RunTime:0.016059s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `Dp_info` WHERE  `cid` = 0 [ RunTime:0.000544s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:15:47+08:00 ] 127.0.0.1 GET /website/siteset/mail
+[ info ] 127.0.0.5/website/siteset/mail [运行时间：0.128004s][吞吐率：7.81req/s] [内存消耗：2,135.49kb] [文件加载：55]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'siteset',
+    2 => 'mail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/siteset/mail',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Siteset->mail[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Siteset.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\siteset\mail.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003137s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.011248s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001444s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000799s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.002396s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:15:49+08:00 ] 127.0.0.1 GET /website/siteset/wechat
+[ info ] 127.0.0.5/website/siteset/wechat [运行时间：0.136550s][吞吐率：7.32req/s] [内存消耗：2,132.27kb] [文件加载：55]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'siteset',
+    2 => 'wechat',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/siteset/wechat',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Siteset->wechat[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Siteset.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\siteset\wechat.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005371s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.009432s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000701s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:15:53+08:00 ] 127.0.0.1 GET /website/banner/type
+[ info ] 127.0.0.5/website/banner/type [运行时间：0.230693s][吞吐率：4.33req/s] [内存消耗：2,148.12kb] [文件加载：55]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'banner',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/banner/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Banner->type[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Banner.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\banner\type.html [ array (
+  0 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003990s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.009514s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001298s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000714s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_type` [ RunTime:0.066751s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_type` WHERE  `type` = 'banner' ORDER BY `orders` ASC,`id` ASC [ RunTime:0.000999s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:15:54+08:00 ] 127.0.0.1 GET /website/banner/index
+[ info ] 127.0.0.5/website/banner/index [运行时间：0.134790s][吞吐率：7.42req/s] [内存消耗：2,132.14kb] [文件加载：55]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'banner',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/banner/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Banner->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Banner.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\banner\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003369s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.008735s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000377s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:15:55+08:00 ] 127.0.0.1 POST /website/banner/page.html
+[ info ] 127.0.0.5/website/banner/page.html [运行时间：0.184980s][吞吐率：5.41req/s] [内存消耗：1,978.27kb] [文件加载：52]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'banner',
+    2 => 'page',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/banner/page.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/banner/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Banner->page[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Banner.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003873s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.009186s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_adv` [ RunTime:0.033707s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,pic as src,`orders` FROM `Dp_adv` ORDER BY `orders` ASC,`id` ASC [ RunTime:0.000627s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:17:23+08:00 ] 127.0.0.1 GET /website/cate/index
+[ info ] 127.0.0.5/website/cate/index [运行时间：0.108483s][吞吐率：9.22req/s] [内存消耗：1,790.74kb] [文件加载：48]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'cate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/cate/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004103s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.013209s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001226s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.001046s ]
+[ error ] [4]语法错误: unexpected '"<script>top.layer.msg('Sorry�' (T_CONSTANT_ENCAPSED_STRING)[D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Common.php:10]
+---------------------------------------------------------------
+[ 2018-10-26T11:17:52+08:00 ] 127.0.0.1 GET /website/cate/index
+[ info ] 127.0.0.5/website/cate/index [运行时间：0.100044s][吞吐率：10.00req/s] [内存消耗：1,899.35kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'cate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/cate/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/cate/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011426s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.007819s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000798s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000643s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:21:31+08:00 ] 127.0.0.1 GET /website/cate/index
+[ info ] 127.0.0.5/website/cate/index [运行时间：0.113868s][吞吐率：8.78req/s] [内存消耗：1,899.21kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'cate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/cate/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003654s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.010702s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.002012s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:31:11+08:00 ] 127.0.0.1 GET /website/index
+[ info ] 127.0.0.5/website/index [运行时间：0.118976s][吞吐率：8.41req/s] [内存消耗：1,897.91kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006525s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.011166s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000483s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:31:23+08:00 ] 127.0.0.1 GET /website/index
+[ info ] 127.0.0.5/website/index [运行时间：0.099475s][吞吐率：10.05req/s] [内存消耗：2,015.34kb] [文件加载：53]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'Dp',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002766s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.011893s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000551s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:31:24+08:00 ] 127.0.0.1 GET /website/index/main.html
+[ info ] 127.0.0.5/website/index/main.html [运行时间：0.104139s][吞吐率：9.60req/s] [内存消耗：1,966.34kb] [文件加载：52]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index/main.html',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->main[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002228s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.010600s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000488s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:31:37+08:00 ] 127.0.0.1 GET /website/cate/index
+[ info ] 127.0.0.5/website/cate/index [运行时间：0.112057s][吞吐率：8.92req/s] [内存消耗：1,899.21kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'cate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/cate/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002184s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.014866s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000700s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:37:21+08:00 ] 127.0.0.1 GET /website/banner/type
+[ info ] 127.0.0.5/website/banner/type [运行时间：0.099446s][吞吐率：10.06req/s] [内存消耗：1,900.71kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'banner',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/banner/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005796s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.012041s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000558s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000375s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:42:19+08:00 ] 127.0.0.1 GET /website/subject/index
+[ info ] 127.0.0.5/website/subject/index [运行时间：0.144190s][吞吐率：6.94req/s] [内存消耗：1,894.82kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'subject',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/subject/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003142s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.016335s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001501s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000637s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:47:25+08:00 ] 127.0.0.1 GET /website/gbook/type
+[ info ] 127.0.0.5/website/gbook/type [运行时间：0.112430s][吞吐率：8.89req/s] [内存消耗：1,909.91kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'gbook',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/gbook/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001783s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.013472s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001179s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.001122s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:47:33+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.127127s][吞吐率：7.87req/s] [内存消耗：1,897.27kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002431s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.010043s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.002036s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.001130s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:51:25+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.150818s][吞吐率：6.63req/s] [内存消耗：1,999.91kb] [文件加载：55]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002267s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.014435s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001105s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.001780s ]
+[ error ] [8]Use of undefined constant __STATIC__ - assumed '__STATIC__'[D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Common.php:10]
+---------------------------------------------------------------
+[ 2018-10-26T11:53:47+08:00 ] 127.0.0.1 GET /website/gbook/type
+[ info ] 127.0.0.5/website/gbook/type [运行时间：0.119511s][吞吐率：8.37req/s] [内存消耗：1,910.27kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'gbook',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/gbook/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002140s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.013908s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.002905s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.001095s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:59:13+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.119504s][吞吐率：8.37req/s] [内存消耗：1,897.43kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007240s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.023923s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000341s ]
+---------------------------------------------------------------
+[ 2018-10-26T11:59:41+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.092490s][吞吐率：10.81req/s] [内存消耗：1,897.72kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/system/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002183s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.009649s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000569s ]
+---------------------------------------------------------------
+[ 2018-10-26T12:03:06+08:00 ] 127.0.0.1 GET /website/gbook/type
+[ info ] 127.0.0.5/website/gbook/type [运行时间：0.132923s][吞吐率：7.52req/s] [内存消耗：1,910.27kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'gbook',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/gbook/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001855s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.013235s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001637s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.003715s ]
+---------------------------------------------------------------
+[ 2018-10-26T12:04:12+08:00 ] 127.0.0.1 GET /website/subject/index
+[ info ] 127.0.0.5/website/subject/index [运行时间：0.122164s][吞吐率：8.19req/s] [内存消耗：1,895.13kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'subject',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/subject/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002467s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.016732s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001481s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000604s ]
+---------------------------------------------------------------
+[ 2018-10-26T12:06:14+08:00 ] 127.0.0.1 GET /website/gbook/type
+[ info ] 127.0.0.5/website/gbook/type [运行时间：0.117163s][吞吐率：8.54req/s] [内存消耗：1,909.94kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'gbook',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/gbook/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002886s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.013765s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001087s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000875s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:40:37+08:00 ] 127.0.0.1 GET /website/subject/index
+[ info ] 127.0.0.5/website/subject/index [运行时间：0.113677s][吞吐率：8.80req/s] [内存消耗：1,894.79kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'subject',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/subject/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008108s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.010539s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001709s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.001561s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:41:48+08:00 ] 127.0.0.1 GET /website/gbook/type
+[ info ] 127.0.0.5/website/gbook/type [运行时间：0.144138s][吞吐率：6.94req/s] [内存消耗：1,909.95kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'gbook',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/gbook/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003866s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.013595s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000825s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:42:17+08:00 ] 127.0.0.1 GET /website/subject/index
+[ info ] 127.0.0.5/website/subject/index [运行时间：0.125462s][吞吐率：7.97req/s] [内存消耗：1,894.85kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'subject',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/subject/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012368s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.009960s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000754s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000874s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:44:34+08:00 ] 127.0.0.1 GET /website/cate/index
+[ info ] 127.0.0.5/website/cate/index [运行时间：0.117967s][吞吐率：8.48req/s] [内存消耗：1,899.21kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'cate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/cate/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001952s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.010726s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000609s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000501s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:45:05+08:00 ] 127.0.0.1 GET /website/subject/index
+[ info ] 127.0.0.5/website/subject/index [运行时间：0.119305s][吞吐率：8.38req/s] [内存消耗：1,894.84kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'subject',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/subject/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002854s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.012157s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000773s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.002054s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:48:58+08:00 ] 127.0.0.1 GET /website/gbook/type
+[ info ] 127.0.0.5/website/gbook/type [运行时间：0.119437s][吞吐率：8.37req/s] [内存消耗：1,909.95kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'gbook',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/gbook/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002667s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.010900s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.003218s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000698s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:50:23+08:00 ] 127.0.0.1 GET /website/subject/index
+[ info ] 127.0.0.5/website/subject/index [运行时间：0.115487s][吞吐率：8.66req/s] [内存消耗：1,894.83kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'subject',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/subject/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002026s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.013521s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.001286s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:51:22+08:00 ] 127.0.0.1 GET /website/gbook/type
+[ info ] 127.0.0.5/website/gbook/type [运行时间：0.117756s][吞吐率：8.49req/s] [内存消耗：1,909.94kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'gbook',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/gbook/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001955s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.012099s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000516s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:52:36+08:00 ] 127.0.0.1 GET /website/subject/index
+[ info ] 127.0.0.5/website/subject/index [运行时间：0.115393s][吞吐率：8.67req/s] [内存消耗：1,894.83kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'subject',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/subject/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002325s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.016536s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000746s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:54:47+08:00 ] 127.0.0.1 GET /website/cate/index
+[ info ] 127.0.0.5/website/cate/index [运行时间：0.110911s][吞吐率：9.02req/s] [内存消耗：1,899.17kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'cate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/cate/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004655s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.017559s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000874s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.002749s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:55:01+08:00 ] 127.0.0.1 GET /website/system/index
+[ info ] 127.0.0.5/website/system/index [运行时间：0.119995s][吞吐率：8.33req/s] [内存消耗：1,897.27kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'system',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/system/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002086s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.017759s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001141s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000987s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:55:14+08:00 ] 127.0.0.1 GET /website/subject/index
+[ info ] 127.0.0.5/website/subject/index [运行时间：0.109146s][吞吐率：9.16req/s] [内存消耗：1,894.84kb] [文件加载：49]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'subject',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/subject/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004103s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.018397s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000750s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000745s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:56:29+08:00 ] 127.0.0.1 GET /website/cate/index
+[ info ] 127.0.0.5/website/cate/index [运行时间：0.138542s][吞吐率：7.22req/s] [内存消耗：2,056.70kb] [文件加载：54]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'cate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/cate/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Cate->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Cate.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\cate\index.html [ array (
+  0 => 'pid',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002203s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.014007s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001292s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.001264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_cate` [ RunTime:0.013436s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name`,`model`,`orders`,`isf` FROM `Dp_cate` ORDER BY `orders` ASC,`id` ASC [ RunTime:0.000714s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_cate` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.000702s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:56:37+08:00 ] 127.0.0.1 GET /website/index
+[ info ] 127.0.0.5/website/index [运行时间：0.098862s][吞吐率：10.12req/s] [内存消耗：2,015.51kb] [文件加载：53]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html [ array (
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'Dp',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001773s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.010995s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000551s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:56:37+08:00 ] 127.0.0.1 GET /website/index/main.html
+[ info ] 127.0.0.5/website/index/main.html [运行时间：0.089824s][吞吐率：11.13req/s] [内存消耗：1,966.43kb] [文件加载：52]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/index/main.html',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Index->main[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Index.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\main.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001888s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.016854s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001200s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000831s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:56:40+08:00 ] 127.0.0.1 GET /website/cate/index
+[ info ] 127.0.0.5/website/cate/index [运行时间：0.196501s][吞吐率：5.09req/s] [内存消耗：2,056.70kb] [文件加载：54]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'cate',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/cate/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Cate->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Cate.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\cate\index.html [ array (
+  0 => 'pid',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001851s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.058431s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001240s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000678s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_cate` [ RunTime:0.015399s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`name`,`model`,`orders`,`isf` FROM `Dp_cate` ORDER BY `orders` ASC,`id` ASC [ RunTime:0.000829s ]
+[ sql ] [ SQL ] SELECT `pid` FROM `Dp_cate` WHERE  `pid` > 0 GROUP BY `pid` [ RunTime:0.001416s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:58:11+08:00 ] 127.0.0.1 GET /website/banner/type
+[ info ] 127.0.0.5/website/banner/type [运行时间：0.150807s][吞吐率：6.63req/s] [内存消耗：2,026.42kb] [文件加载：53]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'banner',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/banner/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Banner->type[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Banner.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\banner\type.html [ array (
+  0 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002675s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.013947s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.001034s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_type` [ RunTime:0.015932s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_type` WHERE  `type` = 'banner' ORDER BY `orders` ASC,`id` ASC [ RunTime:0.002368s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:58:12+08:00 ] 127.0.0.1 GET /website/banner/index
+[ info ] 127.0.0.5/website/banner/index [运行时间：0.125544s][吞吐率：7.97req/s] [内存消耗：2,017.16kb] [文件加载：53]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'banner',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/banner/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Banner->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Banner.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\banner\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011318s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.013152s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000995s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.002095s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:58:13+08:00 ] 127.0.0.1 POST /website/banner/page.html
+[ info ] 127.0.0.5/website/banner/page.html [运行时间：0.110657s][吞吐率：9.04req/s] [内存消耗：1,978.34kb] [文件加载：52]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'banner',
+    2 => 'page',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/banner/page.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://127.0.0.5',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/banner/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Banner->page[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Banner.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002812s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.010783s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001166s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.002385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_adv` [ RunTime:0.012090s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,pic as src,`orders` FROM `Dp_adv` ORDER BY `orders` ASC,`id` ASC [ RunTime:0.000546s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:58:25+08:00 ] 127.0.0.1 GET /website/link/type
+[ info ] 127.0.0.5/website/link/type [运行时间：0.166422s][吞吐率：6.01req/s] [内存消耗：2,147.68kb] [文件加载：55]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'link',
+    2 => 'type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/link/type',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Link->type[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Link.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\link\type.html [ array (
+  0 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011785s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.014313s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000687s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_type` [ RunTime:0.010778s ]
+[ sql ] [ SQL ] SELECT * FROM `Dp_type` WHERE  `type` = 'link' ORDER BY `orders` ASC,`id` ASC [ RunTime:0.000986s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:58:26+08:00 ] 127.0.0.1 GET /website/link/index
+[ info ] 127.0.0.5/website/link/index [运行时间：0.140649s][吞吐率：7.11req/s] [内存消耗：2,136.20kb] [文件加载：55]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'link',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/link/index',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\website\controller\Link->index[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Link.php ]
+[ info ] [ VIEW ] D:\wwwroot\thinkphp5_765tm6\web/application/website\view\link\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001908s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.014647s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.000855s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000770s ]
+---------------------------------------------------------------
+[ 2018-10-26T13:58:27+08:00 ] 127.0.0.1 GET /website/link/fpage?page=1&limit=20
+[ info ] 127.0.0.5/website/link/fpage?page=1&limit=20 [运行时间：0.161042s][吞吐率：6.21req/s] [内存消耗：1,988.63kb] [文件加载：53]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] D:\wwwroot\thinkphp5_765tm6\web\core\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'website',
+    1 => 'link',
+    2 => 'fpage',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => '',
+  'content-length' => '0',
+  'x-original-url' => '/website/link/fpage?page=1&limit=20',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'referer' => 'http://127.0.0.5/website/link/index',
+  'host' => '127.0.0.5',
+  'cookie' => 'Hm_lvt_04fab3def376a222f35762aa47e96232=1539929747; PHPSESSID=i7her1o143jdsm07d9a0b4acl2',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ RUN ] app\website\controller\Link->fpage[ D:\wwwroot\thinkphp5_765tm6\web\application\website\controller\Link.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002250s ] mysql:host=localhost;port=3306;dbname=mythinkphp5;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_sets` [ RunTime:0.012259s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'mail' LIMIT 1 [ RunTime:0.001040s ]
+[ sql ] [ SQL ] SELECT `content` FROM `Dp_sets` WHERE  `name` = 'wechat' LIMIT 1 [ RunTime:0.000877s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `Dp_link` [ RunTime:0.034626s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `Dp_link` LIMIT 1 [ RunTime:0.001067s ]
+[ sql ] [ SQL ] SELECT a.id,logo,a.name,url,tid,t.name as typename,a.orders,FROM_UNIXTIME(time,"%Y-%m-%d %H:%i") as addTime FROM `Dp_link` `a` INNER JOIN `Dp_type` `t` ON `a`.`tid`=`t`.`id` ORDER BY `orders` ASC,`id` ASC LIMIT 0,20 [ RunTime:0.011349s ]

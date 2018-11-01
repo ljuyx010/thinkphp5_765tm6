@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>设置用户组权限</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	{css href="__STATIC__/layui/css/layui.css"}
+	{css href="__STATIC__/css/public.css"}
+</head>
+<body class="childrenBody">
+<form class="layui-form layui-row layui-col-space10">
+	<div class="layui-col-md12 layui-col-xs12">
+		<div class="layui-row layui-col-space10">
+			<div class="layui-col-md9 layui-col-xs12">
+				<div class="layui-form-item magt3">
+					<label class="layui-form-label">用户组名称</label>
+					<div class="layui-input-block">
+						<input type="text" class="layui-input title" name="title" {if condition="isset($v.title)"}value="{$v.title}"{/if} lay-verify="required" placeholder="请输入用户组名称">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">功能权限</label>
+					<div class="layui-input-block">
+					<table class="layui-table">
+					    <thead>
+					      <tr>
+					        <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>
+					        <th>权限名</th>
+					        <th>子权限集</th>
+					      </tr> 
+					    </thead>
+					    <tbody>
+					    {volist name="nav" id="n"}
+					      <tr>
+					        <td><input type="checkbox" name="nid[]" value="{$n.id}" lay-skin="primary"></td>
+					        <td>{$n.title}</td>
+					        <td>
+							{volist name="n.children" id="c"}
+							<input type="checkbox" name="nid[]" value="{$c.id}" title="{$c.title}" lay-skin="primary">
+							{/volist}
+					        </td>
+					      </tr>
+					    {/volist}
+					    </tbody>
+					</table>
+					</div>
+				</div>		
+				<div class="layui-form-item">
+					<label class="layui-form-label">栏目鉴权</label>
+					<div class="layui-input-block">
+					{if condition="isset($v.idr)"}
+						<input type="radio" name="isn" value="1" title="启用" lay-skin="primary" {if condition="$v.idr"}checked{/if} />
+						<input type="radio" name="isn" value="0" title="不启用" lay-skin="primary" {if condition="!$v.idr"}checked{/if}/>
+					{else /}
+						<input type="radio" name="isn" value="1" title="启用" lay-skin="primary"  />
+						<input type="radio" name="isn" value="0" title="不启用" lay-skin="primary" checked />
+					{/if}
+					</div>
+				</div>
+				<div class="layui-form-item" id="menu">
+					<label class="layui-form-label">栏目权限</label>
+					<div class="layui-input-block">
+					<table class="layui-table">
+				        <thead>
+				          <tr>
+				            <th width="70"><input type="checkbox" name="" lay-skin="primary" lay-filter="allCate"></th>
+				            <th>栏目ID</th>
+				            <th>栏目名称</th>
+				        </thead>
+				        <tbody class="x-cate">
+				        {volist name="cate" id="l"}
+				          <tr cate-id='{$l.id}' fid='{$l.pid}' >
+				          	<td><input type="checkbox" name="cid[]" value="{$l.id}" lay-skin="primary"></td>
+				            <td>{$l.id}</td>
+				            <td>{$l._name}</td>		            
+				          </tr>
+				        {/volist}
+				        </tbody>
+				    </table>
+				    </div>
+				</div>
+				<div class="layui-form-item">
+				<div class="layui-input-block">
+				<input class="id" type="hidden" name="id" {if condition="isset($v.id)"}value="{$v.id}"{/if}></input>
+				<a class="layui-btn" lay-filter="add" lay-submit><i class="layui-icon">&#xe609;</i>保存</a></div>
+				</div>
+			</div>			
+		</div>
+	</div>
+</form>
+{js href="__STATIC__/js/jquery.min.js"}
+{js href="__STATIC__/layui/layui.js"}
+<script>
+layui.use(['form','layer','layedit','laydate'],function(){
+    var form = layui.form
+        layer = parent.layer === undefined ? layui.layer : top.layer,
+        laypage = layui.laypage,
+        upload = layui.upload,
+        layedit = layui.layedit,
+        laydate = layui.laydate,
+        $ = layui.jquery;
+
+    form.on('checkbox(allChoose)', function (data) {
+        $("input[name='nid[]']").each(function () {
+            this.checked = data.elem.checked;
+        });
+        form.render('checkbox');
+    });
+
+    form.on('checkbox(allCate)', function (data) {
+        $("input[name='cid[]']").each(function () {
+            this.checked = data.elem.checked;
+        });
+        form.render('checkbox');
+    });
+
+    $("radio[name='isn']").click(function(){
+	    var value = $(this).vale();
+	    console.log(value);
+	    if(value){
+	    	$('#menu').css("display","block");
+	    }else{
+	    	$('#menu').css("display","none");
+	    }
+	});
+
+
+    form.on("submit(add)",function(data){        
+        var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
+        // 实际使用时的提交信息
+        $.post("{:url('auth/runadd')}",{
+            name : $(".name").val(), 
+            title : $(".title").val(), 
+            idr:$('select[name=isn]').val(),
+            id : $('.id').val(),
+            pid : $('.pid').val()
+        },function(res){        	
+        	if(res){
+        		top.layer.close(index);
+	            top.layer.msg("保存成功！");
+	            layer.closeAll("iframe");
+	            //刷新父页面
+	            parent.location.reload();
+        	}else{
+        		top.layer.msg("保存失败！");
+        	}
+        })
+        return false;
+    })
+})
+</script>
+</body>
+</html>
