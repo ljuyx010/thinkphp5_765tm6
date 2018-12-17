@@ -71,10 +71,9 @@
                     <a href="javascript:;"><i class="iconfont">&#xe82b;</i><cite>锁屏</cite></a>
                 </li>
                 <li class="layui-nav-item" id="userInfo">
-                    <a href="javascript:;"><img src="__STATIC__/images/face.jpg" class="layui-nav-img userAvatar"
-                            width="35" height="35"><cite class="adminName">{$Think.session.name}</cite></a>
+                    <a href="javascript:;"><img {if condition="$Think.session.user.pic"}src="{$Think.session.user.pic}"{else /}src="__STATIC__/images/face.jpg"{/if} class="layui-nav-img userAvatar"
+                            width="35" height="35"><cite class="adminName">{$Think.session.user.name}</cite></a>
                     <dl class="layui-nav-child">
-                        <!--<dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>-->
                         <dd><a href="javascript:;" data-url="{:url('admin/modfiy')}"><i class="iconfont icon-bianji4"
                                 data-icon="iconfont icon-bianji4"></i><cite>修改密码</cite></a></dd>
                         <dd pc><a href="javascript:;" class="functionSetting"><i class="layui-icon">&#xe620;</i><cite>功能设定</cite><span
@@ -91,22 +90,14 @@
     <!-- 左侧导航 -->
     <div class="layui-side layui-bg-black">
         <div class="user-photo">
-            <a class="img" title="我的头像" ><img src="__STATIC__/images/face.jpg" class="userAvatar"></a>
-            <p>你好！<span class="userName">{$Think.session.name}</span>, 欢迎登录</p>
+            <a class="img" title="我的头像" ><img {if condition="$Think.session.user.pic"}src="{$Think.session.user.pic}"{else /}src="__STATIC__/images/face.jpg"{/if} class="userAvatar"></a>
+            <p>你好！<span class="userName">{$Think.session.user.name}</span>, 欢迎登录</p>
         </div>
-        <!-- 搜索 
-        <div class="layui-form component" style="margin:10px;">
-            <select name="search" id="search" lay-search lay-filter="searchPage">
-                <option value="">搜索页面或功能</option>
-                <option value="1">layer</option>
-                <option value="2">form</option>
-            </select>
-            <i class="layui-icon">&#xe615;</i>
-        </div>-->
+
         <div class="navBar layui-side-scroll" id="navBar" style="border-bottom: 1px dashed #454545">
             <ul class="layui-nav layui-nav-tree" id="tree">
                 <li class="layui-nav-item layui-this">                
-                    <a href="javascript:;" data-url="{:url('index/main')}"><i class="layui-icon" data-icon="&#xe68e;"></i><cite>后台首页</cite></a>
+                    <a href="javascript:;" data-url="{:url('index/main')}"><i class="layui-icon" data-icon="&#xe68e;"></i><cite>系统首页</cite></a>
                 </li>
             </ul>
         </div>
@@ -115,7 +106,7 @@
     <div class="layui-body layui-form">
         <div class="layui-tab mag0" lay-filter="bodyTab" id="top_tabs_box">
             <ul class="layui-tab-title top_tab" id="top_tabs">
-                <li class="layui-this" lay-id=""><i class="layui-icon">&#xe68e;</i> <cite>后台首页</cite></li>
+                <li class="layui-this" lay-id=""><i class="layui-icon">&#xe68e;</i> <cite>系统首页</cite></li>
             </ul>
             <ul class="layui-nav closeBox">
                 <li class="layui-nav-item">
@@ -175,20 +166,28 @@
 <div class="site-tree-mobile"><i class="layui-icon">&#xe602;</i></div>
 <div class="site-mobile-shade"></div>
 {js href="__STATIC__/js/jquery.min.js"}
+{if condition="$Think.session.user.pic"}
+    <script>var face="{$Think.session.user.pic}";</script>
+{else/}
+    <script>var face="__STATIC__/images/face.jpg";</script>
+{/if}
 <script type="text/javascript">
-    var sat="__STATIC__";
+    var sat="__STATIC__/";
+    var code="{$Think.session.user.password|substr=0,7}"
     var url="{:url('index/getmenu','','')}";
     var curl="{:url('index/clear','','')}";
-    var uname="{$Think.session.name}";
+    var uname="{$Think.session.user.name}";
 </script>
 {js href="__STATIC__/js/jquery.toast.min.js"}
 {js href="__STATIC__/js/alert.js"}
+{js href="__STATIC__/js/md5.js"}
 {js href="__STATIC__/layui/layui.all.js"}
 {js href="__STATIC__/js/index.js"}
 {js href="__STATIC__/js/cache.js"}
 <script>
     window.onload = function () {
-        getData($('.layui-nav-item .layui-this').data('menu'));
+        var id=$('.layui-nav-item .layui-this').data('menu');
+        getData(id);
     };
     layui.use(['layer'],function(){
         let topmenu = $("#top_tabs_box");

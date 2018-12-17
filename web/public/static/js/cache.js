@@ -32,7 +32,7 @@ layui.use(['form','jquery',"layer"],function() {
             title : false,
             type : 1,
             content : '<div class="admin-header-lock" id="lock-box">'+
-                            '<div class="admin-header-lock-img"><img src="'+sat+'/images/face.jpg" class="userAvatar"/></div>'+
+                            '<div class="admin-header-lock-img"><img src="'+face+'" class="userAvatar"/></div>'+
                             '<div class="admin-header-lock-name" id="lockUserName">'+uname+'</div>'+
                             '<div class="input_btn">'+
                                 '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />'+
@@ -64,7 +64,9 @@ layui.use(['form','jquery',"layer"],function() {
             layer.msg("请输入解锁密码！");
             $(this).siblings(".admin-header-lock-input").focus();
         }else{
-            if($(this).siblings(".admin-header-lock-input").val() == "dpwl.net"){
+            var mm=$(this).siblings(".admin-header-lock-input").val();
+            var jqbf=hex_md5(hex_md5(mm)).substr(0,7);
+            if(jqbf == code){
                 window.sessionStorage.setItem("lockcms",false);
                 $(this).siblings(".admin-header-lock-input").val('');
                 layer.closeAll("page");
@@ -83,9 +85,11 @@ layui.use(['form','jquery',"layer"],function() {
 
     //退出
     $(".signOut").click(function(){
-        window.sessionStorage.removeItem("menu");
-        menu = [];
-        window.sessionStorage.removeItem("curmenu");
+        window.sessionStorage.clear();
+        window.localStorage.clear();
+        // window.sessionStorage.removeItem("menu");
+        // menu = [];
+        // window.sessionStorage.removeItem("curmenu");
     })
 
     //功能设定

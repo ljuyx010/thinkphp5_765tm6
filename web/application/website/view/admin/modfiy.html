@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>修改密码</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	{css href="__STATIC__/layui/css/layui.css"}
+	{css href="__STATIC__/css/public.css"}
+</head>
+<body class="childrenBody">
+<form class="layui-form linksAdd">
+	<div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+	<div class="layui-form-item">
+		<div class="layui-upload-list linkLogo">
+			<img class="layui-upload-img linkLogoImg" {if condition="$Think.session.user.pic"}src="{$Think.session.user.pic}"{/if}>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">新密码</label>
+		<div class="layui-input-block">
+			<input type="password" class="layui-input pwd1" lay-verify="required"  placeholder="请输入新密码" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">确认密码</label>
+		<div class="layui-input-block">
+			<input type="password" class="layui-input pwd2" lay-verify="required"  placeholder="请再次输入密码" />
+		</div>
+	</div>
+	<div class="layui-form-item layui-center">
+		<button class="layui-btn" lay-filter="addLink" lay-submit>提交</button>
+	</div>
+	</div>
+</form>
+	{js href="__STATIC__/layui/layui.js"}
+	<script type="text/javascript">
+	layui.use(['form','layer','laydate','table','upload'],function(){
+    var form = layui.form,
+        layer = parent.layer === undefined ? layui.layer : top.layer,
+        $ = layui.jquery,
+        laydate = layui.laydate,
+        upload = layui.upload,
+        table = layui.table;
+
+    //上传logo
+    upload.render({
+        elem: '.linkLogo',
+        url: "{:url('index/upload','','')}",
+        method : "post",
+        done: function(res, index, upload){
+            if(res.code==200){
+                $('.linkLogoImg').attr('src',res.src);
+                $('.linkLogo').css("background","#fff");
+            }else{
+                layer.msg(res.msg);
+            }   
+        }
+    });
+
+    form.on("submit(addLink)",function(data){
+    	var p1=$(".pwd1").val(),p2=$(".pwd2").val();
+    	if(p1==p2){
+	        //弹出loading
+	        var index = top.layer.msg('修改密码中，请稍候',{icon: 16,time:false,shade:0.8});
+	        $.post("{:url('admin/runedit','','')}",{
+	            logo : $(".linkLogoImg").attr("src"),  //头像
+	            pwd : p1,  //密码
+	            pwd1 : p2
+	        },function(res){
+	            if(res){
+	                top.layer.close(index);
+	                top.layer.msg("密码修改成功！");
+	            }else{
+	                top.layer.msg("修改失败！");
+	            }
+	            
+	        })
+	        return false;
+	    }else{
+	    	top.layer.msg("两次密码不一致！");
+	    }
+    })
+
+	})
+	</script>
+</body>
+</html>

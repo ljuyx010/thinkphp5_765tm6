@@ -50,5 +50,5 @@ layui.use(['form','layer','jquery'],function(){
 
 function refresh(){
 	var ts= Date.parse(new Date())/1000;
-	$('#verfy').attr('src','/index.php/captcha/id='+ts);
+	$('#verfy').attr('src','/captcha?rand='+ts);
 }

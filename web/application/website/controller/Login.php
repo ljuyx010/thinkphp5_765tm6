@@ -59,17 +59,19 @@ class Login extends Controller{
 	
 	public function check(){
 		$code=input('post.code');
-		$zh=input('post.username');
-		$pass=input('post.password');
+		$zh=input('post.user');
+		$pass=input('post.pwd');
     	if(!captcha_check($code)){
     		return 1;
     	}else{
     		$rs=db('admin')
 	    		->where('username',$zh)
-	    		->where('password',MD5($pass))
+	    		->where('password',MD5(MD5($pass)))
 	    		->find();
 	    	if($rs){
 	    		session('user',$rs);
+                $time=db('login')->where('aid',$rs['id'])->order('logintime desc')->value('logintime');
+                session('user.lstime',$time);
 	    		$osinfo = $this->getBrowser();
 	    		$request = request();
 		        $logData = array(

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\login\index.html";i:1534836095;}*/ ?>
 <!DOCTYPE html>
 <html class="loginHtml">
 <head>
@@ -10,12 +11,12 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" href="/favicon.ico">
-	{css href="__STATIC__/layui/css/layui.css" }
-	{css href="__STATIC__/css/public.css" }
+	<link rel="stylesheet" type="text/css" href="/public/static/layui/css/layui.css" />
+	<link rel="stylesheet" type="text/css" href="/public/static/css/public.css" />
 </head>
 <body class="loginBody">
 	<form class="layui-form">
-		<div class="login_face"><img src="__STATIC__/images/face.jpg" class="userAvatar"></div>
+		<div class="login_face"><img src="/public/static/images/face.jpg" class="userAvatar"></div>
 		<div class="layui-form-item input-item">
 			<label for="userName">用户名</label>
 			<input type="text" placeholder="请输入用户名" autocomplete="off" id="userName" class="layui-input" lay-verify="required">
@@ -27,7 +28,7 @@
 		<div class="layui-form-item input-item" id="imgCode">
 			<label for="code">验证码</label>
 			<input type="text" placeholder="请输入验证码" autocomplete="off" id="code" class="layui-input">
-			<img id="verfy" onclick="refresh()" src="{:captcha_src()}">
+			<img id="verfy" onclick="refresh()" src="<?php echo captcha_src(); ?>">
 		</div>
 		<div class="layui-form-item">
 			<button class="layui-btn layui-block" lay-filter="login" lay-submit>登录</button>
@@ -38,11 +39,11 @@
 		</div>
 	</form>
 	<script type="text/javascript">
-		var check="{:url('login/check')}";
-		var tz="/website/";
+		var check="<?php echo url('login/check'); ?>";
+		var tz="<?php echo url('index/index'); ?>";
 	</script>
-	{js href="__STATIC__/layui/layui.js"}
-	{js href="__STATIC__/js/login.js"}
-	{js href="__STATIC__/js/cache.js"}
+	<script type="text/javascript" src="/public/static/layui/layui.js"></script>
+	<script type="text/javascript" src="/public/static/js/login.js"></script>
+	<script type="text/javascript" src="/public/static/js/cache.js"></script>
 </body>
 </html>

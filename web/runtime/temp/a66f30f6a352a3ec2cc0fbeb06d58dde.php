@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\auth\rule.html";i:1541058980;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\auth\rule.html";i:1541150653;}*/ ?>
 <!DOCTYPE html>
 <html>
   
@@ -31,7 +31,7 @@
         </thead>
         <tbody class="x-cate">
         <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-          <tr cate-id='<?php echo $v['id']; ?>' fid='<?php echo $v['pid']; ?>' >
+          <tr>
             <td><?php echo $v['id']; ?></td>
             <td><?php echo $v['title']; ?></td>
             <td>

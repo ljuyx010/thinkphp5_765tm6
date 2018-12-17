@@ -37,11 +37,11 @@
 					    <tbody>
 					    {volist name="nav" id="n"}
 					      <tr>
-					        <td><input type="checkbox" name="nid[]" value="{$n.id}" lay-skin="primary"></td>
+					        <td><input type="checkbox" name="nid" value="{$n.id}" lay-filter="Choose" {if condition="isset($v) && in_array($n.id,$v.rules)"}checked{/if} lay-skin="primary"></td>
 					        <td>{$n.title}</td>
 					        <td>
 							{volist name="n.children" id="c"}
-							<input type="checkbox" name="nid[]" value="{$c.id}" title="{$c.title}" lay-skin="primary">
+							<input type="checkbox" name="nid" class="c{$n.id}" value="{$c.id}" {if condition="isset($v) && in_array($c.id,$v.rules)"}checked{/if} title="{$c.title}" lay-skin="primary">
 							{/volist}
 					        </td>
 					      </tr>
@@ -54,15 +54,15 @@
 					<label class="layui-form-label">栏目鉴权</label>
 					<div class="layui-input-block">
 					{if condition="isset($v.idr)"}
-						<input type="radio" name="isn" value="1" title="启用" lay-skin="primary" {if condition="$v.idr"}checked{/if} />
-						<input type="radio" name="isn" value="0" title="不启用" lay-skin="primary" {if condition="!$v.idr"}checked{/if}/>
+						<input type="radio" name="isn" value="1" title="开启" lay-filter="dx" lay-skin="primary" {if condition="$v.idr"}checked{/if} />
+						<input type="radio" name="isn" value="0" title="关闭" lay-filter="dx" lay-skin="primary" {if condition="!$v.idr"}checked{/if}/>
 					{else /}
-						<input type="radio" name="isn" value="1" title="启用" lay-skin="primary"  />
-						<input type="radio" name="isn" value="0" title="不启用" lay-skin="primary" checked />
+						<input type="radio" name="isn" value="1" title="开启" lay-filter="dx" lay-skin="primary"  />
+						<input type="radio" name="isn" value="0" title="关闭" lay-filter="dx" lay-skin="primary" checked />
 					{/if}
 					</div>
 				</div>
-				<div class="layui-form-item" id="menu">
+				<div class="layui-form-item" id="menu" {if condition="!(isset($v.idr) && $v.idr)"}style="display: none;"{/if}>
 					<label class="layui-form-label">栏目权限</label>
 					<div class="layui-input-block">
 					<table class="layui-table">
@@ -75,7 +75,7 @@
 				        <tbody class="x-cate">
 				        {volist name="cate" id="l"}
 				          <tr cate-id='{$l.id}' fid='{$l.pid}' >
-				          	<td><input type="checkbox" name="cid[]" value="{$l.id}" lay-skin="primary"></td>
+				          	<td><input type="checkbox" name="cid" value="{$l.id}" {if condition="isset($v) && in_array($l.id,$v.cid)"}checked{/if} lay-skin="primary"></td>
 				            <td>{$l.id}</td>
 				            <td>{$l._name}</td>		            
 				          </tr>
@@ -96,49 +96,60 @@
 {js href="__STATIC__/js/jquery.min.js"}
 {js href="__STATIC__/layui/layui.js"}
 <script>
-layui.use(['form','layer','layedit','laydate'],function(){
+layui.use(['form','layer','layedit','laydate','table'],function(){
     var form = layui.form
         layer = parent.layer === undefined ? layui.layer : top.layer,
         laypage = layui.laypage,
         upload = layui.upload,
         layedit = layui.layedit,
         laydate = layui.laydate,
+        table = layui.table,
         $ = layui.jquery;
 
     form.on('checkbox(allChoose)', function (data) {
-        $("input[name='nid[]']").each(function () {
+        $("input[name='nid']").each(function () {
+            this.checked = data.elem.checked;
+        });
+        form.render('checkbox');
+    });
+
+    form.on('checkbox(Choose)', function (data) {
+    	var id=this.value;
+        $(".c"+id).each(function () {
             this.checked = data.elem.checked;
         });
         form.render('checkbox');
     });
 
     form.on('checkbox(allCate)', function (data) {
-        $("input[name='cid[]']").each(function () {
+        $("input[name='cid']").each(function () {
             this.checked = data.elem.checked;
         });
         form.render('checkbox');
     });
 
-    $("radio[name='isn']").click(function(){
-	    var value = $(this).vale();
-	    console.log(value);
-	    if(value){
+    form.on('radio(dx)', function (data) {            
+        if(data.value==1){
 	    	$('#menu').css("display","block");
-	    }else{
-	    	$('#menu').css("display","none");
-	    }
-	});
+		}else{
+		    $('#menu').css("display","none");
+		}
 
-
-    form.on("submit(add)",function(data){        
+    });
+    
+    form.on("submit(add)",function(data){
         var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
+        var nid=[],cid=[];
         // 实际使用时的提交信息
-        $.post("{:url('auth/runadd')}",{
-            name : $(".name").val(), 
+        $("input:checkbox[name='nid']:checked").each(function(){nid.push($(this).val());});
+        $("input:checkbox[name='cid']:checked").each(function(){cid.push($(this).val());});
+
+        $.post("{:url('auth/rungadd')}",{
             title : $(".title").val(), 
-            idr:$('select[name=isn]').val(),
+            idr:$('input:radio[name=isn]').val(),
             id : $('.id').val(),
-            pid : $('.pid').val()
+            nid : nid,
+            cid : cid
         },function(res){        	
         	if(res){
         		top.layer.close(index);
@@ -151,7 +162,7 @@ layui.use(['form','layer','layedit','laydate'],function(){
         	}
         })
         return false;
-    })
+    });
 })
 </script>
 </body>

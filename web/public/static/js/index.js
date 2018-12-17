@@ -14,7 +14,7 @@ layui.use(['bodyTab','form','element','layer'],function(){
 		});
 
 	//通过顶部菜单获取左侧二三级菜单
-window.getData = function(id){
+    window.getData = function (id){
         var store = window.sessionStorage;
         if(typeof store === 'undefined'){
             console.log('很遗憾，您的浏览器对h5的支持不是很好');

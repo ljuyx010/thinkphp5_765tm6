@@ -68,7 +68,7 @@ layui.use(['form','layer','layedit','laydate'],function(){
         $.post("{:url('auth/runadd')}",{
             name : $(".name").val(), 
             title : $(".title").val(), 
-            status:$('select[name=isn]').val(),
+            status:$('input:radio[name=isn]').val(),
             id : $('.id').val(),
             pid : $('.pid').val()
         },function(res){        	
