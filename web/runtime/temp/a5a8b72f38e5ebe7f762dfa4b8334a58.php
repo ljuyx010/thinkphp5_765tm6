@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\add.html";i:1551163290;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +10,9 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	{css href="__STATIC__/layui/css/layui.css"}
-	{css href="__STATIC__/css/public.css"}
-	{css href="__STATIC__/css/upload.min.css"}
+	<link rel="stylesheet" type="text/css" href="/public/static/layui/css/layui.css" />
+	<link rel="stylesheet" type="text/css" href="/public/static/css/public.css" />
+	<link rel="stylesheet" type="text/css" href="/public/static/css/upload.min.css" />
 </head>
 <body class="childrenBody">
 <form class="layui-form layui-row layui-col-space10">
@@ -65,9 +66,9 @@
 				<div class="layui-input-block sid">
 					<select name="sid">
 					<option>选择专题</option>
-					{volist name="sub" id="v"}
-						<option value="{$v.id}">{$v.subname|re_substr=0,16}</option>
-					{/volist}
+					<?php if(is_array($sub) || $sub instanceof \think\Collection || $sub instanceof \think\Paginator): $i = 0; $__LIST__ = $sub;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+						<option value="<?php echo $v['id']; ?>"><?php echo re_substr($v['subname'],0,16); ?></option>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
 					</select>
 				</div>
 			</div>
@@ -109,15 +110,15 @@
 			</div>
 			<hr class="layui-bg-gray" />
 			<div class="layui-left">
-				<input type="hidden" name="cid" class="cid" value="{$cid}"></input>
+				<input type="hidden" name="cid" class="cid" value="<?php echo $cid; ?>"></input>
 				<a class="layui-btn" lay-filter="addNews" lay-submit><i class="layui-icon">&#xe609;</i>保存文章</a>
 			</div>
 		</div>
 	</div>
 </form>
-{js href="__STATIC__/js/jquery.min.js"}
-{js href="__STATIC__/layui/layui.js"}
-{js href="__STATIC__/kindeditor/NKeditor-all-min.js"}
+<script type="text/javascript" src="/public/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/public/static/layui/layui.js"></script>
+<script type="text/javascript" src="/public/static/kindeditor/NKeditor-all-min.js"></script>
 <script type="text/javascript">
 layui.use(['form','layer','layedit','laydate','upload'],function(){
     var form = layui.form,
@@ -132,7 +133,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
     //上传缩略图
     upload.render({
 		elem: '#upload-mutiple',
-		url: "{:url('index/uploads','','')}",
+		url: "<?php echo url('index/uploads','',''); ?>",
 		multiple: true,
 		done: function (res) {
 			//上传完毕
@@ -157,7 +158,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
 	$(document).on("click",".remove",function(){
 		var prs=$(this).parents('.img-wrapper');
 		var pid=$(this).parent().siblings("img").attr('data-id');
-		$.post("{:url('index/remove')}",{id:pid},function(res){
+		$.post("<?php echo url('index/remove'); ?>",{id:pid},function(res){
 			if(res){
 				prs.remove();
 			}else{
@@ -194,7 +195,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
 		})
         //弹出loading
         var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
-        $.post("{:url('article/runadd')}",{
+        $.post("<?php echo url('article/runadd'); ?>",{
             title : $(".title").val(),  //文章标题
             keyword : $(".keywords").val(), 
             description : $(".description").val(),  //文章摘要

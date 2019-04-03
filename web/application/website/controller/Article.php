@@ -81,7 +81,7 @@ class Article extends Common{
 			'url' => input('url')
 		);
 		$data['time']=input('time') ? strtotime(input('time')) : time();
-		$data['pics']=input('pics') ? implode("|", input('pics/a')) : '';
+		$data['pics']=input('pics/a') ? implode("|", input('pics/a')) : '';
 		$data['description']=input('description') ? input('description') : re_substr(preg_replace('/\s/', '', input('content','','strip_tags')),0,300,false);
 		$data['content']=input('content','','htmlspecialchars');
 		if(input('?post.id')){

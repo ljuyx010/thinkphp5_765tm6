@@ -73,8 +73,10 @@ class Link extends Common{
 	public function runadd(){
 		$data=input('post.');	
 		if(input('id')){
+			unset($data['addtime']);
 			$rs=db('link')->update($data);
-		}else{
+		}else{			
+			unset($data['addtime']);
 			$data['time']=strtotime(input('addtime'));
 			$rs=db('link')->insert($data);
 		}		

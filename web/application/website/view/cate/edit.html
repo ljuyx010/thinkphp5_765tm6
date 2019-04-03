@@ -175,7 +175,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
             model:$('select[name=model]').val(),
             page:$('select[name=page]').val(),
             gid:$('select[name=gid]').val(),
-            isn:$('select[name=isn]').val(),
+            isn:$('input[name=isn]:checked').val(),
             id : $('.id').val(),
             pid : $('select[name=pid]').val()
         },function(res){        	

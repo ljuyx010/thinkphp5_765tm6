@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\article\edit.html";i:1537843113;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +10,9 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	{css href="__STATIC__/layui/css/layui.css"}
-	{css href="__STATIC__/css/public.css"}
-	{css href="__STATIC__/css/upload.min.css"}
+	<link rel="stylesheet" type="text/css" href="/public/static/layui/css/layui.css" />
+	<link rel="stylesheet" type="text/css" href="/public/static/css/public.css" />
+	<link rel="stylesheet" type="text/css" href="/public/static/css/upload.min.css" />
 </head>
 <body class="childrenBody">
 <form class="layui-form layui-row layui-col-space10">
@@ -21,19 +22,19 @@
 				<div class="layui-form-item magt3">
 					<label class="layui-form-label">文章标题</label>
 					<div class="layui-input-block">
-						<input type="text" class="layui-input title" lay-verify="required" placeholder="请输入文章标题">
+						<input type="text" class="layui-input title" lay-verify="required" value="<?php echo $a['title']; ?>">
 					</div>
 				</div>
 				<div class="layui-form-item magt3">
 					<label class="layui-form-label">文章关键字</label>
 					<div class="layui-input-block">
-						<input type="text" class="layui-input keywords"  placeholder="请输入文章关键字">
+						<input type="text" class="layui-input keywords"  value="<?php echo $a['keyword']; ?>">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">内容摘要</label>
 					<div class="layui-input-block">
-						<textarea placeholder="请输入内容摘要" class="layui-textarea description"></textarea>
+						<textarea placeholder="请输入内容摘要" class="layui-textarea description"><?php echo $a['description']; ?></textarea>
 					</div>
 				</div>
 				<!-- 多图上传 -->
@@ -43,7 +44,11 @@
 	                    <button type="button" class="layui-btn" id="upload-mutiple">选择图片</button>
 	                    <div class="layui-upload-list">
 						<ul class="x-layui-row" id="upload-list">
-
+							<?php if($a['pic']): ?>
+							<li class='img-wrapper' id='selected'><div class='img-container' style='width: 113px; height: 113px'><div class='xbg'></div><img data-id='<?php echo $pid; ?>' src='<?php echo $a['pic']; ?>' style='position: absolute; top: 0px; left: -18.8333px; width: 150.667px; height: 113px;'><div class='file-opt-box clearfix'><span class='remove'>删除</span></div></div></li>
+							<?php endif; if(is_array($piclist) || $piclist instanceof \think\Collection || $piclist instanceof \think\Paginator): $i = 0; $__LIST__ = $piclist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$p): $mod = ($i % 2 );++$i;?>
+							<li class='img-wrapper'><div class='img-container' style='width: 113px; height: 113px'><div class='xbg'></div><img data-id='<?php echo $p['id']; ?>' src='<?php echo $p['imgurl']; ?>' style='position: absolute; top: 0px; left: -18.8333px; width: 150.667px; height: 113px;'><div class='file-opt-box clearfix'><span class='remove'>删除</span></div></div></li>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
 						</ul>
 						</div>
 	                </div>
@@ -53,7 +58,7 @@
 		<div class="layui-form-item magb0">
 			<label class="layui-form-label">文章内容</label>
 			<div class="layui-input-block">
-				<textarea style="width:100%;height:500px;visibility:hidden;" name="content" lay-verify="required" id="content"></textarea>
+				<textarea style="width:100%;height:500px;visibility:hidden;" name="content" lay-verify="required" id="content"><?php echo $a['content']; ?></textarea>
 			</div>
 		</div>
 	</div>
@@ -65,9 +70,9 @@
 				<div class="layui-input-block sid">
 					<select name="sid">
 					<option>选择专题</option>
-					{volist name="sub" id="v"}
-						<option value="{$v.id}">{$v.subname|re_substr=0,16}</option>
-					{/volist}
+					<?php if(is_array($sub) || $sub instanceof \think\Collection || $sub instanceof \think\Paginator): $i = 0; $__LIST__ = $sub;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+						<option <?php if($a['sid'] == $v['id']): ?>selected<?php endif; ?> value="<?php echo $v['id']; ?>"><?php echo re_substr($v['subname'],0,16); ?></option>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
 					</select>
 				</div>
 			</div>
@@ -78,46 +83,46 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label"> 作　者</label>
 				<div class="layui-input-block">
-					<input type="text" name="author" class="layui-input author" placeholder="文章作者或编辑">
+					<input type="text" name="author" class="layui-input author" value="<?php echo $a['author']; ?>">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label"> 来　源</label>
 				<div class="layui-input-block">
-					<input type="text" name="from" class="layui-input from" placeholder="文章来源">
+					<input type="text" name="from" class="layui-input from" value="<?php echo $a['from']; ?>">
 				</div>
 			</div>
 
 			<div class="layui-form-item releaseDate">
 				<label class="layui-form-label"> 时　间</label>
 				<div class="layui-input-block">
-					<input type="text" class="layui-input" name="time" id="release" placeholder="请选择日期和时间" readonly />
+					<input type="text" class="layui-input" name="time" id="release" value="<?php echo date('Y-m-d H:i:s',$a['time']); ?>" readonly />
 				</div>
 			</div>
 
 			<div class="layui-form-item tj">
 				<label class="layui-form-label"><i class="seraph icon-zhiding"></i> 推　荐</label>
 				<div class="layui-input-block">
-					<input type="checkbox" name="tj" id="tj" lay-filter="tj" lay-skin="switch" lay-text="是|否">
+					<input type="checkbox" name="tj" id="tj" lay-filter="tj" <?php if($a['tj']): ?>checked  value="1"<?php else: ?>value="0"<?php endif; ?> lay-skin="switch" lay-text="是|否">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label"> 跳　转</label>
 				<div class="layui-input-block">
-					<input type="text" name="url" class="layui-input url" placeholder="需要自动跳转到其他页面时填写要跳转的完整url">
+					<input type="text" name="url" class="layui-input url" value="<?php echo $a['url']; ?>">
 				</div>
 			</div>
 			<hr class="layui-bg-gray" />
 			<div class="layui-left">
-				<input type="hidden" name="cid" class="cid" value="{$cid}"></input>
+				<input type="hidden" name="id" class="cid" value="<?php echo $a['id']; ?>"></input>
 				<a class="layui-btn" lay-filter="addNews" lay-submit><i class="layui-icon">&#xe609;</i>保存文章</a>
 			</div>
 		</div>
 	</div>
 </form>
-{js href="__STATIC__/js/jquery.min.js"}
-{js href="__STATIC__/layui/layui.js"}
-{js href="__STATIC__/kindeditor/NKeditor-all-min.js"}
+<script type="text/javascript" src="/public/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/public/static/layui/layui.js"></script>
+<script type="text/javascript" src="/public/static/kindeditor/NKeditor-all-min.js"></script>
 <script type="text/javascript">
 layui.use(['form','layer','layedit','laydate','upload'],function(){
     var form = layui.form,
@@ -126,23 +131,17 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
         upload = layui.upload,
         layedit = layui.layedit,
         laydate = layui.laydate,
-        i=0,
         $ = layui.jquery;
 
     //上传缩略图
     upload.render({
 		elem: '#upload-mutiple',
-		url: "{:url('index/uploads','','')}",
+		url: "<?php echo url('index/uploads','',''); ?>",
 		multiple: true,
 		done: function (res) {
 			//上传完毕
 			if (res.code == "200") {
-				if(i==0){
-				$('#upload-list').append("<li class='img-wrapper' id='selected'><div class='img-container' style='width: 113px; height: 113px'><div class='xbg'></div><img data-id='"+res.pid+"' src='"+res.src+"' style='position: absolute; top: 0px; left: -18.8333px; width: 150.667px; height: 113px;'><div class='file-opt-box clearfix'><span class='remove'>删除</span></div></div></li>");
-				i++;
-				}else{
-				$('#upload-list').append("<li class='img-wrapper'><div class='img-container' style='width: 113px; height: 113px'><div class='xbg'></div><img data-id='"+res.pid+"' src='"+res.src+"' style='position: absolute; top: 0px; left: -18.8333px; width: 150.667px; height: 113px;'><div class='file-opt-box clearfix'><span class='remove'>删除</span></div></div></li>");
-				}				
+				$('#upload-list').append("<li class='img-wrapper'><div class='img-container' style='width: 113px; height: 113px'><div class='xbg'></div><img data-id='"+res.pid+"' src='"+res.src+"' style='position: absolute; top: 0px; left: -18.8333px; width: 150.667px; height: 113px;'><div class='file-opt-box clearfix'><span class='remove'>删除</span></div></div></li>");			
 			}else{
 				top.layer.msg(res.msg);
 			}
@@ -157,7 +156,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
 	$(document).on("click",".remove",function(){
 		var prs=$(this).parents('.img-wrapper');
 		var pid=$(this).parent().siblings("img").attr('data-id');
-		$.post("{:url('index/remove')}",{id:pid},function(res){
+		$.post("<?php echo url('index/remove'); ?>",{id:pid},function(res){
 			if(res){
 				prs.remove();
 			}else{
@@ -194,7 +193,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
 		})
         //弹出loading
         var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
-        $.post("{:url('article/runadd')}",{
+        $.post("<?php echo url('article/runadd'); ?>",{
             title : $(".title").val(),  //文章标题
             keyword : $(".keywords").val(), 
             description : $(".description").val(),  //文章摘要
@@ -207,16 +206,16 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
             time : $('#release').val(),    //发布时间
             tj : $("#tj").val(),    //是否置顶
             url : $('.url').val(),    //跳转地址
-            cid : $('.cid').val()
+            id : $('.cid').val()
         },function(res){
         	if(res==1){
         		top.layer.close(index);
-	            top.layer.msg("文章添加成功！");
+	            top.layer.msg("文章修改成功！");
 	            layer.closeAll("iframe");
 	            //刷新父页面
 	            parent.location.reload();
         	}else{
-        		top.layer.msg("文章添加失败！");
+        		top.layer.msg("文章修改失败！");
         	}
         });
         return false;
@@ -225,12 +224,26 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
     //创建一个编辑器
     KindEditor.ready(function(K) {
 	    K.create('textarea[name="content"]', {
-	        uploadJson : K.basePath+"php/default/upload_json.php",
-	        fileManagerJson : K.basePath+'php/default/file_manager_json.php',
+	        uploadJson : "http://herosphp.r9it.com/admin/upload/qiniu",
+	        fileManagerJson : 'http://herosphp.r9it.com/admin/upload/filelist',
+	        imageSearchJson : null, //图片搜索url
+	        dialogOffset : 0, //对话框距离页面顶部的位置，默认为0居中，
+	        filePostName: 'file',
 	        allowFileManager : true,
 	        allowImageUpload : true,
 	        allowMediaUpload : true,
-	        themeType : "default", //主题
+	        themeType : "grey", //主题
+	        afterCreate : function() {
+		        var self = this;
+		        K.ctrl(document, 13, function() {
+			        self.sync();
+			        K('form[name=example]')[0].submit();
+		        });
+		        K.ctrl(self.edit.doc, 13, function() {
+			        self.sync();
+			        K('form[name=example]')[0].submit();
+		        });
+	        },
 	        //错误处理 handler
 	        errorMsgHandler : function(message, type) {
 		        layer.alert(message);

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html";i:1540452173;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\index\index.html";i:1544583511;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,10 +72,9 @@
                     <a href="javascript:;"><i class="iconfont">&#xe82b;</i><cite>锁屏</cite></a>
                 </li>
                 <li class="layui-nav-item" id="userInfo">
-                    <a href="javascript:;"><img src="/public/static/images/face.jpg" class="layui-nav-img userAvatar"
-                            width="35" height="35"><cite class="adminName"><?php echo \think\Session::get('name'); ?></cite></a>
+                    <a href="javascript:;"><img <?php if(\think\Session::get('user.pic')): ?>src="<?php echo \think\Session::get('user.pic'); ?>"<?php else: ?>src="/public/static/images/face.jpg"<?php endif; ?> class="layui-nav-img userAvatar"
+                            width="35" height="35"><cite class="adminName"><?php echo \think\Session::get('user.name'); ?></cite></a>
                     <dl class="layui-nav-child">
-                        <!--<dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>-->
                         <dd><a href="javascript:;" data-url="<?php echo url('admin/modfiy'); ?>"><i class="iconfont icon-bianji4"
                                 data-icon="iconfont icon-bianji4"></i><cite>修改密码</cite></a></dd>
                         <dd pc><a href="javascript:;" class="functionSetting"><i class="layui-icon">&#xe620;</i><cite>功能设定</cite><span
@@ -92,22 +91,14 @@
     <!-- 左侧导航 -->
     <div class="layui-side layui-bg-black">
         <div class="user-photo">
-            <a class="img" title="我的头像" ><img src="/public/static/images/face.jpg" class="userAvatar"></a>
-            <p>你好！<span class="userName"><?php echo \think\Session::get('name'); ?></span>, 欢迎登录</p>
+            <a class="img" title="我的头像" ><img <?php if(\think\Session::get('user.pic')): ?>src="<?php echo \think\Session::get('user.pic'); ?>"<?php else: ?>src="/public/static/images/face.jpg"<?php endif; ?> class="userAvatar"></a>
+            <p>你好！<span class="userName"><?php echo \think\Session::get('user.name'); ?></span>, 欢迎登录</p>
         </div>
-        <!-- 搜索 
-        <div class="layui-form component" style="margin:10px;">
-            <select name="search" id="search" lay-search lay-filter="searchPage">
-                <option value="">搜索页面或功能</option>
-                <option value="1">layer</option>
-                <option value="2">form</option>
-            </select>
-            <i class="layui-icon">&#xe615;</i>
-        </div>-->
+
         <div class="navBar layui-side-scroll" id="navBar" style="border-bottom: 1px dashed #454545">
             <ul class="layui-nav layui-nav-tree" id="tree">
                 <li class="layui-nav-item layui-this">                
-                    <a href="javascript:;" data-url="<?php echo url('index/main'); ?>"><i class="layui-icon" data-icon="&#xe68e;"></i><cite>后台首页</cite></a>
+                    <a href="javascript:;" data-url="<?php echo url('index/main'); ?>"><i class="layui-icon" data-icon="&#xe68e;"></i><cite>系统首页</cite></a>
                 </li>
             </ul>
         </div>
@@ -116,7 +107,7 @@
     <div class="layui-body layui-form">
         <div class="layui-tab mag0" lay-filter="bodyTab" id="top_tabs_box">
             <ul class="layui-tab-title top_tab" id="top_tabs">
-                <li class="layui-this" lay-id=""><i class="layui-icon">&#xe68e;</i> <cite>后台首页</cite></li>
+                <li class="layui-this" lay-id=""><i class="layui-icon">&#xe68e;</i> <cite>系统首页</cite></li>
             </ul>
             <ul class="layui-nav closeBox">
                 <li class="layui-nav-item">
@@ -176,20 +167,28 @@
 <div class="site-tree-mobile"><i class="layui-icon">&#xe602;</i></div>
 <div class="site-mobile-shade"></div>
 <script type="text/javascript" src="/public/static/js/jquery.min.js"></script>
+<?php if(\think\Session::get('user.pic')): ?>
+    <script>var face="<?php echo \think\Session::get('user.pic'); ?>";</script>
+<?php else: ?>
+    <script>var face="/public/static/images/face.jpg";</script>
+<?php endif; ?>
 <script type="text/javascript">
-    var sat="/public/static";
+    var sat="/public/static/";
+    var code="<?php echo substr(\think\Session::get('user.password'),0,7); ?>"
     var url="<?php echo url('index/getmenu','',''); ?>";
     var curl="<?php echo url('index/clear','',''); ?>";
-    var uname="<?php echo \think\Session::get('name'); ?>";
+    var uname="<?php echo \think\Session::get('user.name'); ?>";
 </script>
 <script type="text/javascript" src="/public/static/js/jquery.toast.min.js"></script>
 <script type="text/javascript" src="/public/static/js/alert.js"></script>
+<script type="text/javascript" src="/public/static/js/md5.js"></script>
 <script type="text/javascript" src="/public/static/layui/layui.all.js"></script>
 <script type="text/javascript" src="/public/static/js/index.js"></script>
 <script type="text/javascript" src="/public/static/js/cache.js"></script>
 <script>
     window.onload = function () {
-        getData($('.layui-nav-item .layui-this').data('menu'));
+        var id=$('.layui-nav-item .layui-this').data('menu');
+        getData(id);
     };
     layui.use(['layer'],function(){
         let topmenu = $("#top_tabs_box");

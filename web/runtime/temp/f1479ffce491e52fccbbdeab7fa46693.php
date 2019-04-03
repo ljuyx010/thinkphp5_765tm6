@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\login\index.html";i:1534836095;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:73:"D:\wwwroot\thinkphp5_765tm6\web/application/website\view\login\index.html";i:1543195405;}*/ ?>
 <!DOCTYPE html>
 <html class="loginHtml">
 <head>
@@ -40,7 +40,7 @@
 	</form>
 	<script type="text/javascript">
 		var check="<?php echo url('login/check'); ?>";
-		var tz="<?php echo url('index/index'); ?>";
+		var tz="/website/";
 	</script>
 	<script type="text/javascript" src="/public/static/layui/layui.js"></script>
 	<script type="text/javascript" src="/public/static/js/login.js"></script>
